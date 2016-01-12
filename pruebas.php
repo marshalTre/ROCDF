@@ -4,7 +4,7 @@
 <html lang="es">
 
     <head>
-        <title>Usuario</title>
+        <title>Esta es una prueba cualquiera</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="CSS/style.css">
         <link rel="stylesheet" href="CSS/login.css">

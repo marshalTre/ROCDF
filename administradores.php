@@ -15,7 +15,7 @@ if (isset($_SESSION["session_user"])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
+        <title>inicio</title>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/nav.css">

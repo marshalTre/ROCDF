@@ -15,7 +15,7 @@ if (isset($_SESSION["session_user"])) {
  * @copyright 2015
  */
 
-  $folio = $_POST["folio"];
+ 
   $nom_org = $_POST["nom_org"];
   $tipo_org = $_POST["tipo_org"];
   $rep_legal = $_POST["rep_legal"];

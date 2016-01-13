@@ -59,10 +59,10 @@ if (isset($_SESSION["session_user"])) {
         echo "<font color='red'><h2>Error en la conexión Intentalo más tarde</h2></font>";
         exit;
     }
-$consulta = "insert into registro ('nom_org','tipo_org','rep_legal','registro','calle','num_ext','colonia','delegacion',
-                                    'cod_postal','tel_fijo','tel_movi','pag_int','correo','nom_proyecto','nom_resp','eje_tem','sub_eje',
-                                        'ins_dic','tipo_proyecto','mon_sol','pob_obj','num_mujeres','num_hombres','objetivo','rec_ficha_tec',
-                                            'rec_arch_elec','rec_cons_insc','rec_carta','rec_cons_plat','rec_doc_term','observaciones','resp_proyecto','nom_per_entrega','cargo')
+$consulta = "insert into registro (nom_org,tipo_org,rep_legal,registro,calle,num_ext,colonia,delegacion,
+                                    cod_postal,tel_fijo,tel_movil,pag_int,correo,nom_proyecto,nom_resp,eje_tem,sub_eje,
+                                        ins_dic,tipo_proyecto,mon_sol,pob_obj,num_mujeres,num_hombres,objetivo,rec_ficha_tec,
+                                            rec_arch_elec,rec_cons_insc,rec_carta,rec_cons_plat,rec_doc_term,observaciones,resp_proyecto,nom_per_entrega,cargo)
                                 values ('".$nom_org."','".$tipo_org."','".$rep_legal."','".$registro."','".$calle."','".$num_ext."','".$colonia."','".$delegacion."'
                                             ,'".$cod_postal."','".$tel_fijo."','".$tel_movil."','".$pag_int."','".$correo."','".$nom_proyecto."','".$nom_resp."','".$eje_tem."','".$sub_eje."'
                                                 ,'".$ins_dic."','".$tipo_proyecto."','".$mon_sol."','".$pob_obj."','".$num_mujeres."','".$num_hombres."','".$objetivo."','".$rec_ficha_tec."'

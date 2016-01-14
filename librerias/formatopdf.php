@@ -1,5 +1,5 @@
 <?php
-
+//esto solo es un comentario para que se actualize
 require_once '../control/datos_conexion.php';
 
 $consulta = "Select nom_org from registro where folio='1' ";
@@ -17,8 +17,8 @@ require('fpdf.php');
 
 $pdf = new FPDF();
 $pdf->AddPage();
-//$pdf->Image('../images/angel.png',15,10,-200);
-//$pdf->Image('../images/dgids.png',175,10,-250);
+$pdf->Image('../images/angel.png',15,10,-200);
+$pdf->Image('../images/dgids.png',175,10,-250);
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(190,10,utf8_decode("PROGRAMA DE COINVERSIÓN PARA EL DESARROLLO SOCIAL"),0,0,'C');
 $pdf->Ln(4);

@@ -36,7 +36,7 @@ $pdf->Cell(10,7,utf8_decode("Folio: "),0,0,'C');
 $pdf->SetXY(30,70);
 $pdf->Cell(10,7,0,0,'C');
 $pdf->SetXY(18,77);
-$pdf->Cell(45,7,utf8_decode("Nombre de la organización: "),0,0,'C');
+$pdf->MultiCell(45,7,utf8_decode("Nombre de la organización: ".  utf8_decode($reg['nom_org'])),0,'C');
 $pdf->SetXY(18,84);
 $pdf->Cell(62,7,utf8_decode("Nombre de la o el representante legal: "),0,0,'C');
 $pdf->SetXY(18,91);

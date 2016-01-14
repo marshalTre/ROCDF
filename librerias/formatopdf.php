@@ -1,7 +1,15 @@
-
-
-
 <?php
+
+require_once '../control/datos_conexion.php';
+
+$consulta = "Select nom_org from registro where folio='1' ";
+$query = mysqli_query(conector::conexion(), $consulta);
+
+if ($reg = mysqli_fetch_array($query,MYSQLI_BOTH)) {
+    
+
+
+
 setlocale(LC_TIME, 'es_ES.UTF-8');
 
 require('fpdf.php');
@@ -9,8 +17,8 @@ require('fpdf.php');
 
 $pdf = new FPDF();
 $pdf->AddPage();
-$pdf->Image('../images/angel.png',15,10,-200);
-$pdf->Image('../images/dgids.png',175,10,-250);
+//$pdf->Image('../images/angel.png',15,10,-200);
+//$pdf->Image('../images/dgids.png',175,10,-250);
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(190,10,utf8_decode("PROGRAMA DE COINVERSIÓN PARA EL DESARROLLO SOCIAL"),0,0,'C');
 $pdf->Ln(4);
@@ -26,7 +34,7 @@ $pdf->SetFont('Arial','',10);
 $pdf->SetXY(18,70);
 $pdf->Cell(10,7,utf8_decode("Folio: "),0,0,'C');
 $pdf->SetXY(30,70);
-$pdf->Cell(10,7,$_POST['folio'] ,0,0,'C');
+$pdf->Cell(10,7,0,0,'C');
 $pdf->SetXY(18,77);
 $pdf->Cell(45,7,utf8_decode("Nombre de la organización: "),0,0,'C');
 $pdf->SetXY(18,84);
@@ -90,4 +98,7 @@ $pdf->Cell(130,7,utf8_decode("Quien haga uso indebido de los recursos de este pr
 $pdf->SetXY(40,266);
 $pdf->Cell(130,7,utf8_decode("autoridad competente"),0,0,'C');
 $pdf->Output();
+}  else {
+    echo 'No se puede mostrar';    
+}
 ?>

@@ -5,7 +5,7 @@ class conector {
     public static function conexion() {
         $servidor = "localhost";
         $nombreDeUsuario = "root";
-        $contrasena = "";
+        $contrasena = "rocasado78";
         $baseDeDatos = "rocdf";
 
         $db = new mysqli($servidor, $nombreDeUsuario, $contrasena, $baseDeDatos);

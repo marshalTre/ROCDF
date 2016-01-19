@@ -241,28 +241,28 @@ if (isset($_SESSION["session_user"])) {
                     </select></br></br>
                 </div>
                 <div class="col-md-9">
-                    <div id="eje_1" style="display: none;"><br>
+                    <div id="1" style="display: none;"><br>
                         <label>Eje 1) Prevención y atención de la violencia al interior de las familias y fortalecimiento de la diversidad familiar</label>
                     </div>
-                    <div id="eje_2" style="display: none;"><br>
+                    <div id="2" style="display: none;"><br>
                         <label>Eje 2) Fortalecimiento de la participación comunitaria en la política alimentaria</label>
                     </div>
-                    <div id="eje_3" style="display: none;"><br>
+                    <div id="3" style="display: none;"><br>
                         <label>Eje 3) Promoción y fortalecimiento de las políticas sociales</label>
                     </div>
-                    <div id="eje_4" style="display: none;"><br>
+                    <div id="4" style="display: none;"><br>
                         <label>Eje 4) Promoción de los derechos humanos, no discriminación y diversidad sexual </label>
                     </div>
-                    <div id="eje_5" style="display: none;"><br>
+                    <div id="5" style="display: none;"><br>
                         <label>Eje 5) Desarrollo comunitario, promoción de la cultura y comunicación social alternativa</label>
                     </div>
-                    <div id="eje_6" style="display: none;"><br>
+                    <div id="6" style="display: none;"><br>
                         <label>Eje 6) Promoción de los Derechos de Acceso a la Información Pública y Protección de Datos Personales</label>
                     </div>
-                    <div id="eje_7" style="display: none;"><br>
+                    <div id="7" style="display: none;"><br>
                         <label>Eje 7) Fortalecimiento para el sano desarrollo y garantía de derechos humanos para poblaciones en desventaja social</label>
                     </div>
-                    <div id="eje_8" style="display: none;"><br>
+                    <div id="8" style="display: none;"><br>
                         <label>Eje 8) Promoción y acceso de las mujeres al ejercicio de sus derechos humanos y a una vida libre de violencias </label>
                     </div>
 

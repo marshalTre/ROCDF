@@ -64,7 +64,7 @@ if (isset($_SESSION["session_user"])) {
         <nav id="navigation">
             <center>
                 <ul>
-                    <li data-toggle="modal" data-target="#imp"><a href="librerias/formatopdf.php">Imprimir</a></li>
+                    <!-- <li data-toggle="modal" data-target="#imp"><a href="librerias/formatopdf.php">Imprimir</a></li> -->
                     <li data-toggle="modal" data-target="#mod"><a href="#">Modificar</a></li>
                     <li data-toggle="modal" data-target="#bor"><a href="#">Borrar</a></li>
                     <li><a href='control/cerrarSesion.php' class="btn2" target="_top">Salir</a></li>
@@ -73,7 +73,7 @@ if (isset($_SESSION["session_user"])) {
             </center>
         </nav>
         
-        <section class="imprimir">
+    <!--    <section class="imprimir">
             <div class="modal fade" id="imp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -91,7 +91,7 @@ if (isset($_SESSION["session_user"])) {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         
         <section class="modificar">
             <div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

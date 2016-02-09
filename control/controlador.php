@@ -5,22 +5,16 @@ if (!isset($_SESSION)) {
 error_reporting(0);
 
 require_once './datos_conexion.php';
-require_once './insertar.php';
+//require_once './insertar.php';
 
 
-/**
- * @author www.intercambiosvirtuales.org
- * @copyright 2015
- */
-
-
-
-$revision = "SELECT * FROM registro where folio = '58' ";
+//$revision = "SELECT * FROM registro where folio = '116' ";
+$revision= "SELECT * FROM registro ORDER BY folio DESC LIMIT 1";
 $query2 = mysqli_query(conector::conexion(), $revision);
 
 
 
-if (!$query) {
+if (!$query2) {
 
     echo "<font color='red'><h2>No se pudo ejecutar la consulta</h2></font>";
     exit;
@@ -90,9 +84,7 @@ while ($reg = mysqli_fetch_array($query2)) {
             <nav id="navigation">
                 <center>
                     <ul>
-                        <li data-toggle="modal" data-target="#imp"><a href="../librerias/formatopdf.php">Imprimir</a></li>
-                        <li data-toggle="modal" data-target="#mod"><a href="#">Modificar</a></li>
-                        <li data-toggle="modal" data-target="#bor"><a href="#">Borrar</a></li>
+
                         <li><a href='./cerrarSesion.php' class="btn2" target="_top">Salir</a></li>
                     </ul>
                     <?php
@@ -101,77 +93,15 @@ while ($reg = mysqli_fetch_array($query2)) {
                     ?>
                 </center>
             </nav>
-
-            <section class="imprimir">
-                <div class="modal fade" id="imp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                Hola aqui va a ir la consulta de lo que se ha capturado
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-success">Imprimir</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="modificar">
-                <div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                Hola aqui va a ir el formato para modificar
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-warning">Guardar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="borrar">
-                <div class="modal fade" id="bor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                Hola aqui va a ir el formato para borrar
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-danger">Borrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
             <br><br><br>
 
             <h2>Dato insertado</h2>
             <h4>Verifique que todos sus datos sean correctos</h4>
 
             <div class="container"></br></br></br>          
-                <form action="control/controlador.php" method="post">
+                <form action="./modificar.php" method="post">
                     <label>Folio de recepción</label></br>
-                    <input type="text" name="folio" class="folio" placeholder="Folio"></br></br>
+                    <input type="text" name="folio" class="folio" value="<?php echo $reg['folio'] ?>"></br></br>
                     <div class="row">
                         <div class="col-md-6">
                             <label>Nombre de la organización</label></br>
@@ -904,156 +834,126 @@ while ($reg = mysqli_fetch_array($query2)) {
                         </div>
                     </div>
                     <br><br>
-                    <?php $del = str_split($reg['del_intera']); ?>
+                   
                     <h3 align=center >Delegaciones de Intervención y/o Interacción</h3><br><br>
                     <div id="del_intera">
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="A" name="1[]" id="1" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'A') {
+                            <label><input type="checkbox" value="1" name="del_ao" id="1" <?php
+                                if ( $reg['del_ao']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Álvaro Obregón</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="B" name="2" id="2" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'B') {
+                            <label><input type="checkbox" value="1" name="del_azc" id="2" <?php
+                                
+                                    if ( $reg['del_azc']== '1') {
                                         echo 'checked';
                                     }
-                                }
+                                
                                 ?>>Azcapotzalco</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="C" name="3" id="3" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'C') {
+                            <label><input type="checkbox" value="1" name="del_ben" id="3" <?php
+                                if ( $reg['del_ben']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Benito Juárez</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="D" name="4" id="4" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'D') {
+                            <label><input type="checkbox" value="1" name="del_coy" id="4" <?php
+                                if ( $reg['del_coy']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Coyoacán</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="E"name="5" id="5" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'E') {
+                            <label><input type="checkbox" value="1"name="del_cuaj" id="5" <?php
+                                if ( $reg['del_cuaj']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Cuajimalpa</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="F" name="6" id="6" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'F') {
+                            <label><input type="checkbox" value="1" name="del_cuauh" id="6" <?php
+                                if ( $reg['del_cuauh']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Cuauhtémoc</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="G" name="7" id="7" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'G') {
+                            <label><input type="checkbox" value="1" name="del_gam" id="7" <?php
+                                if ( $reg['del_gam']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Gustavo A. Madero</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="H" name="8" id="8" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'H') {
+                            <label><input type="checkbox" value="1" name="del_iztac" id="8" <?php
+                                if ( $reg['del_iztac']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Iztacalco</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="I" name="9" id="9" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'I') {
+                            <label><input type="checkbox" value="1" name="del_iztap" id="9" <?php
+                                if ( $reg['del_iztap']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Iztapalapa</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="J" name="10" id="10" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'J') {
+                            <label><input type="checkbox" value="1" name="del_magda" id="10" <?php
+                                if ( $reg['del_magda']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Magdalena Contreras</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="K" name="11" id="11" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'K') {
+                            <label><input type="checkbox" value="1" name="del_miguel" id="11" <?php
+                                if ( $reg['del_miguel']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Miguel Hidalgo</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="L" name="12" id="12" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'L') {
+                            <label><input type="checkbox" value="1" name="del_milpa" id="12" <?php
+                                if ( $reg['del_milpa']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Milpa Alta</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="M" name="13" id="13" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'M') {
+                            <label><input type="checkbox" value="1" name="del_tlah" id="13" <?php
+                                if ( $reg['del_tlah']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Tláhuac</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="N" name="14" id="14" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'N') {
+                            <label><input type="checkbox" value="1" name="del_tlal" id="14" <?php
+                                if ( $reg['del_tlal']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Tlalpan</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="O" name="15" id="15" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'O') {
+                            <label><input type="checkbox" value="1" name="del_venus" id="15" <?php
+                                if ( $reg['del_venus']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Venustiano Carranza</label>
                         </div>
                         <div class="col-md-2">
-                            <label><input type="checkbox" value="P" name="16" id="16" <?php
-                                foreach ($del as $value) {
-                                    if ($value == 'P') {
+                            <label><input type="checkbox" value="1" name="del_xochi" id="16" <?php
+                                if ( $reg['del_xochi']== '1') {
                                         echo 'checked';
                                     }
-                                }
                                 ?>>Xochimilco</label>
                         </div>
                         <div class="row">
                             <div class="col-md-2 col-md-offset-6">
-                                <label><input type="checkbox" value="ABCDEFGHIJKLMNOP" name="marcarTodo" id="marcarTodo">Todas</label>
+                                <label><input type="checkbox" name="marcarTodo" id="marcarTodo">Todas</label>
                                 <label for="marcarTodo"></label>
                             </div>
                         </div>
@@ -1256,7 +1156,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                     <div class="row">
                         <div class="form-group">
                             <label for="comment">Observaciones</label>
-                            <textarea name="observaciones" class="form-control" rows="1" id="comment"></textarea>
+                            <textarea name="observaciones" class="form-control" rows="1" id="comment"><?php echo $reg['observaciones'] ?></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -1275,13 +1175,14 @@ while ($reg = mysqli_fetch_array($query2)) {
                     </div>
                     <br><br><br><center>
                         <label style="margin-bottom: 1%;">Da Click en "Aceptar" si los datos son correctos o "Corregir" si algun dato estaba mal</label></center>
-                    <div class="col-md-1 col-md-offset-3">
-                        <button type="submit"class="btn btn-primary btn-md">Aceptar</button><br><br>
-                    </div>
+                    
                     <div class="col-md-1 col-md-offset-3">
                         <button type="submit"class="btn btn-primary btn-md" style="background: #B40404;" >Corregir</button><br><br>
                     </div>
                 </form>
+                <div class="col-md-1 col-md-offset-3">
+                        <button type="submit"class="btn btn-primary btn-md" onclick = "location='../administradores.php'"/>Aceptar</button><br><br>
+                    </div>
             </div>
 
         </div>

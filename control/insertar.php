@@ -48,6 +48,8 @@ $consulta = "INSERT INTO registro( nom_org, tipo_org, rep_legal, registro, calle
                                 values ('" . $nom_org . "','" . $tipo_org . "','" . $rep_legal . "','" . $registro . "','" . $calle . "','" . $num_ext . "','" . $colonia . "','" . $delegacion . "'
                                             ,'" . $cod_postal . "','" . $tel_fijo . "','" . $tel_movil . "','" . $pag_int . "','" . $correo . "','" . $nom_proyecto . "','" . $nom_resp . "','" . $eje_tem . "','" . $sub_eje . "'
                                                 ,'" . $ins_dic . "','" . $tipo_proyecto . "','" . $mon_sol . "','" . $pob_obj . "','" . $num_mujeres . "','" . $num_hombres . "','" . $objetivo . "','" . $rec_ficha_tec . "'
-                                                    ,'" . $rec_arch_elec . "','" . $rec_cons_insc . "','" . $rec_carta . "','" . $rec_cons_plat . "','" . $rec_doc_term . "','" . $observaciones . "','" . $resp_proyecto . "','" . $nom_per_entrega . "','" . $cargo . "');";
+                                                    ,'" . $rec_arch_elec . "','" . $rec_cons_insc . "','" . $rec_carta . "','" . $rec_cons_plat . "','" . $rec_doc_term . "','" . $observaciones . "','" . $resp_proyecto . "','" . $nom_per_entrega . "','" . $cargo . "')";
 
 $query = mysqli_query(conector::conexion(), $consulta);
+header('Location: ./controlador.php');
+

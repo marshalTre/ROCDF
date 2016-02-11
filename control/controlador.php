@@ -9,7 +9,7 @@ require_once './datos_conexion.php';
 
 
 //$revision = "SELECT * FROM registro where folio = '116' ";
-$revision= "SELECT * FROM registro ORDER BY folio DESC LIMIT 1";
+$revision= "SELECT * FROM registro WHERE nom_per_entrega = '".$_SESSION['session_user']."' ORDER BY folio DESC LIMIT 1";
 $query2 = mysqli_query(conector::conexion(), $revision);
 
 
@@ -100,7 +100,7 @@ while ($reg = mysqli_fetch_array($query2)) {
 
             <div class="container"></br></br></br>          
                 <form action="./modificar.php" method="post">
-                    <label>Folio de recepción</label></br>
+                    <label>Folio de recepción <?php echo $_SESSION['session_user']; ?></label></br>
                     <input type="text" name="folio" class="folio" value="<?php echo $reg['folio'] ?>"></br></br>
                     <div class="row">
                         <div class="col-md-6">

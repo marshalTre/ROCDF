@@ -57,7 +57,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
         <header>
             <center>
                 <image id="image1" src="images/sedeso.png"/> 
-                <image id="image2" src="images/DGIDS.png"/> 
+                <image id="image2" src="images/dgids.png"/> 
                 <p class="text">ROCDF</p>
                 <h3 id="reg" >Registro de Organizaciones Civiles</h3>
                 <hr>
@@ -67,10 +67,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
         <nav id="navigation">
             <center>
                 <ul>
-                    <!-- <li data-toggle="modal" data-target="#imp"><a href="librerias/formatopdf.php">Imprimir</a></li> -->
+                    <!-- <li data-toggle="modal" data-target="#imp"><a href="librerias/formatopdf.php">Imprimir</a></li>
                     <li data-toggle="modal" data-target="#mod"><a href="#">Modificar</a></li>
                     <li data-toggle="modal" data-target="#bor"><a href="#">Borrar</a></li>
-                    <li><a href='control/cerrarSesion.php' class="btn2" target="_top">Salir</a></li>
+                    <li><a href='control/cerrarSesion.php' class="btn btn-primary btn-md" target="_top">Salir</a></li>-->
                 </ul>
                 <?php setlocale(LC_TIME, 'es_ES.UTF-8'); echo strftime("%A, %d de %B de %Y") ?>
             </center>
@@ -94,7 +94,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         
         <section class="modificar">
             <div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -134,9 +134,9 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <div class="container"></br></br></br>          
+        <div class="container-fluid"></br></br></br>          
             <form action="control/insertar.php" method="post">
                 <label>Folio de recepción</label></br>
                     <input type="text" name="folio" class="folio" placeholder="Folio"></br></br>
@@ -570,7 +570,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     <label><input type="checkbox" value="1" name="del_xochimilco" id="16">Xochimilco</label>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-md-offset-6">
+                    <div class="col-md-1 col-md-offset-5">
                         <label><input type="checkbox" value="ABCDEFGHIJKLMNO" name="marcarTodo" id="marcarTodo">Todas</label>
                         <label for="marcarTodo"></label>
                     </div>
@@ -716,7 +716,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 <?php while ($reg = mysqli_fetch_array($queryUs)) { ?>
                 <div class="col-md-3">            
                     <label>ID de quien recibe el proyecto</label></br>
-                    <input type="text" name="resp_proyecto" class="repre" value="<?php echo $reg['id_usuarios'] ?>" size="40">
+                    <input type="text" name="resp_proyecto" class="repre" value="<?php echo $reg['id_usuarios'] ?>" size="40" OnFocus="this.blur()">
                 </div>
                 <?php } ?>
                 <div class="col-md-4 col-md-offset-2">
@@ -728,12 +728,18 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     <input type="text" name="cargo" class="registro" placeholder="Cargo"></br>
                 </div>
             </div>
-            <div class="col-md-1 col-md-offset-6"><br><br>
-                <button type="submit"class="btn btn-primary btn-md" >Ingresar</button><br><br>
+            <div class="row"><br><br>
+                <div class="col-md-1 col-md-offset-6">
+                    <button type="submit"class="btn btn-danger btn-md" >Ingresar</button><br><br>
+                </div>
+                <div class="col-md-1 col-md-offset-1">
+                    <a href='control/cerrarSesion.php' class="btn btn-primary btn-md" target="_top">Salir</a><br><br>
+
+                </div>
             </div>
         </form>
-            </div>
 
+            </div>
         </div>
 
         <aside>

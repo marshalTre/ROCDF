@@ -7,6 +7,9 @@ if (isset($_SESSION["session_user"])) {
     header("location:index.html");
     exit();
 }
+require_once './control/datos_conexion.php';
+$user="SELECT * from usuarios WHERE usuario='".$_SESSION["session_user"]."'";
+$queryUs = mysqli_query(conector::conexion(), $user);
 ?>
 <!DOCTYPE html>
 
@@ -134,7 +137,7 @@ if (isset($_SESSION["session_user"])) {
         </section>
 
         <div class="container"></br></br></br>          
-            <form action="control/controlador.php" method="post">
+            <form action="control/insertar.php" method="post">
                 <label>Folio de recepción</label></br>
                     <input type="text" name="folio" class="folio" placeholder="Folio"></br></br>
             <div class="row">
@@ -519,52 +522,52 @@ if (isset($_SESSION["session_user"])) {
                 <h3 align=center >Delegaciones de Intervención y/o Interacción</h3><br><br>
             <div id="del_intera">
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="A" name="1" id="1">Álvaro Obregón</label>
+                    <label><input type="checkbox" value="1" name="del_alvaro" id="1">Álvaro Obregón</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="B" name="2" id="2">Azcapotzalco</label>
+                    <label><input type="checkbox" value="1" name="del_azcapotzalco" id="2">Azcapotzalco</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="C" name="3" id="3">Benito Juárez</label>
+                    <label><input type="checkbox" value="1" name="del_benito" id="3">Benito Juárez</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="D" name="4" id="4">Coyoacán</label>
+                    <label><input type="checkbox" value="1" name="del_coyoacan" id="4">Coyoacán</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="E"name="5" id="5">Cuajimalpa</label>
+                    <label><input type="checkbox" value="1"name="del_cuajimalpa" id="5">Cuajimalpa</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="D" name="6" id="6">Cuauhtémoc</label>
+                    <label><input type="checkbox" value="1" name="del_cuauhtemoc" id="6">Cuauhtémoc</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="F" name="7" id="7">Gustavo A. Madero</label>
+                    <label><input type="checkbox" value="1" name="del_gustavo" id="7">Gustavo A. Madero</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="G" name="8" id="8">Iztacalco</label>
+                    <label><input type="checkbox" value="1" name="del_iztacalco" id="8">Iztacalco</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="H" name="9" id="9">Iztapalapa</label>
+                    <label><input type="checkbox" value="1" name="del_iztapalapa" id="9">Iztapalapa</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="I" name="10" id="10">Magdalena Contreras</label>
+                    <label><input type="checkbox" value="1" name="del_magdalena" id="10">Magdalena Contreras</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="J" name="11" id="11">Miguel Hidalgo</label>
+                    <label><input type="checkbox" value="1" name="del_miguel" id="11">Miguel Hidalgo</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="K" name="12" id="12">Milpa Alta</label>
+                    <label><input type="checkbox" value="1" name="del_milpa" id="12">Milpa Alta</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="L" name="13" id="13">Tláhuac</label>
+                    <label><input type="checkbox" value="1" name="del_tlahuac" id="13">Tláhuac</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="M" name="14" id="14">Tlalpan</label>
+                    <label><input type="checkbox" value="1" name="del_tlalpan" id="14">Tlalpan</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="N" name="15" id="15">Venustiano Carranza</label>
+                    <label><input type="checkbox" value="1" name="del_venustiano" id="15">Venustiano Carranza</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="O" name="16" id="16">Xochimilco</label>
+                    <label><input type="checkbox" value="1" name="del_xochimilco" id="16">Xochimilco</label>
                 </div>
                 <div class="row">
                     <div class="col-md-2 col-md-offset-6">
@@ -710,10 +713,12 @@ if (isset($_SESSION["session_user"])) {
                     </div>
             </div>
             <div class="row">
+                <?php while ($reg = mysqli_fetch_array($queryUs)) { ?>
                 <div class="col-md-3">            
-                    <label>Responsable quien recibe el proyecto</label></br>
-                    <input type="text" name="resp_proyecto" class="repre" placeholder="Nombre" size="40">
+                    <label>ID de quien recibe el proyecto</label></br>
+                    <input type="text" name="resp_proyecto" class="repre" value="<?php echo $reg['id_usuarios'] ?>" size="40">
                 </div>
+                <?php } ?>
                 <div class="col-md-4 col-md-offset-2">
                     <label>Nombre de la persona que entrega el proyecto</label></br>
                     <input type="text" name="nom_per_entrega" class="registro" placeholder="Nombre" size="40"></br>

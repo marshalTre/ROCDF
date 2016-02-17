@@ -1,4 +1,5 @@
 <?php
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -23,7 +24,22 @@ $nom_proyecto = filter_input(INPUT_POST, 'nom_proyecto');
 $nom_resp = filter_input(INPUT_POST, 'nom_resp');
 $eje_tem = filter_input(INPUT_POST, 'eje_tem');
 $sub_eje = filter_input(INPUT_POST, 'sub_eje');
-/**  $marcarTodo = $_POST["marcarTodo"]; */
+$del_alvaro = filter_input(INPUT_POST, 'del_alvaro');
+$del_azcapotzalco = filter_input(INPUT_POST, 'del_azcapotzalco');
+$del_benito = filter_input(INPUT_POST, 'del_benito');
+$del_coyoacan = filter_input(INPUT_POST, 'del_coyoacan');
+$del_cuajimalpa = filter_input(INPUT_POST, 'del_cuajimalpa');
+$del_cuauhtemoc = filter_input(INPUT_POST, 'del_cuauhtemoc');
+$del_gustavo = filter_input(INPUT_POST, 'del_gustavo');
+$del_iztacalco = filter_input(INPUT_POST, 'del_iztacalco');
+$del_iztapalapa = filter_input(INPUT_POST, 'del_iztapalapa');
+$del_magdalena = filter_input(INPUT_POST, 'del_magdalena');
+$del_miguel = filter_input(INPUT_POST, 'del_miguel');
+$del_milpa = filter_input(INPUT_POST, '	del_milpa');
+$del_tlahuac = filter_input(INPUT_POST, 'ddel_tlahuac');
+$del_tlalpan = filter_input(INPUT_POST, 'del_tlalpan');
+$del_venustiano = filter_input(INPUT_POST, 'del_venustiano');
+$del_xochimilco = filter_input(INPUT_POST, 'del_xochimilco');
 $ins_dic = filter_input(INPUT_POST, 'ins_dic');
 $tipo_proyecto = filter_input(INPUT_POST, 'tipo_proyecto');
 $mon_sol = filter_input(INPUT_POST, 'mon_sol');
@@ -42,13 +58,15 @@ $resp_proyecto = filter_input(INPUT_POST, 'resp_proyecto');
 $nom_per_entrega = filter_input(INPUT_POST, 'nom_per_entrega');
 $cargo = filter_input(INPUT_POST, 'cargo');
 
-$consulta = "INSERT INTO registro( nom_org, tipo_org, rep_legal, registro, calle, num_ext, colonia, delegacion, cod_postal, tel_fijo, tel_moviL,
-                            pag_int, correo, nom_proyecto, nom_resp, eje_tem, sub_eje, ins_dic, tipo_proyecto, mon_sol, pob_obj, num_mujeres, 
-                               num_hombres, objetivo, rec_ficha_tec, rec_arch_elec, rec_cons_insc, rec_carta, rec_cons_plat, rec_doc_term, observaciones, resp_proyecto, nom_per_entrega, cargo ) 
-                                values ('" . $nom_org . "','" . $tipo_org . "','" . $rep_legal . "','" . $registro . "','" . $calle . "','" . $num_ext . "','" . $colonia . "','" . $delegacion . "'
-                                            ,'" . $cod_postal . "','" . $tel_fijo . "','" . $tel_movil . "','" . $pag_int . "','" . $correo . "','" . $nom_proyecto . "','" . $nom_resp . "','" . $eje_tem . "','" . $sub_eje . "'
-                                                ,'" . $ins_dic . "','" . $tipo_proyecto . "','" . $mon_sol . "','" . $pob_obj . "','" . $num_mujeres . "','" . $num_hombres . "','" . $objetivo . "','" . $rec_ficha_tec . "'
-                                                    ,'" . $rec_arch_elec . "','" . $rec_cons_insc . "','" . $rec_carta . "','" . $rec_cons_plat . "','" . $rec_doc_term . "','" . $observaciones . "','" . $resp_proyecto . "','" . $nom_per_entrega . "','" . $cargo . "')";
+$consulta = "INSERT INTO registro_gral( nom_org, id_tipo_org, rep_legal, registro, calle, num_ext, colonia, delegacion, cod_postal, tel_fijo, tel_moviL,
+             pag_int, correo, nom_proyecto, nom_resp, id_cat_eje, id_sub_eje, id_cat_institucion, tipo_proyecto, mon_sol, id_cat_poblacion, num_mujeres, 
+             num_hombres, del_alvaro, del_azcapotzalco, del_benito, del_coyoacan, del_cuajimalpa, del_cuauhtemoc,del_gustavo, del_iztacalco, del_iztapalapa,
+             del_magdalena, del_miguel, del_milpa, del_tlahuac, del_tlalpan, del_venustiano, del_xochimilco, objetivo, rec_ficha_tec, rec_arch_elec, rec_cons_insc, rec_carta, rec_cons_plat, rec_doc_term, observaciones, id_usuarios, nom_per_entrega, cargo ) 
+             values ('" . $nom_org . "','" . $tipo_org . "','" . $rep_legal . "','" . $registro . "','" . $calle . "','" . $num_ext . "','" . $colonia . "','" . $delegacion . "',"
+        . "'" . $cod_postal . "','" . $tel_fijo . "','" . $tel_movil . "','" . $pag_int . "','" . $correo . "','" . $nom_proyecto . "','" . $nom_resp . "','" . $eje_tem . "','" . $sub_eje . "',"
+        . "'" . $ins_dic . "','" . $tipo_proyecto . "','" . $mon_sol . "','" . $pob_obj . "','" . $num_mujeres . "','" . $num_hombres . "','" . $del_alvaro . "','" . $del_azcapotzalco . "','" . $del_benito . "','" . $del_coyoacan . "','" . $del_cuajimalpa . "','" . $del_cuauhtemoc . "',"
+        . "'" . $del_gustavo . "','" . $del_iztacalco . "','" . $del_iztapalapa . "','" . $del_magdalena . "','" . $del_miguel . "','" . $del_milpa . "','" . $del_tlahuac . "','" . $del_tlalpan . "','" . $del_venustiano . "','" . $del_xochimilco . "','" . $objetivo . "','" . $rec_ficha_tec . "',"
+        . "'" . $rec_arch_elec . "','" . $rec_cons_insc . "','" . $rec_carta . "','" . $rec_cons_plat . "','" . $rec_doc_term . "','" . $observaciones . "','" . $resp_proyecto . "','" . $nom_per_entrega . "','" . $cargo . "')";
 
 $query = mysqli_query(conector::conexion(), $consulta);
 header('Location: ./controlador.php');

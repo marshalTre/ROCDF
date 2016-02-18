@@ -241,32 +241,48 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                         <option value="6">Eje 6</option>
                         <option value="7">Eje 7</option>
                         <option value="8">Eje 8</option>
+                        <option value="9">Eje 9</option>
+                        <option value="10">Eje 10</option>
+                        <option value="11">Eje 11</option>
+                        <option value="12">Eje 12</option>
                     </select></br></br>
                 </div>
                 <div class="col-md-9">
                     <div id="1" style="display: none;"><br>
-                        <label>Eje 1) Prevención y atención de la violencia al interior de las familias y fortalecimiento de la diversidad familiar</label>
+                        <label>Eje 1) Atención y prevención de la violencia familiar.</label>
                     </div>
                     <div id="2" style="display: none;"><br>
-                        <label>Eje 2) Fortalecimiento de la participación comunitaria en la política alimentaria</label>
+                        <label>Eje 2) Promoción de acciones y medidas para la educación social, cultural y emocional, de las personas agresoras y de las víctimas de la violencia familiar para la Ciudad de México.</label>
                     </div>
                     <div id="3" style="display: none;"><br>
-                        <label>Eje 3) Promoción y fortalecimiento de las políticas sociales</label>
+                        <label>Eje 3) Fortalecimiento de acciones de prevención de violencia familiar con estrategias de desarrollo social y comunitario.</label>
                     </div>
                     <div id="4" style="display: none;"><br>
-                        <label>Eje 4) Promoción de los derechos humanos, no discriminación y diversidad sexual </label>
+                        <label>Eje 4) Fortalecimiento de la participación comunitaria en la política alimentaria. </label>
                     </div>
                     <div id="5" style="display: none;"><br>
-                        <label>Eje 5) Desarrollo comunitario, promoción de la cultura y comunicación social alternativa</label>
+                        <label>Eje 5) Impulsar el fortalecimiento de los procesos organizativos en los comedores comunitarios.</label>
                     </div>
                     <div id="6" style="display: none;"><br>
-                        <label>Eje 6) Promoción de los Derechos de Acceso a la Información Pública y Protección de Datos Personales</label>
+                        <label>Eje 6) Promover la capacitación y manejo en la administración de alimentos en los comedores comunitarios, en temas tales como: higiene, administración, variedad alimenticia, dietas saludables, acceso a bancos de alimentos, manejo de desechos, sostenibilidad y viabilidad financiera.</label>
                     </div>
                     <div id="7" style="display: none;"><br>
-                        <label>Eje 7) Fortalecimiento para el sano desarrollo y garantía de derechos humanos para poblaciones en desventaja social</label>
+                        <label>Eje 7) Promoción y fortalecimiento de las políticas sociales.</label>
                     </div>
                     <div id="8" style="display: none;"><br>
-                        <label>Eje 8) Promoción y acceso de las mujeres al ejercicio de sus derechos humanos y a una vida libre de violencias </label>
+                        <label>Eje 8) Impulsar procesos de fortalecimiento de las políticas públicas de fomento a las organizaciones de la sociedad civil. </label>
+                    </div>
+                    <div id="9" style="display: none;"><br>
+                        <label>Eje 9) Profesionalización de las organizaciones de la sociedad civil para aumentar su incidencia en el ámbito comunitario. </label>
+                    </div>
+                    <div id="10" style="display: none;"><br>
+                        <label>Eje 10) Promoción de los Derechos de Acceso a la Información Pública y Protección de Datos Personales. </label>
+                    </div>
+                    <div id="11" style="display: none;"><br>
+                        <label>Eje 11) Fortalecimiento para el sano desarrollo y garantía de derechos humanos para población en vulnerabilidad. </label>
+                    </div>
+                    <div id="12" style="display: none;"><br>
+                        <label>Eje 12) Promoción y acceso de las mujeres al ejercicio de sus derechos humanos y a una vida libre de violencias. </label>
                     </div>
 
                 </div>
@@ -280,67 +296,60 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     <option value="sub_1_2">1.2</option>
                     <option value="sub_1_3">1.3</option>
                     <option value="sub_1_4">1.4</option>
-                    <option value="sub_1_5">1.5</option>
-                    <option value="sub_1_6">1.6</option>
-                    <option value="sub_1_7">1.7</option>
-                    <option value="sub_1_8">1.8</option>
-                    <option value="sub_1_9">1.9</option>
                     <option value="sub_2_1">2.1</option>
                     <option value="sub_2_2">2.2</option>
                     <option value="sub_2_3">2.3</option>
                     <option value="sub_3_1">3.1</option>
                     <option value="sub_3_2">3.2</option>
                     <option value="sub_3_3">3.3</option>
-                    <option value="sub_3_4">3.4</option>
                     <option value="sub_4_1">4.1</option>
-                    <option value="sub_4_2">4.2</option>
-                    <option value="sub_4_3">4.3</option>
-                    <option value="sub_4_4">4.4</option>
-                    <option value="sub_4_5">4.5</option>
                     <option value="sub_5_1">5.1</option>
-                    <option value="sub_5_2">5.2</option>
-                    <option value="sub_5_3">5.3</option>
-                    <option value="sub_5_4">5.4</option>
-                    <option value="sub_5_5">5.5</option>
-                    <option value="sub_5_6">5.6</option>
-                    <option value="sub_5_7">5.7</option>
-                    <option value="sub_5_8">5.8</option>
-                    <option value="sub_5_9">5.9</option>
                     <option value="sub_6_1">6.1</option>
-                    <option value="sub_6_2">6.2</option>
-                    <option value="sub_6_3">6.3</option>
                     <option value="sub_7_1">7.1</option>
                     <option value="sub_7_2">7.2</option>
                     <option value="sub_7_3">7.3</option>
                     <option value="sub_7_4">7.4</option>
                     <option value="sub_7_5">7.5</option>
                     <option value="sub_7_6">7.6</option>
-                    <option value="sub_7_7">7.7</option>
-                    <option value="sub_7_8">7.8</option>
-                    <option value="sub_7_9">7.9</option>
-                    <option value="sub_7_10">7.10</option>
-                    <option value="sub_7_11">7.11</option>
-                    <option value="sub_7_12">7.12</option>
-                    <option value="sub_7_13">7.13</option>
-                    <option value="sub_7_14">7.14</option>
                     <option value="sub_8_1">8.1</option>
-                    <option value="sub_8_2">8.2</option>
-                    <option value="sub_8_3">8.3</option>
-                    <option value="sub_8_4">8.4</option>
-                    <option value="sub_8_5">8.5</option>
-                    <option value="sub_8_6">8.6</option>
-                    <option value="sub_8_7">8.7</option>
-                    <option value="sub_8_8">8.8</option>
-                    <option value="sub_8_9">8.9</option>
-                    <option value="sub_8_10">8.10</option>
-                    <option value="sub_8_11">8.11</option>
-                    <option value="sub_8_12">8.12</option>
+                    <option value="sub_9_1">9.1</option>
+                    <option value="sub_10_1">10.1</option>
+                    <option value="sub_10_2">10.2</option>
+                    <option value="sub_11_1">11.1</option>
+                    <option value="sub_11_2">11.2</option>
+                    <option value="sub_11_3">11.3</option>
+                    <option value="sub_11_4">11.4</option>
+                    <option value="sub_11_5">11.5</option>
+                    <option value="sub_11_6">11.6</option>
+                    <option value="sub_11_7">11.7</option>
+                    <option value="sub_11_8">11.8</option>
+                    <option value="sub_11_9">11.9</option>
+                    <option value="sub_11_10">11.10</option>
+                    <option value="sub_11_11">11.11</option>
+                    <option value="sub_11_12">11.12</option>
+                    <option value="sub_11_13">11.13</option>
+                    <option value="sub_11_14">11.14</option>
+                    <option value="sub_11_15">11.15</option>
+                    <option value="sub_11_16">11.16</option>
+                    <option value="sub_12_1">12.1</option>
+                    <option value="sub_12_2">12.2</option>
+                    <option value="sub_12_3">12.3</option>
+                    <option value="sub_12_4">12.4</option>
+                    <option value="sub_12_5">12.5</option>
+                    <option value="sub_12_6">12.6</option>
+                    <option value="sub_12_7">12.7</option>
+                    <option value="sub_12_8">12.8</option>
+                    <option value="sub_12_9">12.9</option>
+                    <option value="sub_12_10">12.10</option>
+                    <option value="sub_12_11">12.11</option>
+                    <option value="sub_12_12">12.12</option>
+                    <option value="sub_12_13">12.13</option>
                 </select>
                 </div>
 
             <div class="col-md-9">
                     <div id="sub_1_1" style="display: none;"><br>
-                        <h5>1.1  Atención y prevención de la violencia familiar</h5>
+                        <h5>1.1  Fomentar, promover y proporcionar capacitación en diferentes ramas productivas, para contribuir a que las mujeres se reintegren a una vida social y familiar libre de violencias, junto con sus hijas e hijos.</h5>
                     </div>
                     <div id="sub_1_2" style="display: none;"><br>
                         <h5>1.2  Fortalecimiento de las capacidades a las y los servidores públicos para la mejor atención en materia de violencia familiar con perspectiva de género y derechos humanos.</h5>
@@ -349,173 +358,153 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                         <h5>1.3  Apoyo psicológico y jurídico a mujeres víctimas de violencia familiar y sus hijas e hijos.</h5>
                     </div>
                     <div id="sub_1_4" style="display: none;"><br>
-                        <h5>1.4  Seguimiento y análisis de la aplicación de la normatividad en materia de violencia familiar para el Distrito Federal.</h5>
-                    </div>
-                    <div id="sub_1_5" style="display: none;"><br>
-                        <h5>1.5  Promoción de acciones y medidas para la educación social, cultural y emocional de la persona agresora y de las víctimas de violencia familiar. </h5>
-                    </div>
-                    <div id="sub_1_6" style="display: none;"><br>
-                        <h5>1.6  Fomento de acciones de prevención de la violencia familiar y del buen trato en las escuelas de la Ciudad de México.</h5>
-                    </div>
-                    <div id="sub_1_7" style="display: none;"><br>
-                        <h5>1.7  Fortalecimiento de las políticas públicas a través de la equidad, democracia, los derechos humanos para prevención de la violencia al interior de las familias diversas.</h5>
-                    </div>
-                    <div id="sub_1_8" style="display: none;"><br>
-                        <h5>1.8  Fortalecimiento de acciones de prevención de la violencia familiar con estrategias de desarrollo social y comunitario.</h5>
-                    </div>
-                    <div id="sub_1_9" style="display: none;"><br>
-                        <h5>1.9  Promoción de la participación infantil para la inclusión activa en la solución de la problemática de la violencia familiar.</h5>
+                        <h5>1.4  Seguimiento y análisis de la aplicación de la normatividad en materia de violencia familiar para la Ciudad de México.</h5>
                     </div>
                     <div id="sub_2_1" style="display: none;"><br>
-                        <h5>2.1  Impulsar el fortalecimiento de los procesos organizativos en la política alimentaria en los comedores comunitarios.</h5>
+                        <h5>2.1  Fomentar, promover y proporcionar capacitación a mujeres víctimas de violencia familiar, garantizando el acceso al empleo, a través de oficios o mejoras de sus habilidades en el trabajo y/o actualización de sus estudios a través de becas, como un medio para fortalecer e implementar proyectos productivos. </h5>
                     </div>
                     <div id="sub_2_2" style="display: none;"><br>
-                        <h5>2.2  Promover la capacitación y manejo en la administración de alimentos en los comedores comunitarios, en temas tales como: higiene, administración, variedad alimenticia, dietas saludables, acceso a bancos de alimentos, sostenibilidad y viabilidad financiera.</h5>
+                        <h5>2.2  Fomento de acciones de prevención de la violencia familiar y del buen trato en las escuelas de la Ciudad de México.</h5>
                     </div>
                     <div id="sub_2_3" style="display: none;"><br>
-                        <h5>2.3  Formación, sensibilización y fomento de mejoras en la calidad de vida de los integrantes de los comités de administración, que incentive una mejor atención y servicio en la población atendida en los comedores comunitarios.</h5>
+                        <h5>2.3  Fortalecimiento de las políticas públicas a través de la equidad, democracia, los derechos humanos para prevención de la violencia al interior de las familias diversas.</h5>
                     </div>
                     <div id="sub_3_1" style="display: none;"><br>
-                        <h5>3.1  Impulsar procesos de fortalecimiento de las políticas públicas de fomento a las organizaciones de la sociedad civil.</h5>
+                        <h5>3.1  Fomentar, promover y proporcionar capacitación para el empleo, dirigido  a las mujeres víctimas de violencia familiar, con la finalidad de brindar las condiciones básicas necesarias para impulsar su autonomía y continuar su proceso de atención especializada, hasta lograr vivir una vida libre de violencia, en condiciones mínimas de independencia económica, logrando en su toma de decisiones, su empoderamiento y el rescate de sus derechos.</h5>
                     </div>
                     <div id="sub_3_2" style="display: none;"><br>
-                        <h5>3.2  Profesionalización de las organizaciones de la sociedad civil para aumentar su incidencia en el ámbito comunitario.</h5>
+                        <h5>3.2  Apoyo e inclusión de las mujeres indígenas víctimas de violencia, en el conocimiento de sus derechos y acompañamiento de traductores.</h5>
                     </div>
                     <div id="sub_3_3" style="display: none;"><br>
-                        <h5>3.3  Promoción y fomento de campañas de educación, información y difusión de temáticas y políticas sociales sobre equidad de género, prevención de las violencias hacia las mujeres, las niñas y los niños, las y los jóvenes, y derecho a la alimentación, con el fin de fomentar la equidad y la igualdad social.</h5>
-                    </div>
-                    <div id="sub_3_4" style="display: none;"><br>
-                        <h5>3.4  Seguimiento y análisis de la normatividad en materia de organizaciones de la sociedad civil.</h5>
+                        <h5>3.3  Fortalecimiento de las políticas públicas a través de participación activa en ferias gubernamentales, tendientes a erradicar la violencia familiar.</h5>
                     </div>
                     <div id="sub_4_1" style="display: none;"><br>
-                        <h5>4.1  Promoción de la defensa, el goce y el ejercicio de los derechos humanos y la no discriminación, en todos los ámbitos.</h5>
-                    </div>
-                    <div id="sub_4_2" style="display: none;"><br>
-                        <h5>4.2  Fortalecimiento de una cultura de inclusión, respeto y reconocimiento a la diversidad sexual y las familias diversas.</h5>
-                    </div>
-                    <div id="sub_4_3" style="display: none;"><br>
-                        <h5>4.3  Formación, capacitación y sensibilización de servidores públicos en derechos humanos, no discriminación y derecho a la identidad.</h5>
-                    </div>
-                    <div id="sub_4_4" style="display: none;"><br>
-                        <h5>4.4  Elaboracion de diagnósticos sobre la situación actual de la población LGBTTTI de la Ciudad de México.</h5>
-                    </div>
-                    <div id="sub_4_5" style="display: none;"><br>
-                        <h5>4.5  Promoción para el conocimiento, ejercicio, goce y defensa del derecho a la identidad jurídica de la población residente en el Distrito Federal. </h5>
+                        <h5>4.1  Acciones para el fortalecimiento de la participación comunitaria en la política alimentaria, a través de la generación de empleos, autosuficiencia económica y alimentaria.</h5>
                     </div>
                     <div id="sub_5_1" style="display: none;"><br>
-                        <h5>5.1  Promoción de la convivencia comunitaria y reconstrucción del tejido social a partir de procesos de inclusión.</h5>
-                    </div>
-                    <div id="sub_5_2" style="display: none;"><br>
-                        <h5>5.2  Fomento de la participación social a través de diversas estrategias orientadas al desarrollo social y a mejorar las condiciones de vida de las comunidades.</h5>
-                    </div>
-                    <div id="sub_5_3" style="display: none;"><br>
-                        <h5>5.3  Promoción y difusión de actividades culturales y fomento de las artes para el desarrollo social.</h5>
-                    </div>
-                    <div id="sub_5_4" style="display: none;"><br>
-                        <h5>5.4  Promoción de la organización de redes sociales orientadas a garantizar los derechos sociales.</h5>
-                    </div>
-                    <div id="sub_5_5" style="display: none;"><br>
-                        <h5>5.5  Investigar y desarrollar acciones para la recuperación de la memoria histórica y riqueza cultural de los pueblos, barrios y colonias de la Ciudad de México.</h5>
-                    </div>
-                    <div id="sub_5_6" style="display: none;"><br>
-                        <h5>5.6  Realizar acciones para el fortalecimiento de las identidades juveniles.</h5>
-                    </div>
-                    <div id="sub_5_7" style="display: none;"><br>
-                        <h5>5.7  Fortalecimiento de medios alternativos de comunicación para promover el ejercicio de los derechos sociales, la igualdad  y la no discriminación y el desarrollo cultural y comunitario</h5>
-                    </div>
-                    <div id="sub_5_8" style="display: none;"><br>
-                        <h5>5.8  Fortalecimiento y acceso comunitario a nuevas tecnologías.</h5>
-                    </div>
-                    <div id="sub_5_9" style="display: none;"><br>
-                        <h5>5.9  Promoción y difusión de los programas sociales del Gobierno del Distrito Federal a grupos de población en desventaja social.</h5>
+                        <h5>5.1  Acciones para impulsar el fortalecimiento de los procesos organizativos en los comedores comunitarios, a través de capacitaciones con reconocimiento oficial, garantizando su profesionalización derivando en la optimización de los comedores y en su caso, la auto realización personal.</h5>
                     </div>
                     <div id="sub_6_1" style="display: none;"><br>
-                        <h5>6.1  Proyectos para ejercicios de contraloría ciudadanas por la transparencia.</h5>
-                    </div>
-                    <div id="sub_6_2" style="display: none;"><br>
-                        <h5>6.2  Proyectos culturales en vinculación con instituciones educativas públicas o privadas; mesas de trabajo, exposiciones y concursos relativos a la transparencia, el acceso a la información y la protección de los datos personales en el Distrito Federal, que incluyan una amplia difusión de los derechos.</h5>
-                    </div>
-                    <div id="sub_6_3" style="display: none;"><br>
-                        <h5>6.3  Proyectos para fortalecer capacidades y habilidades de los jóvenes y las mujeres, a través de los derechos de acceso a la información pública y protección de datos personales, para desarrollar liderazgos, formas de organización y participación ciudadana.</h5>
+                        <h5>6.1  Proyectos encaminados a la capacitación y manejo en la administración de alimentos en los comedores comunitarios, en temas tales como: higiene, administración, variedad alimenticia, dietas saludables, acceso a bancos de alimentos, manejo de desechos, sostenibilidad y viabilidad financiera, dirigidos a los administradores y a la población atendida en los comedores comunitarios.</h5>
                     </div>
                     <div id="sub_7_1" style="display: none;"><br>
-                        <h5>7.1  Estimulación temprana: implementar con las niñas y niños canalizados por los Centros del DIF-DF, técnicas para el desarrollo de las capacidades y habilidades de los niños en la primera infancia, entre el nacimiento y los seis años de vida, para corregir trastornos reales o potenciales en su desarrollo, o para estimular capacidades compensadoras; teniendo en cuenta tanto al menor como a la familia y su entorno social.</h5>
+                        <h5>7.1  Fomentar, promover y proporcionar las condiciones adecuadas de inserción e integración laboral  de la población LGBTTTI de la Ciudad de México.</h5>
                     </div>
                     <div id="sub_7_2" style="display: none;"><br>
-                        <h5>7.2  Desarrollo psicosocial en primera infancia que atienda el desarrollo intelectual, lingüístico, social, emocional y personal de niñas y niños.</h5>
+                        <h5>7.2  Implementar acciones concretas para la inclusión laboral y prevención de la discriminación por orientación sexual e identidad de género en ámbitos laborales.</h5>
                     </div>
                     <div id="sub_7_3" style="display: none;"><br>
-                        <h5>7.3  Atención directa en prevención con las niñas, niños y jóvenes que se encuentran en riesgo de presentar situación de calle.</h5>
+                        <h5>7.3  Conformación de emprendimientos productivos de la población LGBTTTI de la Ciudad de México. </h5>
                     </div>
                     <div id="sub_7_4" style="display: none;"><br>
-                        <h5>7.4  Actividades deportivas para niñas y niños y jóvenes de 6 a 18 años que apoyen el desarrollo humano físico, mental, psicológico y social.</h5>
+                        <h5>7.4  Facilitar la inserción laboral de la población LGBTTTI de la Ciudad de México a través de la adquisición de un oficio en el marco del auto empleo y la implementación de proyectos productivos.</h5>
                     </div>
                     <div id="sub_7_5" style="display: none;"><br>
-                        <h5>7.5  Prevención de conductas autodestructivas en niñas, niños y adolescentes (bullying, suicidio).</h5>
+                        <h5>7.5  Fortalecimiento de una cultura de inclusión, respeto y reconocimiento a la diversidad sexual y las familias diversas.</h5>
                     </div>
                     <div id="sub_7_6" style="display: none;"><br>
-                        <h5>7.6  Formación de redes de apoyo social para adolescentes de 12 a 17 años que permitan el ejercicio pleno de sus derechos humanos proporcionando herramientas frente a riesgos que afectan su calidad de vida permitiéndoles al adolescente tomar decisiones en beneficio para su futuro.</h5>
-                    </div>
-                    <div id="sub_7_7" style="display: none;"><br>
-                        <h5>7.7  Formación de redes comunitarias y comunicación comunitaria para fomentar el fortalecimiento del tejido social ejerciendo su derecho a la expresión y libre asociación que coadyuven a potenciar las capacidades de la población en forma individual, familiar y comunitaria permitiendo la elevación del capital social.</h5>
-                    </div>
-                    <div id="sub_7_8" style="display: none;"><br>
-                        <h5>7.8  Actividades recreativas y culturales para mujeres y hombres de 18 a 60 años y más que les permita estimular su crecimiento individual y comunitario propiciando la transformación colectiva positiva.</h5>
-                    </div>
-                    <div id="sub_7_9" style="display: none;"><br>
-                        <h5>7.9  Diseño, promoción, defensa, difusión, ejercicio e implementación de acciones que garanticen los derechos humanos de las personas con discapacidad.</h5>
-                    </div>
-                    <div id="sub_7_10" style="display: none;"><br>
-                        <h5>7.10  Promoción de los derechos de las mujeres y niñas con discapacidad.</h5>
-                    </div>
-                    <div id="sub_7_11" style="display: none;"><br>
-                        <h5>7.11  Fomento de actividades que promuevan el diseño universal y accesibilidad para personas con discapacidad.</h5>
-                    </div>
-                    <div id="sub_7_12" style="display: none;"><br>
-                        <h5>7.12  Desarrollo de actividades que promuevan la autonomía y la vida independiente de  las personas con discapacidad mediante actividades de inclusión educativa, recreativa y cultural.</h5>
-                    </div>
-                    <div id="sub_7_13" style="display: none;"><br>
-                        <h5>7.13  Promoción de la inclusión laboral.</h5>
-                    </div>
-                    <div id="sub_7_14" style="display: none;"><br>
-                        <h5>7.14  Atención e integración social a niñas, niños y adolescentes que se encuentran en una condición vulnerable, mediante la intervención de albergues y hogares provisionales.</h5>
+                        <h5>7.6  Promoción de la defensa, el goce y el ejercicio de los derechos humanos y la no discriminación en todos los ámbitos.</h5>
                     </div>
                     <div id="sub_8_1" style="display: none;"><br>
-                        <h5>8.1  Atención y prevención de la violencia comunitaria contra las niñas y las mujeres en el Distrito Federal.</h5>
+                        <h5>8.1  Capacitación a las organizaciones de la sociedad civil para fortalecer las capacidades y  los modelos de profesionalización, con la finalidad de  consolidar su incidencia en el diseño, instrumentación y evaluación de programas y políticas sociales.</h5>
                     </div>
-                    <div id="sub_8_2" style="display: none;"><br>
-                        <h5>8.2  Acciones de información y formación sobre la igualdad sustantiva y los derechos humanos de las niñas y las mujeres en el Distrito Federal.</h5>
+                    <div id="sub_9_1" style="display: none;"><br>
+                        <h5>9.1  Capacitación a  organizaciones civiles que contribuyan a promover el  crecimiento económico, el ingreso y el autoempleo, generando acciones para la autosustentabilidad económica de grupos de mujeres y hombres y de comunidades para realizar proyectos productivos.</h5>
                     </div>
-                    <div id="sub_8_3" style="display: none;"><br>
-                        <h5>8.3  Alternativas para el fortalecimiento del derecho a la salud integral de las mujeres; con especial énfasis en las acciones dirigidas a la prevención y atención de los embarazos adolescentes, VIH/Sida, riesgos de ITS, desórdenes alimenticios y adicciones.</h5>
+                    <div id="sub_10_1" style="display: none;"><br>
+                        <h5>10.1  Fortalecer estrategias (Capacitación, promoción, difusión, contraloría y participación ciudadana), con la finalidad de incrementar las capacidades de la ciudadanía en general, con base en los derechos de acceso a la información pública y de protección de datos personales.</h5>
                     </div>
-                    <div id="sub_8_4" style="display: none;"><br>
-                        <h5>8.4  Promoción de la defensa, goce y el ejercicio de los Derechos Humanos de las trabajadoras sexuales.</h5>
+                    <div id="sub_10_2" style="display: none;"><br>
+                        <h5>10.2  Incrementar el conocimiento sobre los temas transparencia, derecho de acceso a la información pública y derecho de protección de datos personales, a través de proyectos culturales, que incluyan una amplia difusión en la Ciudad de México.</h5>
                     </div>
-                    <div id="sub_8_5" style="display: none;"><br>
-                        <h5>8.5  Fomento de acciones para la prevención y atención de las víctimas de la trata y la explotación humana con especial énfasis en protección de mujeres indígenas y migrantes.</h5>
+                    <div id="sub_11_1" style="display: none;"><br>
+                        <h5>11.1  Fomentar la lactancia materna, coadyuvar con las instituciones públicas para brindar a niñas y niños estimulación temprana, capacitar a padres y madres respecto a los nuevos modelos de crianza, fortalecer las capacidades y/o habilidades en el personal profesional que atiende primera infancia. Estimulación temprana: implementar con las niñas y niños canalizados por los Centros del DIF-CDMX, técnicas para el desarrollo de las capacidades y habilidades de los niños en la primera infancia, entre el nacimiento y los seis años de vida, para corregir trastornos reales o potenciales en su desarrollo, o para estimular capacidades compensadoras; teniendo en cuenta tanto al menor como a la familia y su entorno social.</h5>
                     </div>
-                    <div id="sub_8_6" style="display: none;"><br>
-                        <h5>8.6  Propuestas de movilidad segura, espacios amigables y ciudades seguras para las niñas y las mujeres.</h5>
+                    <div id="sub_11_2" style="display: none;"><br>
+                        <h5>11.2  Fomentar una nutrición adecuada y apoyar para que la alimentación sea accesible para las niñas, niños y adolescentes.</h5>
                     </div>
-                    <div id="sub_8_7" style="display: none;"><br>
-                        <h5>8.7  Estudios y análisis de experiencias exitosas  sobre corresponsabilidad y empresas sociales dedicadas al cuidado de niñas, niños,  adolescentes, personas adultas mayores, personas enfermas y discapacitadas.</h5>
+                    <div id="sub_11_3" style="display: none;"><br>
+                        <h5>11.3  Implementar estrategias para prevenir, detectar y erradicar la violencia infantil en todos los ámbitos, fomentar una cultura de paz, prevenir conductas autodestructivas, evitar que las niñas, niños y adolescentes sean víctimas de cualquier forma de explotación económica y salgan del entorno familiar hacia las calles.</h5>
                     </div>
-                    <div id="sub_8_8" style="display: none;"><br>
-                        <h5>8.8  Estudios y análisis sobre armonización y homologación de Códigos y Leyes del Distrito Federal con los Tratados Internacionales en materia de Derechos Humanos de las mujeres en el marco de la Reforma Constitucional en materia de derechos humanos y del nuevo Sistema Penal acusatorio.</h5>
+                    <div id="sub_11_4" style="display: none;"><br>
+                        <h5>11.4  Fomentar la participación infantil y adolescente y formar promotores de los derechos humanos desde la infancia.</h5>
                     </div>
-                    <div id="sub_8_9" style="display: none;"><br>
-                        <h5>8.9  Promoción de la defensa, goce y el ejercicio de los derechos humanos de las mujeres en reclusión.</h5>
+                    <div id="sub_11_5" style="display: none;"><br>
+                        <h5>11.5  Implementar procesos de comunicación social que garanticen el derecho a la libre expresión e información.</h5>
                     </div>
-                    <div id="sub_8_10" style="display: none;"><br>
-                        <h5>8.10  Estudios de viabilidad para la creación de fondos de crédito y ahorro para mujeres emprendedoras en la CDMX.</h5>
+                    <div id="sub_11_6" style="display: none;"><br>
+                        <h5>11.6  Acompañar y apoyar a niñas, niños y adolescentes con bajo rendimiento escolar y fomentar entre ellas y ellos la realización de actividades deportivas y culturales para lograr su desarrollo integral.</h5>
                     </div>
-                    <div id="sub_8_11" style="display: none;"><br>
-                        <h5>8.11  Elaboración de aplicaciones y programas tecnológicos para desarrollar actitudes y promover la cultura de no violencia entre niñas y niños de Escuelas Primarias.</h5>
+                    <div id="sub_11_7" style="display: none;"><br>
+                        <h5>11.7  Fomentar entre los adolescentes el ejercicio responsable de derechos sexuales y reproductivos a fin de prevenir enfermedades de transmisión sexual y embarazo adolescente y capacitar a las niñas, niños y adolescentes en masculinidades y paternidades responsables.</h5>
                     </div>
-                    <div id="sub_8_12" style="display: none;"><br>
-                        <h5>8.12  Acciones para la recuperación y sustentabilidad ecológica con participación de las mujeres y con enfoque productivo.</h5>
+                    <div id="sub_11_8" style="display: none;"><br>
+                        <h5>11.8  Brindar capacitación multidisciplinaria a los derechohabientes de sociedades cooperativas.</h5>
                     </div>
+                    <div id="sub_11_9" style="display: none;"><br>
+                        <h5>11.9  Fomentar la participación de la ciudadana en la toma de decisiones gubernamentales encaminadas a garantizar el ejercicio de sus derechos humanos y generar redes de apoyo vecinal que garanticen el derecho de las comunidades a vivir en paz y a disfrutar de los espacios públicos.</h5>
+                    </div>
+                    <div id="sub_11_10" style="display: none;"><br>
+                        <h5>11.10  Diseño, promoción, defensa, difusión, ejercicio e implementación de acciones que garanticen los derechos humanos de las personas con discapacidad  (niños, niñas, adolescentes mujeres y hombres, adultas, adultos; adultas mayores y adultos mayores).</h5>
+                    </div>
+                    <div id="sub_11_11" style="display: none;"><br>
+                        <h5>11.11  Capacitación y actualización institucional en materia de rehabilitación, terapia física, terapia del Lenguaje, terapia ocupacional, para personal profesional especializado que trabaja con las personas con discapacidad.</h5>
+                    </div>
+                    <div id="sub_11_12" style="display: none;"><br>
+                        <h5>11.12  Capacitación e instrucción profesional para cuidados alternativos a familiares, cuidadores y personal que atiende a personas con discapacidad, psicosocial e intelectual.</h5>
+                    </div>
+                    <div id="sub_11_13" style="display: none;"><br>
+                        <h5>11.13  Fomento de actividades que promuevan el diseño universal y los ajustes razonables para personas con discapacidad.</h5>
+                    </div>
+                    <div id="sub_11_14" style="display: none;"><br>
+                        <h5>11.14  Desarrollo de actividades que promuevan la autonomía y la vida independiente de las personas con discapacidad mediante actividades de inclusión educativa, deportiva, recreativa y cultural.</h5>
+                    </div>
+                    <div id="sub_11_15" style="display: none;"><br>
+                        <h5>11.15  Promoción de Talleres productivos, microempresas, cooperativas, promoviendo la inclusión laboral de las personas con discapacidad.</h5>
+                    </div>
+                    <div id="sub_11_16" style="display: none;"><br>
+                        <h5>11.16  Atención e integración social a niñas, niños y adolescentes que se encuentran en una condición vulnerable, mediante la intervención de albergues y hogares provisionales.</h5>
+                    </div>
+                    <div id="sub_12_1" style="display: none;"><br>
+                        <h5>12.1  Acciones para la elaboración de políticas públicas dirigidas a la atención de las niñas en la Ciudad de México.</h5>
+                    </div>
+                    <div id="sub_12_2" style="display: none;"><br>
+                        <h5>12.2  Acciones para la prevención y atención del embarazo adolescente.</h5>
+                    </div>
+                    <div id="sub_12_3" style="display: none;"><br>
+                        <h5>12.3  Desarrollo de propuestas a partir de experiencias exitosas para la autonomía económica de las mujeres en la Ciudad de México.</h5>
+                    </div>
+                    <div id="sub_12_4" style="display: none;"><br>
+                        <h5>12.4  Propuestas sobre alternativas sociales para el trabajo de cuidado.</h5>
+                    </div>
+                    <div id="sub_12_5" style="display: none;"><br>
+                        <h5>12.5  Propuestas para la atención, prevención de la violencia contra las niñas y mujeres en la  Ciudad de México.</h5>
+                    </div>
+                    <div id="sub_12_6" style="display: none;"><br>
+                        <h5>12.6  Propuesta para promover y garantizar los derechos sexuales y reproductivos de las mujeres y las adolescentes en la Ciudad de México.</h5>
+                    </div>
+                    <div id="sub_12_7" style="display: none;"><br>
+                        <h5>12.7  Proyectos para el desarrollo de habilidades digitales de las mujeres  y niñas a fin de  favorecer su empoderamiento.</h5>
+                    </div>
+                    <div id="sub_12_8" style="display: none;"><br>
+                        <h5>12.8  Acciones para la recuperación y sustentabilidad ecológica con  participación de las mujeres y con enfoque productivo.</h5>
+                    </div>
+                    <div id="sub_12_9" style="display: none;"><br>
+                        <h5>12.9  Acciones que promuevan el ejercicio de los derechos humanos de las mujeres y las niñas en la Ciudad de México a través de actividades audivisuales, culturales y artes escénicas, con énfasis en grupos más desfavorecidos.</h5>
+                    </div>
+                    <div id="sub_12_10" style="display: none;"><br>
+                        <h5>12.10  Propuestas para promoción del goce y ejercicio de los derechos humanos de las trabajadoras del hogar.</h5>
+                    </div>
+                    <div id="sub_12_11" style="display: none;"><br>
+                        <h5>12.11  Propuestas para la reducción de la violencia y la discriminación contra las mujeres lesbianas, bisexuales, transgénero y transexuales, así como promover su empoderamiento.</h5>
+                    </div>
+                    <div id="sub_12_12" style="display: none;"><br>
+                        <h5>12.12  Promoción de la defensa, goce y el ejercicio de los derechos humanos de las mujeres en reclusión.</h5>
+                    </div>
+                    <div id="sub_12_13" style="display: none;"><br>
+                        <h5>12.13  Fomento de acciones para la prevención y atención de las víctimas de la trata y la explotación humana con especial énfasis en protección a mujeres indígenas y migrantes.</h5>
+                    </div>
+                   
             </div>
             </div>
         <br><br>
@@ -716,7 +705,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 <?php while ($reg = mysqli_fetch_array($queryUs)) { ?>
                 <div class="col-md-3">            
                     <label>ID de quien recibe el proyecto</label></br>
-                    <input type="text" name="resp_proyecto" class="repre" value="<?php echo $reg['id_usuarios'] ?>" size="40" OnFocus="this.blur()">
+                    <input type="text" name="resp_proyecto" class="repre" value="<?php echo $reg['id_usuarios'] ?>" size="1" OnFocus="this.blur()">
                 </div>
                 <?php } ?>
                 <div class="col-md-4 col-md-offset-2">

@@ -69,5 +69,5 @@ $consulta = "INSERT INTO registro_gral( nom_org, id_tipo_org, rep_legal, registr
         . "'" . $rec_arch_elec . "','" . $rec_cons_insc . "','" . $rec_carta . "','" . $rec_cons_plat . "','" . $rec_doc_term . "','" . $observaciones . "','" . $resp_proyecto . "','" . $nom_per_entrega . "','" . $cargo . "')";
 
 $query = mysqli_query(conector::conexion(), $consulta);
-header('Location: ./controlador.php');
+header('Location: ./controlador.php?numUs= '. $resp_proyecto.'');
 

@@ -75,7 +75,7 @@ $modificar='UPDATE registro_gral SET nom_org="'.$nom_org.'", id_tipo_org="'.$tip
         . 'id_cat_institucion="'.$ins_dic.'" where id_folio="'.$folio.'"' ;
 
 $queryMod = mysqli_query(conector::conexion(), $modificar);
-
+clearstatcache();
 if($queryMod){
     
     echo 'Se genero bien el query';

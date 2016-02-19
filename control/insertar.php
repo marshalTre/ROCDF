@@ -65,11 +65,26 @@ $consulta = "INSERT INTO registro_gral( nom_org, rep_legal, registro, calle, num
              del_cuajimalpa, del_cuauhtemoc, del_gustavo, del_iztacalco, del_iztapalapa, del_magdalena, del_miguel, del_milpa, del_tlahuac, del_tlalpan,
              del_venustiano, del_xochimilco, objetivo, rec_ficha_tec, rec_arch_elec, rec_copia_insc, rec_carta, rec_cons_plat, rec_doc_term, observaciones,
              nom_per_entrega, cargo, id_tipo_org, id_cat_eje, id_sub_eje, id_cat_poblacion, id_cat_institucion, id_usuarios ) 
-             values ('".$nom_org."','".$rep_legal."','".$registro."','".$calle."','".$num_ext."','".$colonia."','".$delegacion."','".$cod_postal."','".$tel_fijo."','".$tel_movil."','".$pag_int."','".$correo."','".$nom_proyecto."','".$nom_resp."','".$tipo_proyecto."','".$mon_sol."','".$num_mujeres."','".$num_hombres."','".$del_alvaro."','".$del_azcapotzalco."','".$del_benito."','".$del_coyoacan."','".$del_cuajimalpa."','".$del_cuauhtemoc."','".$del_gustavo."','".$del_iztacalco."','".$del_iztapalapa."','".$del_magdalena."','".$del_miguel."','".$del_milpa."','".$del_tlahuac."','".$del_tlalpan."','".$del_venustiano."','".$del_xochimilco."','".$objetivo."','".$rec_ficha_tec."','".$rec_arch_elec."','".$rec_copia_insc."','".$rec_carta."','".$rec_cons_plat."','".$rec_doc_term."','".$observaciones."','".$nom_per_entrega."','".$cargo."','".$id_tipo_org."','".$id_cat_eje."','".$id_sub_eje."','".$id_cat_poblacion."','".$id_cat_institucion."','".$user."');";
+             VALUES ('".$nom_org."','".$rep_legal."','".$registro."','".$calle."','".$num_ext."',"
+        . "'".$colonia."','".$delegacion."','".$cod_postal."','".$tel_fijo."','".$tel_movil."','".$pag_int."',"
+        . "'".$correo."','".$nom_proyecto."','".$nom_resp."','".$tipo_proyecto."','".$mon_sol."','".$num_mujeres."',"
+        . "'".$num_hombres."','".$del_alvaro."','".$del_azcapotzalco."','".$del_benito."','".$del_coyoacan."',"
+        . "'".$del_cuajimalpa."','".$del_cuauhtemoc."','".$del_gustavo."','".$del_iztacalco."','".$del_iztapalapa."',"
+        . "'".$del_magdalena."','".$del_miguel."','".$del_milpa."','".$del_tlahuac."','".$del_tlalpan."','".$del_venustiano."',"
+        . "'".$del_xochimilco."','".$objetivo."','".$rec_ficha_tec."','".$rec_arch_elec."','".$rec_cons_insc."',"
+        . "'".$rec_carta."','".$rec_cons_plat."','".$rec_doc_term."','".$observaciones."','".$nom_per_entrega."','".$cargo."',"
+        . "'".$tipo_org."','".$eje_tem."','".$sub_eje."','".$pob_obj."','".$ins_dic."','".$resp_proyecto."')";
 
 
 
 $query = mysqli_query(conector::conexion(), $consulta);
-clearstatcache();
-header('Location: ./controlador.php?numUs= '. $resp_proyecto.'');
 
+if($query){
+    
+    echo 'Se genero bien el query';
+}else{
+    
+    echo 'No se genera el query'. mysqli_error(conector::conexion(), $consulta);
+//header('Location: ./controlador.php?numUs= '. $resp_proyecto.'');
+
+}

@@ -16,7 +16,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
 <html lang="es">
 
     <head>
-        <meta charset="utf-8" />
+        <meta  http-equiv="Content-Type" content="text/html" charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
@@ -76,65 +76,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             </center>
         </nav>
         
-    <!--    <section class="imprimir">
-            <div class="modal fade" id="imp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            Hola aqui va a ir la consulta de lo que se ha capturado
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-success">Imprimir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="modificar">
-            <div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            Hola aqui va a ir el formato para modificar
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-warning">Guardar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="borrar">
-            <div class="modal fade" id="bor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            Hola aqui va a ir el formato para borrar
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-danger">Borrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+    
 
         <div class="container-fluid"></br></br></br>          
             <form action="control/insertar.php" method="post">
@@ -149,9 +91,9 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     <label>Tipo de organización</label></br>
                         <select name="tipo_org">
                             <option value=""></option>
-                            <option value="AC">Asociación Civil</option>
-                            <option value="IAP">Institución de Asistencia Privada</option>
-                            <option value="SC">Sociedad Civil</option>
+                            <option value="A.C.">Asociación Civil</option>
+                            <option value="I.A.P">Institución de Asistencia Privada</option>
+                            <option value="S.C.">Sociedad Civil</option>
                             <option value="OT">Otra</option>
                         </select></br></br>
                 </div>    
@@ -511,52 +453,52 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 <h3 align=center >Delegaciones de Intervención y/o Interacción</h3><br><br>
             <div id="del_intera">
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_alvaro" id="1">Álvaro Obregón</label>
+                    <label><input type="checkbox" value="SI" name="del_alvaro" id="1">Álvaro Obregón</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_azcapotzalco" id="2">Azcapotzalco</label>
+                    <label><input type="checkbox" value="SI" name="del_azcapotzalco" id="2">Azcapotzalco</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_benito" id="3">Benito Juárez</label>
+                    <label><input type="checkbox" value="SI" name="del_benito" id="3">Benito Juárez</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_coyoacan" id="4">Coyoacán</label>
+                    <label><input type="checkbox" value="SI" name="del_coyoacan" id="4">Coyoacán</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1"name="del_cuajimalpa" id="5">Cuajimalpa</label>
+                    <label><input type="checkbox" value="SI"name="del_cuajimalpa" id="5">Cuajimalpa</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_cuauhtemoc" id="6">Cuauhtémoc</label>
+                    <label><input type="checkbox" value="SI" name="del_cuauhtemoc" id="6">Cuauhtémoc</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_gustavo" id="7">Gustavo A. Madero</label>
+                    <label><input type="checkbox" value="SI" name="del_gustavo" id="7">Gustavo A. Madero</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_iztacalco" id="8">Iztacalco</label>
+                    <label><input type="checkbox" value="SI" name="del_iztacalco" id="8">Iztacalco</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_iztapalapa" id="9">Iztapalapa</label>
+                    <label><input type="checkbox" value="SI" name="del_iztapalapa" id="9">Iztapalapa</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_magdalena" id="10">Magdalena Contreras</label>
+                    <label><input type="checkbox" value="SI" name="del_magdalena" id="10">Magdalena Contreras</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_miguel" id="11">Miguel Hidalgo</label>
+                    <label><input type="checkbox" value="SI" name="del_miguel" id="11">Miguel Hidalgo</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_milpa" id="12">Milpa Alta</label>
+                    <label><input type="checkbox" value="SI" name="del_milpa" id="12">Milpa Alta</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_tlahuac" id="13">Tláhuac</label>
+                    <label><input type="checkbox" value="SI" name="del_tlahuac" id="13">Tláhuac</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_tlalpan" id="14">Tlalpan</label>
+                    <label><input type="checkbox" value="SI" name="del_tlalpan" id="14">Tlalpan</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_venustiano" id="15">Venustiano Carranza</label>
+                    <label><input type="checkbox" value="SI" name="del_venustiano" id="15">Venustiano Carranza</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="1" name="del_xochimilco" id="16">Xochimilco</label>
+                    <label><input type="checkbox" value="SI" name="del_xochimilco" id="16">Xochimilco</label>
                 </div>
                 <div class="row">
                     <div class="col-md-1 col-md-offset-5">

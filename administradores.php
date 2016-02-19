@@ -138,8 +138,8 @@ $queryUs = mysqli_query(conector::conexion(), $user);
 
         <div class="container-fluid"></br></br></br>          
             <form action="control/insertar.php" method="post">
-                <label>Folio de recepción</label></br>
-                    <input type="text" name="folio" class="folio" placeholder="Folio"></br></br>
+                <!-- <label>Folio de recepción</label></br>
+                    <input type="text" name="folio" class="folio" placeholder="Folio"></br></br>-->
             <div class="row">
                 <div class="col-md-6">
                     <label>Nombre de la organización</label></br>
@@ -571,8 +571,9 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                         <select name="ins_dic">
                             <option value=""></option>
                             <option value="DGIDS">DGIDS</option>
-                            <option value="DIF">DIF</option>
+                            <option value="DIF" >DIF</option>
                             <option value="INMUJERES">Inmujeres</option>
+                            <option value="INFODF">INFODF</option>
                         </select>
                 </div>
                 <div class="col-md-3 col-md-offset-2">

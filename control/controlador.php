@@ -33,7 +33,8 @@ while ($reg = mysqli_fetch_array($query2)) {
     <html lang="es">
 
         <head>
-            <meta charset="utf-8" />
+            <meta  http-equiv="Content-Type" content="text/html" charset="utf-8" />
+            
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title></title>
@@ -51,6 +52,7 @@ while ($reg = mysqli_fetch_array($query2)) {
             <script type="text/javascript" src="../css/bootstrap-3.3.6-dist/js/jquery-1.11.3.min.js"></script>
             <script type="text/javascript" src="../js/eje.js"></script>
             <script type="text/javascript" src="../js/subeje.js"></script>
+            <script type="text/javascript" src="../js/mayusculas.js"></script>
             <script type="text/javascript">
                 $(document).ready(function () {
 
@@ -105,7 +107,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                     <div class="row">
                         <div class="col-md-6">
                             <label>Nombre de la organización</label></br>
-                            <input type="text" name="nom_org" class="organizacion" value="<?php echo $reg['nom_org'] ?>"size="70">
+                            <input type="text" name="nom_org" class="organizacion" value="<?php echo $reg['nom_org'] ?>"size="70"  onChange="conMayusculas(this)"  onkeypress="return soloLetras(event)">
                         </div>
                         <div class="col-md-3 col-md-offset-2">
                             <label>Tipo de organización</label></br>
@@ -137,25 +139,25 @@ while ($reg = mysqli_fetch_array($query2)) {
                     <div class="row">
                         <div class="col-md-5">            
                             <label>Nombre del representante legal</label></br>
-                            <input type="text" name="rep_legal" class="repre" value="<?php echo $reg['rep_legal'] ?>" size="60">
+                            <input type="text" name="rep_legal" class="repre" value="<?php echo $reg['rep_legal'] ?>" size="60"  onChange="conMayusculas(this)" onkeypress="return soloLetras(event)">
                         </div>
                         <div class="col-md-3 col-md-offset-2">
                             <label>Registro</label></br>
-                            <input type="text" name="registro" class="registro" value="<?php echo $reg['registro'] ?>"></br>
+                            <input type="text" name="registro" class="registro" value="<?php echo $reg['registro'] ?>"  onChange="conMayusculas(this)" onkeypress="return soloLetras(event)"></br>
                         </div>
                     </div></br></br>
                     <div class="row">
                         <div class="col-md-3">
                             <label>Calle</label></br>
-                            <input type="text" name="calle" class="calle" value="<?php echo $reg['calle'] ?>" size="40">
+                            <input type="text" name="calle" class="calle" value="<?php echo $reg['calle'] ?>" size="40"  onChange="conMayusculas(this)" onkeypress="return soloLetras(event)">
                         </div>
                         <div class="col-md-2 col-md-offset-1">
                             <label>Número ext. o int.</label>
-                            <input type="text" name="num_ext" class="num_ext" value="<?php echo $reg['num_ext'] ?>"></br>
+                            <input type="text" name="num_ext" class="num_ext" value="<?php echo $reg['num_ext'] ?>" onChange="conMayusculas(this)" onkeypress="return soloLetras(event)"></br>
                         </div>
                         <div class="col-md-2">
                             <label>Colonia</label></br>
-                            <input type="text" name="colonia" class="colonia" value="<?php echo $reg['colonia'] ?>"></br>
+                            <input type="text" name="colonia" class="colonia" value="<?php echo $reg['colonia'] ?>" onChange="conMayusculas(this)" onkeypress="return soloLetras(event)"></br>
                         </div>
                         <div class="col-md-2">
                             <label>Delegación Política</label></br>
@@ -247,15 +249,15 @@ while ($reg = mysqli_fetch_array($query2)) {
                     <div class="row">
                         <div class="col-md-2"> 
                             <label>Código Postal</label></br>
-                            <input type="text" name="cod_postal" class="cod_postal" value="<?php echo $reg['cod_postal'] ?>" size="6"></br>
+                            <input type="text" name="cod_postal" class="cod_postal" value="<?php echo $reg['cod_postal'] ?>" size="6" onkeypress="return soloNumeros(event)"></br>
                         </div>
                         <div class="col-md-2">                
                             <label>Teléfono Fijo</label></br>                
-                            <input type="text" name="tel_fijo" class="tel_fijo" value="<?php echo $reg['tel_fijo'] ?>"></br>
+                            <input type="text" name="tel_fijo" class="tel_fijo" value="<?php echo $reg['tel_fijo'] ?>" onkeypress="return soloNumeros(event)"></br>
                         </div>
                         <div class="col-md-2">
                             <label>Teléfono Móvil</label></br>
-                            <input type="text" name="tel_movil" class="tel_movil" value="<?php echo $reg['tel_movil'] ?>"></br>
+                            <input type="text" name="tel_movil" class="tel_movil" value="<?php echo $reg['tel_movil'] ?>" onkeypress="return soloNumeros(event)"></br>
                         </div>
                         <div class="col-md-2">
                             <label>Página de Internet</label></br>
@@ -267,9 +269,9 @@ while ($reg = mysqli_fetch_array($query2)) {
                         </div>
                     </div>
                     <label>Nombre del Proyecto</label></br>
-                    <input type="text" name="nom_proyecto" class="nom_proyecto" value="<?php echo $reg['nom_proyecto'] ?>" size="100"></br></br>
+                    <input type="text" name="nom_proyecto" class="nom_proyecto" value="<?php echo $reg['nom_proyecto'] ?>" size="100" onChange="conMayusculas(this)"  onkeypress="return soloLetras(event)"></br></br>
                     <label>Nombre del Responsable del Proyecto</label></br>
-                    <input type="text" name="nom_resp" class="nom_resp" value="<?php echo $reg['nom_resp'] ?>" size="60"></br></br>
+                    <input type="text" name="nom_resp" class="nom_resp" value="<?php echo $reg['nom_resp'] ?>" size="60" onChange="conMayusculas(this)"  onkeypress="return soloLetras(event)"></br></br>
                     <div class="row">
                         <div class="col-md-2">
                             <label>Eje Temático</label></br>
@@ -980,7 +982,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                         </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Monto solicitado</label></br>
-                            <input type="text" name="mon_sol" class="mon_sol" value="<?php echo $reg['mon_sol'] ?>"></br>
+                            <input type="text" name="mon_sol" class="mon_sol" value="<?php echo $reg['mon_sol'] ?>" onkeypress="return soloNumeros(event)"></br>
                         </div>
                     </div><br>
                     <div class="row">
@@ -1048,17 +1050,17 @@ while ($reg = mysqli_fetch_array($query2)) {
                         </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Mujeres</label></br>
-                            <input type="text" name="num_mujeres" class="internet" value="<?php echo $reg['num_mujeres'] ?>">
+                            <input type="text" name="num_mujeres" class="internet" value="<?php echo $reg['num_mujeres'] ?>" onkeypress="return soloNumeros(event)">
                         </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Hombres</label></br>
-                            <input type="text" name="num_hombres" class="internet" value="<?php echo $reg['num_hombres'] ?>"></br>
+                            <input type="text" name="num_hombres" class="internet" value="<?php echo $reg['num_hombres'] ?>" onkeypress="return soloNumeros(event)"></br>
                         </div>
                     </div></br>
                     <div class="row">
                         <div class="form-group">
                             <label for="comment">Objetivo general del Proyecto</label>
-                            <textarea  name="objetivo" class="form-control" rows="5" id="comment" ><?php echo $reg['objetivo'] ?></textarea>
+                            <textarea  name="objetivo" class="form-control" rows="5" id="comment" onChange="conMayusculas(this)"  onkeypress="return soloLetras(event)"><?php echo $reg['objetivo'] ?></textarea>
                         </div>
 
                     </div>
@@ -1162,7 +1164,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                     <div class="row">
                         <div class="form-group">
                             <label for="comment">Observaciones</label>
-                            <textarea name="observaciones" class="form-control" rows="1" id="comment"><?php echo $reg['observaciones'] ?></textarea>
+                            <textarea name="observaciones" class="form-control" rows="1" id="comment" onChange="conMayusculas(this)"  onkeypress="return soloLetras(event)"><?php echo $reg['observaciones'] ?></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -1172,23 +1174,25 @@ while ($reg = mysqli_fetch_array($query2)) {
                         </div>
                         <div class="col-md-4 col-md-offset-2">
                             <label>Nombre de la persona que entrega el proyecto</label></br>
-                            <input type="text" name="nom_per_entrega" class="registro" value="<?php echo $reg['nom_per_entrega'] ?>" size="40"></br>
+                            <input type="text" name="nom_per_entrega" class="registro" value="<?php echo $reg['nom_per_entrega'] ?>" size="40" onChange="conMayusculas(this)"  onkeypress="return soloLetras(event)"></br>
                         </div>
                         <div class="col-md-1">
                             <label>Cargo</label></br>
-                            <input type="text" name="cargo" class="registro" value="<?php echo $reg['cargo'] ?>"></br>
+                            <input type="text" name="cargo" class="registro" value="<?php echo $reg['cargo'] ?>" onChange="conMayusculas(this)"  onkeypress="return soloLetras(event)"></br>
                         </div>
                     </div>
                     <br><br><br><center>
                         <label style="margin-bottom: 1%;">Da Click en "Aceptar" si los datos son correctos o "Corregir" si algun dato estaba mal</label></center>
 
-                    <div class="col-md-1 col-md-offset-3">
+                    <div class="col-md-1 col-md-offset-2">
                         <button type="submit"class="btn btn-primary btn-md" style="background: #B40404;" >Corregir</button><br><br>
                     </div>
                 </form>
-                
-                <div class="col-md-1 col-md-offset-4">
-                    <button type="submit"class="btn btn-primary btn-md" onclick = "location = '../librerias/formatopdf.php'"/>Aceptar</button><br><br>
+                <div class="col-md-1 col-md-offset-2">
+                    <button type="submit"class="imp" onclick = "location = '../librerias/formatopdf.php'"/>Imprimir</button><br><br>
+                </div>
+                <div class="col-md-1 col-md-offset-3">
+                    <button type="submit"class="btn btn-primary btn-md" onclick = "location = '../administradores.php'"/>Aceptar</button><br><br>
                 </div>
             </div>
 

@@ -16,6 +16,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
 <html lang="es">
 
     <head>
+        <meta http-equiv='cache-control' content='no-cache'> <meta http-equiv='expires' content='0'> <meta http-equiv='pragma' content='no-cache'>
         <meta  http-equiv="Content-Type" content="text/html" charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,6 +35,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
         <script type="text/javascript" src="css/bootstrap-3.3.6-dist/js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/eje.js"></script>
         <script type="text/javascript" src="js/subeje.js"></script>
+        <script type="text/javascript" src="js/mayusculas.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
  
@@ -85,11 +87,11 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-6">
                     <label>Nombre de la organización</label></br>
-                    <input type="text" name="nom_org" class="organizacion" placeholder="Nombre de la organización" size="70">
+                    <input type="text" name="nom_org" class="organizacion" placeholder="Nombre de la organización" size="70" onChange="conMayusculas(this)" required  >
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <label>Tipo de organización</label></br>
-                        <select name="tipo_org">
+                        <select name="tipo_org" required>
                             <option value=""></option>
                             <option value="A.C.">Asociación Civil</option>
                             <option value="I.A.P">Institución de Asistencia Privada</option>
@@ -101,29 +103,29 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-5">            
                     <label>Nombre del representante legal</label></br>
-                    <input type="text" name="rep_legal" class="repre" placeholder="Representante" size="60">
+                    <input type="text" name="rep_legal" class="repre" placeholder="Representante" size="60" onChange="conMayusculas(this)" required  >
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <label>Registro</label></br>
-                    <input type="text" name="registro" class="registro" placeholder="Registro"></br>
+                    <input type="text" name="registro" class="registro" placeholder="Registro" onChange="conMayusculas(this)" required  ></br>
                 </div>
             </div></br></br>
             <div class="row">
                 <div class="col-md-3">
                     <label>Calle</label></br>
-                    <input type="text" name="calle" class="calle" placeholder="Calle" size="40">
+                    <input type="text" name="calle" class="calle" placeholder="Calle" size="40" onChange="conMayusculas(this)" required  >
                 </div>
                 <div class="col-md-2 col-md-offset-1">
                     <label>Número ext. o int.</label>
-                    <input type="text" name="num_ext" class="num_ext" placeholder="Número"></br>
+                    <input type="text" name="num_ext" class="num_ext" placeholder="Número" onChange="conMayusculas(this)" required  ></br>
                 </div>
                 <div class="col-md-2">
                     <label>Colonia</label></br>
-                    <input type="text" name="colonia" class="colonia" placeholder="Colonia"></br>
+                    <input type="text" name="colonia" class="colonia" placeholder="Colonia" onChange="conMayusculas(this)" required  ></br>
                 </div>
                 <div class="col-md-2">
                     <label>Delegación Política</label></br>
-                    <select name="delegacion">
+                    <select name="delegacion" required>
                         <option value=""></option>
                         <option value="ALVARO OBREGON">Álvaro Obregón</option>
                         <option value="AZCAPOTZALCO">Azcapotzalco</option>
@@ -147,33 +149,33 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-2"> 
                     <label>Código Postal</label></br>
-                    <input type="text" name="cod_postal" class="cod_postal" placeholder="C.P." size="6"></br>
+                    <input type="text" name="cod_postal" class="cod_postal" placeholder="C.P." size="6" required onkeypress="return soloNumeros(event)"></br>
                 </div>
                 <div class="col-md-2">                
                     <label>Teléfono Fijo</label></br>                
-                    <input type="text" name="tel_fijo" class="tel_fijo" placeholder="Teléfono"></br>
+                    <input type="text" name="tel_fijo" class="tel_fijo" placeholder="Teléfono" required onkeypress="return soloNumeros(event)"></br>
                 </div>
                 <div class="col-md-2">
                     <label>Teléfono Móvil</label></br>
-                    <input type="text" name="tel_movil" class="tel_movil" placeholder="Teléfono"></br>
+                    <input type="text" name="tel_movil" class="tel_movil" placeholder="Teléfono" required onkeypress="return soloNumeros(event)"></br>
                 </div>
                 <div class="col-md-2">
                     <label>Página de Internet</label></br>
-                    <input type="text" name="pag_int" class="pag_int" placeholder="Página de Internet"></br>
+                    <input type="text" name="pag_int" class="pag_int" placeholder="Página de Internet" ></br>
                 </div>
                 <div class="col-md-3">
                     <label>Correo Electrónico</label></br>                
-                    <input type="text" name="correo" class="correo" placeholder="Email"></br></br>
+                    <input type="email" name="correo" class="correo" placeholder="Email" required></br></br>
                 </div>
             </div>
                 <label>Nombre del Proyecto</label></br>
-                <input type="text" name="nom_proyecto" class="nom_proyecto" placeholder="Proyecto" size="100"></br></br>
+                <input type="text" name="nom_proyecto" class="nom_proyecto" placeholder="Proyecto" size="100" onChange="conMayusculas(this)" required  ></br></br>
                 <label>Nombre del Responsable del Proyecto</label></br>
-                <input type="text" name="nom_resp" class="nom_resp" placeholder="Responsable del proyecto" size="60"></br></br>
+                <input type="text" name="nom_resp" class="nom_resp" placeholder="Responsable del proyecto" size="60" onChange="conMayusculas(this)" required  ></br></br>
             <div class="row">
                 <div class="col-md-2">
                     <label>Eje Temático</label></br>
-                    <select id="eje" name="eje_tem" onChange="mostrar(this.value);">
+                    <select id="eje" name="eje_tem" onChange="mostrar(this.value);" required="">
                         <option value=""></option>
                         <option value="1">Eje 1</option>
                         <option value="2">Eje 2</option>
@@ -232,7 +234,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-2">
                 <label>Sub Eje</label></br>
-                <select id="subeje" name="sub_eje" onChange="mostrarr(this.value);">
+                <select id="subeje" name="sub_eje" onChange="mostrarr(this.value);" required="">
                     <option value=""></option>
                     <option value="sub_1_1">1.1</option>
                     <option value="sub_1_2">1.2</option>
@@ -510,7 +512,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row"><br><br>
                 <div class="col-md-3">
                     <label>Institución que dictamina</label></br>
-                        <select name="ins_dic">
+                        <select name="ins_dic" required>
                             <option value=""></option>
                             <option value="DGIDS">DGIDS</option>
                             <option value="DIF" >DIF</option>
@@ -520,7 +522,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <label>Tipo de proyecto</label></br>
-                        <select name="tipo_proyecto">
+                        <select name="tipo_proyecto" required>
                             <option value=""></option>
                             <option value="NUEVO">Nuevo</option>
                             <option value="CONTINUIDAD">Continuidad</option>
@@ -528,13 +530,13 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                 <div class="col-md-2 col-md-offset-2">
                     <label>Monto solicitado</label></br>
-                    <input type="text" name="mon_sol" class="mon_sol" placeholder="Monto Solicitado"></br>
+                    <input type="text" name="mon_sol" class="mon_sol" placeholder="Monto Solicitado"  required onkeypress="return soloNumeros(event)"></br>
                 </div>
             </div><br>
             <div class="row">
                 <div class="col-md-3">
                     <label>Población Objetivo</label>
-                        <select name="pob_obj">
+                        <select name="pob_obj" required>
                             <option value=""></option>
                             <option value="1">Personas Adultas Mayores</option>
                             <option value="2">Comites Ciudadanos</option>
@@ -551,17 +553,17 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Mujeres</label></br>
-                            <input type="text" name="num_mujeres" class="internet" placeholder="No. Mujeres">
+                            <input type="text" name="num_mujeres" class="internet" placeholder="No. Mujeres" required onkeypress="return soloNumeros(event)">
                         </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Hombres</label></br>
-                            <input type="text" name="num_hombres" class="internet" placeholder="No. Hombres"></br>
+                            <input type="text" name="num_hombres" class="internet" placeholder="No. Hombres"  required onkeypress="return soloNumeros(event)"></br>
                         </div>
             </div></br>
             <div class="row">
                     <div class="form-group">
                         <label for="comment">Objetivo general del Proyecto</label>
-                        <textarea  name="objetivo" class="form-control" rows="5" id="comment"></textarea>
+                        <textarea  name="objetivo" class="form-control" rows="5" id="comment" onChange="conMayusculas(this)" required=""  ></textarea>
                     </div>
 
             </div>
@@ -573,10 +575,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <td>1. Proyecto y ficha técnica (original y copia impresas)</td>
                             <td> 
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_ficha_tec" value='SI'>Sí
+                                        <input type="radio" name="rec_ficha_tec" value='SI' required>Sí
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_ficha_tec" value='NO'>No
+                                        <input type="radio" name="rec_ficha_tec" value='NO' required>No
                                     </label>
                             </td>
                         </tr>
@@ -584,10 +586,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <td>2. Archivo electrónico del proyecto y ficha técnica (CD o USB)</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_arch_elec" value='SI'>Sí
+                                        <input type="radio" name="rec_arch_elec" value='SI' required>Sí
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_arch_elec" value='NO'>No
+                                        <input type="radio" name="rec_arch_elec" value='NO' required>No
                                     </label>
                             </td>
                         </tr>
@@ -595,10 +597,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <td>3. Copia fotostática simple de la Constancia de inscripción en el Registro de Organizaciones Civiles del Distrito Federal</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_insc" value='SI'>Sí
+                                        <input type="radio" name="rec_cons_insc" value='SI' required>Sí
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_insc" value='NO'>No
+                                        <input type="radio" name="rec_cons_insc" value='NO' required>No
                                     </label>
                             </td>
                         </tr>
@@ -606,10 +608,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <td>4. Carta compromiso (original y copia impresa)</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_carta" value='SI'>Sí
+                                        <input type="radio" name="rec_carta" value='SI' required>Sí
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_carta" value='NO'>No
+                                        <input type="radio" name="rec_carta" value='NO' required>No
                                     </label>
                             </td>
                         </tr>
@@ -617,10 +619,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <td>5. Constancia de participación de la plática informativa</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_plat" value='SI'>Sí
+                                        <input type="radio" name="rec_cons_plat" value='SI' required>Sí
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_plat" value='NO'>No
+                                        <input type="radio" name="rec_cons_plat" value='NO' required>No
                                     </label>
                             </td>
                         </tr>
@@ -628,10 +630,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <td>6. Documento de terminación 2014 y/o 2013</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_doc_term" value='SI'>Sí
+                                        <input type="radio" name="rec_doc_term" value='SI' required>Sí
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_doc_term" value='NO'>No
+                                        <input type="radio" name="rec_doc_term" value='NO' required>No
                                     </label>
 </td></td>
                         </tr>
@@ -641,7 +643,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                     <div class="form-group">
                         <label for="comment">Observaciones</label>
-                        <textarea name="observaciones" class="form-control" rows="1" id="comment"></textarea>
+                        <textarea name="observaciones" class="form-control" rows="1" id="comment" onChange="conMayusculas(this)"   ></textarea>
                     </div>
             </div>
             <div class="row">
@@ -653,18 +655,19 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 <?php } ?>
                 <div class="col-md-4 col-md-offset-2">
                     <label>Nombre de la persona que entrega el proyecto</label></br>
-                    <input type="text" name="nom_per_entrega" class="registro" placeholder="Nombre" size="40"></br>
+                    <input type="text" name="nom_per_entrega" class="registro" placeholder="Nombre" size="40" onChange="conMayusculas(this)" required  ></br>
                 </div>
                 <div class="col-md-1">
                     <label>Cargo</label></br>
-                    <input type="text" name="cargo" class="registro" placeholder="Cargo"></br>
+                    <input type="text" name="cargo" class="registro" placeholder="Cargo" onChange="conMayusculas(this)" required=""></br>
                 </div>
             </div>
+            <br>
             <div class="row"><br><br>
-                <div class="col-md-1 col-md-offset-6">
+                <div class="col-md-1 col-md-offset-4">
                     <button type="submit"class="btn btn-danger btn-md" >Ingresar</button><br><br>
                 </div>
-                <div class="col-md-1 col-md-offset-1">
+                <div class="col-md-1 col-md-offset-3">
                     <a href='control/cerrarSesion.php' class="btn btn-primary btn-md" target="_top">Salir</a><br><br>
 
                 </div>

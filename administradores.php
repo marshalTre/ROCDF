@@ -16,8 +16,8 @@ $queryUs = mysqli_query(conector::conexion(), $user);
 <html lang="es">
 
     <head>
-        <meta http-equiv='cache-control' content='no-cache'> <meta http-equiv='expires' content='0'> <meta http-equiv='pragma' content='no-cache'>
-        <meta  http-equiv="Content-Type" content="text/html" charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
@@ -35,7 +35,6 @@ $queryUs = mysqli_query(conector::conexion(), $user);
         <script type="text/javascript" src="css/bootstrap-3.3.6-dist/js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/eje.js"></script>
         <script type="text/javascript" src="js/subeje.js"></script>
-        <script type="text/javascript" src="js/mayusculas.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
  
@@ -78,23 +77,81 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             </center>
         </nav>
         
-    
+    <!--    <section class="imprimir">
+            <div class="modal fade" id="imp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Hola aqui va a ir la consulta de lo que se ha capturado
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-success">Imprimir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="modificar">
+            <div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Hola aqui va a ir el formato para modificar
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-warning">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="borrar">
+            <div class="modal fade" id="bor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Hola aqui va a ir el formato para borrar
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-danger">Borrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
 
         <div class="container-fluid"></br></br></br>          
             <form action="control/insertar.php" method="post">
-                <!-- <label>Folio de recepción</label></br>
+                <!-- <label>Folio de recepci&oacute;n</label></br>
                     <input type="text" name="folio" class="folio" placeholder="Folio"></br></br>-->
             <div class="row">
                 <div class="col-md-6">
-                    <label>Nombre de la organización</label></br>
-                    <input type="text" name="nom_org" class="organizacion" placeholder="Nombre de la organización" size="70" onChange="conMayusculas(this)" required  >
+                    <label>Nombre de la organizaci&oacute;n</label></br>
+                    <input type="text" name="nom_org" class="organizacion" placeholder="Nombre de la organizaci&oacute;n" size="70">
                 </div>
                 <div class="col-md-3 col-md-offset-2">
-                    <label>Tipo de organización</label></br>
-                        <select name="tipo_org" required>
+                    <label>Tipo de organizaci&oacute;n</label></br>
+                        <select name="tipo_org">
                             <option value=""></option>
-                            <option value="A.C.">Asociación Civil</option>
-                            <option value="I.A.P">Institución de Asistencia Privada</option>
+                            <option value="A.C.">Asociaci&oacute;n Civil</option>
+                            <option value="I.A.P">Instituci&oacute;n de Asistencia Privada</option>
                             <option value="S.C.">Sociedad Civil</option>
                             <option value="OT">Otra</option>
                         </select></br></br>
@@ -103,43 +160,43 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-5">            
                     <label>Nombre del representante legal</label></br>
-                    <input type="text" name="rep_legal" class="repre" placeholder="Representante" size="60" onChange="conMayusculas(this)" required  >
+                    <input type="text" name="rep_legal" class="repre" placeholder="Representante" size="60">
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <label>Registro</label></br>
-                    <input type="text" name="registro" class="registro" placeholder="Registro" onChange="conMayusculas(this)" required  ></br>
+                    <input type="text" name="registro" class="registro" placeholder="Registro"></br>
                 </div>
             </div></br></br>
             <div class="row">
                 <div class="col-md-3">
                     <label>Calle</label></br>
-                    <input type="text" name="calle" class="calle" placeholder="Calle" size="40" onChange="conMayusculas(this)" required  >
+                    <input type="text" name="calle" class="calle" placeholder="Calle" size="40">
                 </div>
                 <div class="col-md-2 col-md-offset-1">
-                    <label>Número ext. o int.</label>
-                    <input type="text" name="num_ext" class="num_ext" placeholder="Número" onChange="conMayusculas(this)" required  ></br>
+                    <label>N&uacute;mero ext. o int.</label>
+                    <input type="text" name="num_ext" class="num_ext" placeholder="N&uacute;mero"></br>
                 </div>
                 <div class="col-md-2">
                     <label>Colonia</label></br>
-                    <input type="text" name="colonia" class="colonia" placeholder="Colonia" onChange="conMayusculas(this)" required  ></br>
+                    <input type="text" name="colonia" class="colonia" placeholder="Colonia"></br>
                 </div>
                 <div class="col-md-2">
-                    <label>Delegación Política</label></br>
-                    <select name="delegacion" required>
+                    <label>Delegaci&oacute;n Pol&iacute;tica</label></br>
+                    <select name="delegacion">
                         <option value=""></option>
-                        <option value="ALVARO OBREGON">Álvaro Obregón</option>
+                        <option value="ALVARO OBREGON">&Aacute;lvaro Obreg&oacute;n</option>
                         <option value="AZCAPOTZALCO">Azcapotzalco</option>
-                        <option value="BENITO JUAREZ">Benito Juárez</option>
-                        <option value="COYOACAN">Coyoacán</option>
+                        <option value="BENITO JUAREZ">Benito Ju&aacute;rez</option>
+                        <option value="COYOACAN">Coyoac&aacute;n</option>
                         <option value="CUJIMALPA">Cuajimalpa</option>
-                        <option value="CUAUHTEMOC">Cuauhtémoc</option>
+                        <option value="CUAUHTEMOC">Cuauht&eacute;moc</option>
                         <option value="GUSTAVO A. MADERO">Gustavo A. Madero</option>
                         <option value="IZTACALCO">Iztacalco</option>
                         <option value="IZTAPALAPA">Iztapalapa</option>
                         <option value="MAGDALENA CONTRERAS">Magdalena Contreras</option>
                         <option value="MIGUEL HIDALGO">Miguel Hidalgo</option>
                         <option value="MILPA ALTA">Milpa Alta</option>
-                        <option value="TLAHUAC">Tláhuac</option>
+                        <option value="TLAHUAC">Tl&aacute;huac</option>
                         <option value="TLALPAN">Tlalpan</option>
                         <option value="VENUSTIANO CARRANZA">Venustiano Carranza</option>
                         <option value="XOCHIMILCO">Xochimilco</option>
@@ -148,34 +205,34 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             </div>
             <div class="row">
                 <div class="col-md-2"> 
-                    <label>Código Postal</label></br>
-                    <input type="text" name="cod_postal" class="cod_postal" placeholder="C.P." size="6" required onkeypress="return soloNumeros(event)"></br>
+                    <label>C&oacute;digo Postal</label></br>
+                    <input type="text" name="cod_postal" class="cod_postal" placeholder="C.P." size="6"></br>
                 </div>
                 <div class="col-md-2">                
-                    <label>Teléfono Fijo</label></br>                
-                    <input type="text" name="tel_fijo" class="tel_fijo" placeholder="Teléfono" required onkeypress="return soloNumeros(event)"></br>
+                    <label>Tel&eacute;fono Fijo</label></br>                
+                    <input type="text" name="tel_fijo" class="tel_fijo" placeholder="Tel&eacute;fono"></br>
                 </div>
                 <div class="col-md-2">
-                    <label>Teléfono Móvil</label></br>
-                    <input type="text" name="tel_movil" class="tel_movil" placeholder="Teléfono" required onkeypress="return soloNumeros(event)"></br>
+                    <label>Tel&eacute;fono M&oacute;vil</label></br>
+                    <input type="text" name="tel_movil" class="tel_movil" placeholder="Tel&eacute;fono"></br>
                 </div>
                 <div class="col-md-2">
-                    <label>Página de Internet</label></br>
-                    <input type="text" name="pag_int" class="pag_int" placeholder="Página de Internet" ></br>
+                    <label>P&aacute;gina de Internet</label></br>
+                    <input type="text" name="pag_int" class="pag_int" placeholder="P&aacute;gina de Internet"></br>
                 </div>
                 <div class="col-md-3">
-                    <label>Correo Electrónico</label></br>                
-                    <input type="email" name="correo" class="correo" placeholder="Email" required></br></br>
+                    <label>Correo Electr&oacute;nico</label></br>                
+                    <input type="text" name="correo" class="correo" placeholder="Email"></br></br>
                 </div>
             </div>
                 <label>Nombre del Proyecto</label></br>
-                <input type="text" name="nom_proyecto" class="nom_proyecto" placeholder="Proyecto" size="100" onChange="conMayusculas(this)" required  ></br></br>
+                <input type="text" name="nom_proyecto" class="nom_proyecto" placeholder="Proyecto" size="100"></br></br>
                 <label>Nombre del Responsable del Proyecto</label></br>
-                <input type="text" name="nom_resp" class="nom_resp" placeholder="Responsable del proyecto" size="60" onChange="conMayusculas(this)" required  ></br></br>
+                <input type="text" name="nom_resp" class="nom_resp" placeholder="Responsable del proyecto" size="60"></br></br>
             <div class="row">
                 <div class="col-md-2">
-                    <label>Eje Temático</label></br>
-                    <select id="eje" name="eje_tem" onChange="mostrar(this.value);" required="">
+                    <label>Eje Tem&aacute;tico</label></br>
+                    <select id="eje" name="eje_tem" onChange="mostrar(this.value);">
                         <option value=""></option>
                         <option value="1">Eje 1</option>
                         <option value="2">Eje 2</option>
@@ -193,40 +250,40 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                 <div class="col-md-9">
                     <div id="1" style="display: none;"><br>
-                        <label>Eje 1) Atención y prevención de la violencia familiar.</label>
+                        <label>Eje 1) Atenci&oacute;n y prevenci&oacute;n de la violencia familiar.</label>
                     </div>
                     <div id="2" style="display: none;"><br>
-                        <label>Eje 2) Promoción de acciones y medidas para la educación social, cultural y emocional, de las personas agresoras y de las víctimas de la violencia familiar para la Ciudad de México.</label>
+                        <label>Eje 2) Promoci&oacute;n de acciones y medidas para la educaci&oacute;n social, cultural y emocional, de las personas agresoras y de las v&iacute;ctimas de la violencia familiar para la Ciudad de M&eacute;xico.</label>
                     </div>
                     <div id="3" style="display: none;"><br>
-                        <label>Eje 3) Fortalecimiento de acciones de prevención de violencia familiar con estrategias de desarrollo social y comunitario.</label>
+                        <label>Eje 3) Fortalecimiento de acciones de prevenci&oacute;n de violencia familiar con estrategias de desarrollo social y comunitario.</label>
                     </div>
                     <div id="4" style="display: none;"><br>
-                        <label>Eje 4) Fortalecimiento de la participación comunitaria en la política alimentaria. </label>
+                        <label>Eje 4) Fortalecimiento de la participaci&oacute;n comunitaria en la pol&iacute;tica alimentaria. </label>
                     </div>
                     <div id="5" style="display: none;"><br>
                         <label>Eje 5) Impulsar el fortalecimiento de los procesos organizativos en los comedores comunitarios.</label>
                     </div>
                     <div id="6" style="display: none;"><br>
-                        <label>Eje 6) Promover la capacitación y manejo en la administración de alimentos en los comedores comunitarios, en temas tales como: higiene, administración, variedad alimenticia, dietas saludables, acceso a bancos de alimentos, manejo de desechos, sostenibilidad y viabilidad financiera.</label>
+                        <label>Eje 6) Promover la capacitaci&oacute;n y manejo en la administraci&oacute;n de alimentos en los comedores comunitarios, en temas tales como: higiene, administraci&oacute;n, variedad alimenticia, dietas saludables, acceso a bancos de alimentos, manejo de desechos, sostenibilidad y viabilidad financiera.</label>
                     </div>
                     <div id="7" style="display: none;"><br>
-                        <label>Eje 7) Promoción y fortalecimiento de las políticas sociales.</label>
+                        <label>Eje 7) Promoci&oacute;n y fortalecimiento de las pol&iacute;ticas sociales.</label>
                     </div>
                     <div id="8" style="display: none;"><br>
-                        <label>Eje 8) Impulsar procesos de fortalecimiento de las políticas públicas de fomento a las organizaciones de la sociedad civil. </label>
+                        <label>Eje 8) Impulsar procesos de fortalecimiento de las pol&iacute;ticas p&uacute;blicas de fomento a las organizaciones de la sociedad civil. </label>
                     </div>
                     <div id="9" style="display: none;"><br>
-                        <label>Eje 9) Profesionalización de las organizaciones de la sociedad civil para aumentar su incidencia en el ámbito comunitario. </label>
+                        <label>Eje 9) Profesionalizaci&oacute;n de las organizaciones de la sociedad civil para aumentar su incidencia en el &aacute;mbito comunitario. </label>
                     </div>
                     <div id="10" style="display: none;"><br>
-                        <label>Eje 10) Promoción de los Derechos de Acceso a la Información Pública y Protección de Datos Personales. </label>
+                        <label>Eje 10) Promoci&oacute;n de los Derechos de Acceso a la Informaci&oacute;n P&uacute;blica y Protecci&oacute;n de Datos Personales. </label>
                     </div>
                     <div id="11" style="display: none;"><br>
-                        <label>Eje 11) Fortalecimiento para el sano desarrollo y garantía de derechos humanos para población en vulnerabilidad. </label>
+                        <label>Eje 11) Fortalecimiento para el sano desarrollo y garant&iacute;a de derechos humanos para poblaci&oacute;n en vulnerabilidad. </label>
                     </div>
                     <div id="12" style="display: none;"><br>
-                        <label>Eje 12) Promoción y acceso de las mujeres al ejercicio de sus derechos humanos y a una vida libre de violencias. </label>
+                        <label>Eje 12) Promoci&oacute;n y acceso de las mujeres al ejercicio de sus derechos humanos y a una vida libre de violencias. </label>
                     </div>
 
                 </div>
@@ -234,7 +291,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-2">
                 <label>Sub Eje</label></br>
-                <select id="subeje" name="sub_eje" onChange="mostrarr(this.value);" required="">
+                <select id="subeje" name="sub_eje" onChange="mostrarr(this.value);">
                     <option value=""></option>
                     <option value="sub_1_1">1.1</option>
                     <option value="sub_1_2">1.2</option>
@@ -293,184 +350,184 @@ $queryUs = mysqli_query(conector::conexion(), $user);
 
             <div class="col-md-9">
                     <div id="sub_1_1" style="display: none;"><br>
-                        <h5>1.1  Fomentar, promover y proporcionar capacitación en diferentes ramas productivas, para contribuir a que las mujeres se reintegren a una vida social y familiar libre de violencias, junto con sus hijas e hijos.</h5>
+                        <h5>1.1  Fomentar, promover y proporcionar capacitaci&oacute;n en diferentes ramas productivas, para contribuir a que las mujeres se reintegren a una vida social y familiar libre de violencias, junto con sus hijas e hijos.</h5>
                     </div>
                     <div id="sub_1_2" style="display: none;"><br>
-                        <h5>1.2  Fortalecimiento de las capacidades a las y los servidores públicos para la mejor atención en materia de violencia familiar con perspectiva de género y derechos humanos.</h5>
+                        <h5>1.2  Fortalecimiento de las capacidades a las y los servidores p&uacute;blicos para la mejor atenci&oacute;n en materia de violencia familiar con perspectiva de g&eacute;nero y derechos humanos.</h5>
                     </div>
                     <div id="sub_1_3" style="display: none;"><br>
-                        <h5>1.3  Apoyo psicológico y jurídico a mujeres víctimas de violencia familiar y sus hijas e hijos.</h5>
+                        <h5>1.3  Apoyo psicol&oacute;gico y jur&iacute;dico a mujeres v&iacute;ctimas de violencia familiar y sus hijas e hijos.</h5>
                     </div>
                     <div id="sub_1_4" style="display: none;"><br>
-                        <h5>1.4  Seguimiento y análisis de la aplicación de la normatividad en materia de violencia familiar para la Ciudad de México.</h5>
+                        <h5>1.4  Seguimiento y an&aacute;lisis de la aplicaci&oacute;n de la normatividad en materia de violencia familiar para la Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_2_1" style="display: none;"><br>
-                        <h5>2.1  Fomentar, promover y proporcionar capacitación a mujeres víctimas de violencia familiar, garantizando el acceso al empleo, a través de oficios o mejoras de sus habilidades en el trabajo y/o actualización de sus estudios a través de becas, como un medio para fortalecer e implementar proyectos productivos. </h5>
+                        <h5>2.1  Fomentar, promover y proporcionar capacitaci&oacute;n a mujeres v&iacute;ctimas de violencia familiar, garantizando el acceso al empleo, a trav&eacute;s de oficios o mejoras de sus habilidades en el trabajo y/o actualizaci&oacute;n de sus estudios a trav&eacute;s de becas, como un medio para fortalecer e implementar proyectos productivos. </h5>
                     </div>
                     <div id="sub_2_2" style="display: none;"><br>
-                        <h5>2.2  Fomento de acciones de prevención de la violencia familiar y del buen trato en las escuelas de la Ciudad de México.</h5>
+                        <h5>2.2  Fomento de acciones de prevenci&oacute;n de la violencia familiar y del buen trato en las escuelas de la Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_2_3" style="display: none;"><br>
-                        <h5>2.3  Fortalecimiento de las políticas públicas a través de la equidad, democracia, los derechos humanos para prevención de la violencia al interior de las familias diversas.</h5>
+                        <h5>2.3  Fortalecimiento de las pol&iacute;ticas p&uacute;blicas a trav&eacute;s de la equidad, democracia, los derechos humanos para prevenci&oacute;n de la violencia al interior de las familias diversas.</h5>
                     </div>
                     <div id="sub_3_1" style="display: none;"><br>
-                        <h5>3.1  Fomentar, promover y proporcionar capacitación para el empleo, dirigido  a las mujeres víctimas de violencia familiar, con la finalidad de brindar las condiciones básicas necesarias para impulsar su autonomía y continuar su proceso de atención especializada, hasta lograr vivir una vida libre de violencia, en condiciones mínimas de independencia económica, logrando en su toma de decisiones, su empoderamiento y el rescate de sus derechos.</h5>
+                        <h5>3.1  Fomentar, promover y proporcionar capacitaci&oacute;n para el empleo, dirigido  a las mujeres v&iacute;ctimas de violencia familiar, con la finalidad de brindar las condiciones b&aacute;sicas necesarias para impulsar su autonom&iacute;a y continuar su proceso de atenci&oacute;n especializada, hasta lograr vivir una vida libre de violencia, en condiciones m&iacute;nimas de independencia econ&oacute;mica, logrando en su toma de decisiones, su empoderamiento y el rescate de sus derechos.</h5>
                     </div>
                     <div id="sub_3_2" style="display: none;"><br>
-                        <h5>3.2  Apoyo e inclusión de las mujeres indígenas víctimas de violencia, en el conocimiento de sus derechos y acompañamiento de traductores.</h5>
+                        <h5>3.2  Apoyo e inclusi&oacute;n de las mujeres ind&iacute;genas v&iacute;ctimas de violencia, en el conocimiento de sus derechos y acompa&ntilde;amiento de traductores.</h5>
                     </div>
                     <div id="sub_3_3" style="display: none;"><br>
-                        <h5>3.3  Fortalecimiento de las políticas públicas a través de participación activa en ferias gubernamentales, tendientes a erradicar la violencia familiar.</h5>
+                        <h5>3.3  Fortalecimiento de las pol&iacute;ticas p&uacute;blicas a trav&eacute;s de participaci&oacute;n activa en ferias gubernamentales, tendientes a erradicar la violencia familiar.</h5>
                     </div>
                     <div id="sub_4_1" style="display: none;"><br>
-                        <h5>4.1  Acciones para el fortalecimiento de la participación comunitaria en la política alimentaria, a través de la generación de empleos, autosuficiencia económica y alimentaria.</h5>
+                        <h5>4.1  Acciones para el fortalecimiento de la participaci&oacute;n comunitaria en la pol&iacute;tica alimentaria, a trav&eacute;s de la generaci&oacute;n de empleos, autosuficiencia econ&oacute;mica y alimentaria.</h5>
                     </div>
                     <div id="sub_5_1" style="display: none;"><br>
-                        <h5>5.1  Acciones para impulsar el fortalecimiento de los procesos organizativos en los comedores comunitarios, a través de capacitaciones con reconocimiento oficial, garantizando su profesionalización derivando en la optimización de los comedores y en su caso, la auto realización personal.</h5>
+                        <h5>5.1  Acciones para impulsar el fortalecimiento de los procesos organizativos en los comedores comunitarios, a trav&eacute;s de capacitaciones con reconocimiento oficial, garantizando su profesionalizaci&oacute;n derivando en la optimizaci&oacute;n de los comedores y en su caso, la auto realizaci&oacute;n personal.</h5>
                     </div>
                     <div id="sub_6_1" style="display: none;"><br>
-                        <h5>6.1  Proyectos encaminados a la capacitación y manejo en la administración de alimentos en los comedores comunitarios, en temas tales como: higiene, administración, variedad alimenticia, dietas saludables, acceso a bancos de alimentos, manejo de desechos, sostenibilidad y viabilidad financiera, dirigidos a los administradores y a la población atendida en los comedores comunitarios.</h5>
+                        <h5>6.1  Proyectos encaminados a la capacitaci&oacute;n y manejo en la administraci&oacute;n de alimentos en los comedores comunitarios, en temas tales como: higiene, administraci&oacute;n, variedad alimenticia, dietas saludables, acceso a bancos de alimentos, manejo de desechos, sostenibilidad y viabilidad financiera, dirigidos a los administradores y a la poblaci&oacute;n atendida en los comedores comunitarios.</h5>
                     </div>
                     <div id="sub_7_1" style="display: none;"><br>
-                        <h5>7.1  Fomentar, promover y proporcionar las condiciones adecuadas de inserción e integración laboral  de la población LGBTTTI de la Ciudad de México.</h5>
+                        <h5>7.1  Fomentar, promover y proporcionar las condiciones adecuadas de inserci&oacute;n e integraci&oacute;n laboral  de la poblaci&oacute;n LGBTTTI de la Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_7_2" style="display: none;"><br>
-                        <h5>7.2  Implementar acciones concretas para la inclusión laboral y prevención de la discriminación por orientación sexual e identidad de género en ámbitos laborales.</h5>
+                        <h5>7.2  Implementar acciones concretas para la inclusi&oacute;n laboral y prevenci&oacute;n de la discriminaci&oacute;n por orientaci&oacute;n sexual e identidad de g&eacute;nero en &aacute;mbitos laborales.</h5>
                     </div>
                     <div id="sub_7_3" style="display: none;"><br>
-                        <h5>7.3  Conformación de emprendimientos productivos de la población LGBTTTI de la Ciudad de México. </h5>
+                        <h5>7.3  Conformaci&oacute;n de emprendimientos productivos de la poblaci&oacute;n LGBTTTI de la Ciudad de M&eacute;xico. </h5>
                     </div>
                     <div id="sub_7_4" style="display: none;"><br>
-                        <h5>7.4  Facilitar la inserción laboral de la población LGBTTTI de la Ciudad de México a través de la adquisición de un oficio en el marco del auto empleo y la implementación de proyectos productivos.</h5>
+                        <h5>7.4  Facilitar la inserci&oacute;n laboral de la poblaci&oacute;n LGBTTTI de la Ciudad de M&eacute;xico a trav&eacute;s de la adquisici&oacute;n de un oficio en el marco del auto empleo y la implementaci&oacute;n de proyectos productivos.</h5>
                     </div>
                     <div id="sub_7_5" style="display: none;"><br>
-                        <h5>7.5  Fortalecimiento de una cultura de inclusión, respeto y reconocimiento a la diversidad sexual y las familias diversas.</h5>
+                        <h5>7.5  Fortalecimiento de una cultura de inclusi&oacute;n, respeto y reconocimiento a la diversidad sexual y las familias diversas.</h5>
                     </div>
                     <div id="sub_7_6" style="display: none;"><br>
-                        <h5>7.6  Promoción de la defensa, el goce y el ejercicio de los derechos humanos y la no discriminación en todos los ámbitos.</h5>
+                        <h5>7.6  Promoci&oacute;n de la defensa, el goce y el ejercicio de los derechos humanos y la no discriminaci&oacute;n en todos los &aacute;mbitos.</h5>
                     </div>
                     <div id="sub_8_1" style="display: none;"><br>
-                        <h5>8.1  Capacitación a las organizaciones de la sociedad civil para fortalecer las capacidades y  los modelos de profesionalización, con la finalidad de  consolidar su incidencia en el diseño, instrumentación y evaluación de programas y políticas sociales.</h5>
+                        <h5>8.1  Capacitaci&oacute;n a las organizaciones de la sociedad civil para fortalecer las capacidades y  los modelos de profesionalizaci&oacute;n, con la finalidad de  consolidar su incidencia en el dise&ntilde;o, instrumentaci&oacute;n y evaluaci&oacute;n de programas y pol&iacute;ticas sociales.</h5>
                     </div>
                     <div id="sub_9_1" style="display: none;"><br>
-                        <h5>9.1  Capacitación a  organizaciones civiles que contribuyan a promover el  crecimiento económico, el ingreso y el autoempleo, generando acciones para la autosustentabilidad económica de grupos de mujeres y hombres y de comunidades para realizar proyectos productivos.</h5>
+                        <h5>9.1  Capacitaci&oacute;n a  organizaciones civiles que contribuyan a promover el  crecimiento econ&oacute;mico, el ingreso y el autoempleo, generando acciones para la autosustentabilidad econ&oacute;mica de grupos de mujeres y hombres y de comunidades para realizar proyectos productivos.</h5>
                     </div>
                     <div id="sub_10_1" style="display: none;"><br>
-                        <h5>10.1  Fortalecer estrategias (Capacitación, promoción, difusión, contraloría y participación ciudadana), con la finalidad de incrementar las capacidades de la ciudadanía en general, con base en los derechos de acceso a la información pública y de protección de datos personales.</h5>
+                        <h5>10.1  Fortalecer estrategias (Capacitaci&oacute;n, promoci&oacute;n, difusi&oacute;n, contralor&iacute;a y participaci&oacute;n ciudadana), con la finalidad de incrementar las capacidades de la ciudadan&iacute;a en general, con base en los derechos de acceso a la informaci&oacute;n p&uacute;blica y de protecci&oacute;n de datos personales.</h5>
                     </div>
                     <div id="sub_10_2" style="display: none;"><br>
-                        <h5>10.2  Incrementar el conocimiento sobre los temas transparencia, derecho de acceso a la información pública y derecho de protección de datos personales, a través de proyectos culturales, que incluyan una amplia difusión en la Ciudad de México.</h5>
+                        <h5>10.2  Incrementar el conocimiento sobre los temas transparencia, derecho de acceso a la informaci&oacute;n p&uacute;blica y derecho de protecci&oacute;n de datos personales, a trav&eacute;s de proyectos culturales, que incluyan una amplia difusi&oacute;n en la Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_11_1" style="display: none;"><br>
-                        <h5>11.1  Fomentar la lactancia materna, coadyuvar con las instituciones públicas para brindar a niñas y niños estimulación temprana, capacitar a padres y madres respecto a los nuevos modelos de crianza, fortalecer las capacidades y/o habilidades en el personal profesional que atiende primera infancia. Estimulación temprana: implementar con las niñas y niños canalizados por los Centros del DIF-CDMX, técnicas para el desarrollo de las capacidades y habilidades de los niños en la primera infancia, entre el nacimiento y los seis años de vida, para corregir trastornos reales o potenciales en su desarrollo, o para estimular capacidades compensadoras; teniendo en cuenta tanto al menor como a la familia y su entorno social.</h5>
+                        <h5>11.1  Fomentar la lactancia materna, coadyuvar con las instituciones p&uacute;blicas para brindar a ni&ntilde;as y ni&ntilde;os estimulaci&oacute;n temprana, capacitar a padres y madres respecto a los nuevos modelos de crianza, fortalecer las capacidades y/o habilidades en el personal profesional que atiende primera infancia. Estimulaci&oacute;n temprana: implementar con las ni&ntilde;as y ni&ntilde;os canalizados por los Centros del DIF-CDMX, t&eacute;cnicas para el desarrollo de las capacidades y habilidades de los ni&ntilde;os en la primera infancia, entre el nacimiento y los seis a&ntilde;os de vida, para corregir trastornos reales o potenciales en su desarrollo, o para estimular capacidades compensadoras; teniendo en cuenta tanto al menor como a la familia y su entorno social.</h5>
                     </div>
                     <div id="sub_11_2" style="display: none;"><br>
-                        <h5>11.2  Fomentar una nutrición adecuada y apoyar para que la alimentación sea accesible para las niñas, niños y adolescentes.</h5>
+                        <h5>11.2  Fomentar una nutrici&oacute;n adecuada y apoyar para que la alimentaci&oacute;n sea accesible para las ni&ntilde;as, ni&ntilde;os y adolescentes.</h5>
                     </div>
                     <div id="sub_11_3" style="display: none;"><br>
-                        <h5>11.3  Implementar estrategias para prevenir, detectar y erradicar la violencia infantil en todos los ámbitos, fomentar una cultura de paz, prevenir conductas autodestructivas, evitar que las niñas, niños y adolescentes sean víctimas de cualquier forma de explotación económica y salgan del entorno familiar hacia las calles.</h5>
+                        <h5>11.3  Implementar estrategias para prevenir, detectar y erradicar la violencia infantil en todos los &aacute;mbitos, fomentar una cultura de paz, prevenir conductas autodestructivas, evitar que las ni&ntilde;as, ni&ntilde;os y adolescentes sean v&iacute;ctimas de cualquier forma de explotaci&oacute;n econ&oacute;mica y salgan del entorno familiar hacia las calles.</h5>
                     </div>
                     <div id="sub_11_4" style="display: none;"><br>
-                        <h5>11.4  Fomentar la participación infantil y adolescente y formar promotores de los derechos humanos desde la infancia.</h5>
+                        <h5>11.4  Fomentar la participaci&oacute;n infantil y adolescente y formar promotores de los derechos humanos desde la infancia.</h5>
                     </div>
                     <div id="sub_11_5" style="display: none;"><br>
-                        <h5>11.5  Implementar procesos de comunicación social que garanticen el derecho a la libre expresión e información.</h5>
+                        <h5>11.5  Implementar procesos de comunicaci&oacute;n social que garanticen el derecho a la libre expresi&oacute;n e informaci&oacute;n.</h5>
                     </div>
                     <div id="sub_11_6" style="display: none;"><br>
-                        <h5>11.6  Acompañar y apoyar a niñas, niños y adolescentes con bajo rendimiento escolar y fomentar entre ellas y ellos la realización de actividades deportivas y culturales para lograr su desarrollo integral.</h5>
+                        <h5>11.6  Acompa&ntilde;ar y apoyar a ni&ntilde;as, ni&ntilde;os y adolescentes con bajo rendimiento escolar y fomentar entre ellas y ellos la realizaci&oacute;n de actividades deportivas y culturales para lograr su desarrollo integral.</h5>
                     </div>
                     <div id="sub_11_7" style="display: none;"><br>
-                        <h5>11.7  Fomentar entre los adolescentes el ejercicio responsable de derechos sexuales y reproductivos a fin de prevenir enfermedades de transmisión sexual y embarazo adolescente y capacitar a las niñas, niños y adolescentes en masculinidades y paternidades responsables.</h5>
+                        <h5>11.7  Fomentar entre los adolescentes el ejercicio responsable de derechos sexuales y reproductivos a fin de prevenir enfermedades de transmisi&oacute;n sexual y embarazo adolescente y capacitar a las ni&ntilde;as, ni&ntilde;os y adolescentes en masculinidades y paternidades responsables.</h5>
                     </div>
                     <div id="sub_11_8" style="display: none;"><br>
-                        <h5>11.8  Brindar capacitación multidisciplinaria a los derechohabientes de sociedades cooperativas.</h5>
+                        <h5>11.8  Brindar capacitaci&oacute;n multidisciplinaria a los derechohabientes de sociedades cooperativas.</h5>
                     </div>
                     <div id="sub_11_9" style="display: none;"><br>
-                        <h5>11.9  Fomentar la participación de la ciudadana en la toma de decisiones gubernamentales encaminadas a garantizar el ejercicio de sus derechos humanos y generar redes de apoyo vecinal que garanticen el derecho de las comunidades a vivir en paz y a disfrutar de los espacios públicos.</h5>
+                        <h5>11.9  Fomentar la participaci&oacute;n de la ciudadana en la toma de decisiones gubernamentales encaminadas a garantizar el ejercicio de sus derechos humanos y generar redes de apoyo vecinal que garanticen el derecho de las comunidades a vivir en paz y a disfrutar de los espacios p&uacute;blicos.</h5>
                     </div>
                     <div id="sub_11_10" style="display: none;"><br>
-                        <h5>11.10  Diseño, promoción, defensa, difusión, ejercicio e implementación de acciones que garanticen los derechos humanos de las personas con discapacidad  (niños, niñas, adolescentes mujeres y hombres, adultas, adultos; adultas mayores y adultos mayores).</h5>
+                        <h5>11.10  Dise&ntilde;o, promoci&oacute;n, defensa, difusi&oacute;n, ejercicio e implementaci&oacute;n de acciones que garanticen los derechos humanos de las personas con discapacidad  (ni&ntilde;os, ni&ntilde;as, adolescentes mujeres y hombres, adultas, adultos; adultas mayores y adultos mayores).</h5>
                     </div>
                     <div id="sub_11_11" style="display: none;"><br>
-                        <h5>11.11  Capacitación y actualización institucional en materia de rehabilitación, terapia física, terapia del Lenguaje, terapia ocupacional, para personal profesional especializado que trabaja con las personas con discapacidad.</h5>
+                        <h5>11.11  Capacitaci&oacute;n y actualizaci&oacute;n institucional en materia de rehabilitaci&oacute;n, terapia f&iacute;sica, terapia del Lenguaje, terapia ocupacional, para personal profesional especializado que trabaja con las personas con discapacidad.</h5>
                     </div>
                     <div id="sub_11_12" style="display: none;"><br>
-                        <h5>11.12  Capacitación e instrucción profesional para cuidados alternativos a familiares, cuidadores y personal que atiende a personas con discapacidad, psicosocial e intelectual.</h5>
+                        <h5>11.12  Capacitaci&oacute;n e instrucci&oacute;n profesional para cuidados alternativos a familiares, cuidadores y personal que atiende a personas con discapacidad, psicosocial e intelectual.</h5>
                     </div>
                     <div id="sub_11_13" style="display: none;"><br>
-                        <h5>11.13  Fomento de actividades que promuevan el diseño universal y los ajustes razonables para personas con discapacidad.</h5>
+                        <h5>11.13  Fomento de actividades que promuevan el dise&ntilde;o universal y los ajustes razonables para personas con discapacidad.</h5>
                     </div>
                     <div id="sub_11_14" style="display: none;"><br>
-                        <h5>11.14  Desarrollo de actividades que promuevan la autonomía y la vida independiente de las personas con discapacidad mediante actividades de inclusión educativa, deportiva, recreativa y cultural.</h5>
+                        <h5>11.14  Desarrollo de actividades que promuevan la autonom&iacute;a y la vida independiente de las personas con discapacidad mediante actividades de inclusi&oacute;n educativa, deportiva, recreativa y cultural.</h5>
                     </div>
                     <div id="sub_11_15" style="display: none;"><br>
-                        <h5>11.15  Promoción de Talleres productivos, microempresas, cooperativas, promoviendo la inclusión laboral de las personas con discapacidad.</h5>
+                        <h5>11.15  Promoci&oacute;n de Talleres productivos, microempresas, cooperativas, promoviendo la inclusi&oacute;n laboral de las personas con discapacidad.</h5>
                     </div>
                     <div id="sub_11_16" style="display: none;"><br>
-                        <h5>11.16  Atención e integración social a niñas, niños y adolescentes que se encuentran en una condición vulnerable, mediante la intervención de albergues y hogares provisionales.</h5>
+                        <h5>11.16  Atenci&oacute;n e integraci&oacute;n social a ni&ntilde;as, ni&ntilde;os y adolescentes que se encuentran en una condici&oacute;n vulnerable, mediante la intervenci&oacute;n de albergues y hogares provisionales.</h5>
                     </div>
                     <div id="sub_12_1" style="display: none;"><br>
-                        <h5>12.1  Acciones para la elaboración de políticas públicas dirigidas a la atención de las niñas en la Ciudad de México.</h5>
+                        <h5>12.1  Acciones para la elaboraci&oacute;n de pol&iacute;ticas p&uacute;blicas dirigidas a la atenci&oacute;n de las ni&ntilde;as en la Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_12_2" style="display: none;"><br>
-                        <h5>12.2  Acciones para la prevención y atención del embarazo adolescente.</h5>
+                        <h5>12.2  Acciones para la prevenci&oacute;n y atenci&oacute;n del embarazo adolescente.</h5>
                     </div>
                     <div id="sub_12_3" style="display: none;"><br>
-                        <h5>12.3  Desarrollo de propuestas a partir de experiencias exitosas para la autonomía económica de las mujeres en la Ciudad de México.</h5>
+                        <h5>12.3  Desarrollo de propuestas a partir de experiencias exitosas para la autonom&iacute;a econ&oacute;mica de las mujeres en la Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_12_4" style="display: none;"><br>
-                        <h5>12.4  Propuestas sobre alternativas sociales para el trabajo de cuidado.</h5>
+                        <h5>12.4  Propuestas sobre alternativas sociales para el trabajo de cuidado.</h5>
                     </div>
                     <div id="sub_12_5" style="display: none;"><br>
-                        <h5>12.5  Propuestas para la atención, prevención de la violencia contra las niñas y mujeres en la  Ciudad de México.</h5>
+                        <h5>12.5  Propuestas para la atenci&oacute;n, prevenci&oacute;n de la violencia contra las ni&ntilde;as y mujeres en la  Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_12_6" style="display: none;"><br>
-                        <h5>12.6  Propuesta para promover y garantizar los derechos sexuales y reproductivos de las mujeres y las adolescentes en la Ciudad de México.</h5>
+                        <h5>12.6  Propuesta para promover y garantizar los derechos sexuales y reproductivos de las mujeres y las adolescentes en la Ciudad de M&eacute;xico.</h5>
                     </div>
                     <div id="sub_12_7" style="display: none;"><br>
-                        <h5>12.7  Proyectos para el desarrollo de habilidades digitales de las mujeres  y niñas a fin de  favorecer su empoderamiento.</h5>
+                        <h5>12.7  Proyectos para el desarrollo de habilidades digitales de las mujeres  y ni&ntilde;as a fin de  favorecer su empoderamiento.</h5>
                     </div>
                     <div id="sub_12_8" style="display: none;"><br>
-                        <h5>12.8  Acciones para la recuperación y sustentabilidad ecológica con  participación de las mujeres y con enfoque productivo.</h5>
+                        <h5>12.8  Acciones para la recuperaci&oacute;n y sustentabilidad ecol&oacute;gica con  participaci&oacute;n de las mujeres y con enfoque productivo.</h5>
                     </div>
                     <div id="sub_12_9" style="display: none;"><br>
-                        <h5>12.9  Acciones que promuevan el ejercicio de los derechos humanos de las mujeres y las niñas en la Ciudad de México a través de actividades audivisuales, culturales y artes escénicas, con énfasis en grupos más desfavorecidos.</h5>
+                        <h5>12.9  Acciones que promuevan el ejercicio de los derechos humanos de las mujeres y las ni&ntilde;as en la Ciudad de M&eacute;xico a trav&eacute;s de actividades audivisuales, culturales y artes esc&eacute;nicas, con &eacute;nfasis en grupos m&aacute;s desfavorecidos.</h5>
                     </div>
                     <div id="sub_12_10" style="display: none;"><br>
-                        <h5>12.10  Propuestas para promoción del goce y ejercicio de los derechos humanos de las trabajadoras del hogar.</h5>
+                        <h5>12.10  Propuestas para promoci&oacute;n del goce y ejercicio de los derechos humanos de las trabajadoras del hogar.</h5>
                     </div>
                     <div id="sub_12_11" style="display: none;"><br>
-                        <h5>12.11  Propuestas para la reducción de la violencia y la discriminación contra las mujeres lesbianas, bisexuales, transgénero y transexuales, así como promover su empoderamiento.</h5>
+                        <h5>12.11  Propuestas para la reducci&oacute;n de la violencia y la discriminaci&oacute;n contra las mujeres lesbianas, bisexuales, transg&eacute;nero y transexuales, as&iacute; como promover su empoderamiento.</h5>
                     </div>
                     <div id="sub_12_12" style="display: none;"><br>
-                        <h5>12.12  Promoción de la defensa, goce y el ejercicio de los derechos humanos de las mujeres en reclusión.</h5>
+                        <h5>12.12  Promoci&oacute;n de la defensa, goce y el ejercicio de los derechos humanos de las mujeres en reclusi&oacute;n.</h5>
                     </div>
                     <div id="sub_12_13" style="display: none;"><br>
-                        <h5>12.13  Fomento de acciones para la prevención y atención de las víctimas de la trata y la explotación humana con especial énfasis en protección a mujeres indígenas y migrantes.</h5>
+                        <h5>12.13  Fomento de acciones para la prevenci&oacute;n y atenci&oacute;n de las v&iacute;ctimas de la trata y la explotaci&oacute;n humana con especial &eacute;nfasis en protecci&oacute;n a mujeres ind&iacute;genas y migrantes.</h5>
                     </div>
                    
             </div>
             </div>
         <br><br>
-                <h3 align=center >Delegaciones de Intervención y/o Interacción</h3><br><br>
+                <h3 align=center >Delegaciones de Intervenci&oacute;n y/o Interacci&oacute;n</h3><br><br>
             <div id="del_intera">
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="SI" name="del_alvaro" id="1">Álvaro Obregón</label>
+                    <label><input type="checkbox" value="SI" name="del_alvaro" id="1">Álvaro Obreg&oacute;n</label>
                 </div>
                 <div class="col-md-2">
                     <label><input type="checkbox" value="SI" name="del_azcapotzalco" id="2">Azcapotzalco</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="SI" name="del_benito" id="3">Benito Juárez</label>
+                    <label><input type="checkbox" value="SI" name="del_benito" id="3">Benito Ju&aacute;rez</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="SI" name="del_coyoacan" id="4">Coyoacán</label>
+                    <label><input type="checkbox" value="SI" name="del_coyoacan" id="4">Coyoac&aacute;n</label>
                 </div>
                 <div class="col-md-2">
                     <label><input type="checkbox" value="SI"name="del_cuajimalpa" id="5">Cuajimalpa</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="SI" name="del_cuauhtemoc" id="6">Cuauhtémoc</label>
+                    <label><input type="checkbox" value="SI" name="del_cuauhtemoc" id="6">Cuauht&eacute;moc</label>
                 </div>
                 <div class="col-md-2">
                     <label><input type="checkbox" value="SI" name="del_gustavo" id="7">Gustavo A. Madero</label>
@@ -491,7 +548,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     <label><input type="checkbox" value="SI" name="del_milpa" id="12">Milpa Alta</label>
                 </div>
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="SI" name="del_tlahuac" id="13">Tláhuac</label>
+                    <label><input type="checkbox" value="SI" name="del_tlahuac" id="13">Tl&aacute;huac</label>
                 </div>
                 <div class="col-md-2">
                     <label><input type="checkbox" value="SI" name="del_tlalpan" id="14">Tlalpan</label>
@@ -511,8 +568,8 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             </div>
             <div class="row"><br><br>
                 <div class="col-md-3">
-                    <label>Institución que dictamina</label></br>
-                        <select name="ins_dic" required>
+                    <label>Instituci&oacute;n que dictamina</label></br>
+                        <select name="ins_dic">
                             <option value=""></option>
                             <option value="DGIDS">DGIDS</option>
                             <option value="DIF" >DIF</option>
@@ -522,7 +579,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <label>Tipo de proyecto</label></br>
-                        <select name="tipo_proyecto" required>
+                        <select name="tipo_proyecto">
                             <option value=""></option>
                             <option value="NUEVO">Nuevo</option>
                             <option value="CONTINUIDAD">Continuidad</option>
@@ -530,13 +587,13 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                 <div class="col-md-2 col-md-offset-2">
                     <label>Monto solicitado</label></br>
-                    <input type="text" name="mon_sol" class="mon_sol" placeholder="Monto Solicitado"  required onkeypress="return soloNumeros(event)"></br>
+                    <input type="text" name="mon_sol" class="mon_sol" placeholder="Monto Solicitado"></br>
                 </div>
             </div><br>
             <div class="row">
                 <div class="col-md-3">
-                    <label>Población Objetivo</label>
-                        <select name="pob_obj" required>
+                    <label>Poblaci&oacute;n Objetivo</label>
+                        <select name="pob_obj">
                             <option value=""></option>
                             <option value="1">Personas Adultas Mayores</option>
                             <option value="2">Comites Ciudadanos</option>
@@ -544,26 +601,26 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <option value="4">Hombres</option>
                             <option value="5">Jovenes</option>
                             <option value="6">Mujeres</option>
-                            <option value="7">Niñas/Niños</option>
+                            <option value="7">Ni&ntilde;as/Ni&ntilde;os</option>
                             <option value="8">Organizaciones Sociales</option>
-                            <option value="9">Población en General</option>
-                            <option value="10">Población LGBTTTI</option>
+                            <option value="9">Poblaci&oacute;n en General</option>
+                            <option value="10">Poblaci&oacute;n LGBTTTI</option>
                             <option value="11">Pueblos y Colectividades Indigenas</option>
                         </select>
                 </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Mujeres</label></br>
-                            <input type="text" name="num_mujeres" class="internet" placeholder="No. Mujeres" required onkeypress="return soloNumeros(event)">
+                            <input type="text" name="num_mujeres" class="internet" placeholder="No. Mujeres">
                         </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Hombres</label></br>
-                            <input type="text" name="num_hombres" class="internet" placeholder="No. Hombres"  required onkeypress="return soloNumeros(event)"></br>
+                            <input type="text" name="num_hombres" class="internet" placeholder="No. Hombres"></br>
                         </div>
             </div></br>
             <div class="row">
                     <div class="form-group">
                         <label for="comment">Objetivo general del Proyecto</label>
-                        <textarea  name="objetivo" class="form-control" rows="5" id="comment" onChange="conMayusculas(this)" required=""  ></textarea>
+                        <textarea  name="objetivo" class="form-control" rows="5" id="comment"></textarea>
                     </div>
 
             </div>
@@ -572,35 +629,35 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                     <label>Requisitos</label>
                     <tbody>
                         <tr>
-                            <td>1. Proyecto y ficha técnica (original y copia impresas)</td>
+                            <td>1. Proyecto y ficha t&eacute;cnica (original y copia impresas)</td>
                             <td> 
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_ficha_tec" value='SI' required>Sí
+                                        <input type="radio" name="rec_ficha_tec" value='SI'>S&iacute;
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_ficha_tec" value='NO' required>No
-                                    </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2. Archivo electrónico del proyecto y ficha técnica (CD o USB)</td>
-                            <td>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="rec_arch_elec" value='SI' required>Sí
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="rec_arch_elec" value='NO' required>No
+                                        <input type="radio" name="rec_ficha_tec" value='NO'>No
                                     </label>
                             </td>
                         </tr>
                         <tr>
-                            <td>3. Copia fotostática simple de la Constancia de inscripción en el Registro de Organizaciones Civiles del Distrito Federal</td>
+                            <td>2. Archivo electr&oacute;nico del proyecto y ficha t&eacute;cnica (CD o USB)</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_insc" value='SI' required>Sí
+                                        <input type="radio" name="rec_arch_elec" value='SI'>S&iacute;
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_insc" value='NO' required>No
+                                        <input type="radio" name="rec_arch_elec" value='NO'>No
+                                    </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3. Copia fotost&aacute;tica simple de la Constancia de inscripci&oacute;n en el Registro de Organizaciones Civiles del Distrito Federal</td>
+                            <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="rec_cons_insc" value='SI'>S&iacute;
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="rec_cons_insc" value='NO'>No
                                     </label>
                             </td>
                         </tr>
@@ -608,32 +665,32 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                             <td>4. Carta compromiso (original y copia impresa)</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_carta" value='SI' required>Sí
+                                        <input type="radio" name="rec_carta" value='SI'>S&iacute;
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_carta" value='NO' required>No
-                                    </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5. Constancia de participación de la plática informativa</td>
-                            <td>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_plat" value='SI' required>Sí
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="rec_cons_plat" value='NO' required>No
+                                        <input type="radio" name="rec_carta" value='NO'>No
                                     </label>
                             </td>
                         </tr>
                         <tr>
-                            <td>6. Documento de terminación 2014 y/o 2013</td>
+                            <td>5. Constancia de participaci&oacute;n de la pl&aacute;tica informativa</td>
                             <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_doc_term" value='SI' required>Sí
+                                        <input type="radio" name="rec_cons_plat" value='SI'>S&iacute;
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="rec_doc_term" value='NO' required>No
+                                        <input type="radio" name="rec_cons_plat" value='NO'>No
+                                    </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6. Documento de terminaci&oacute;n 2014 y/o 2013</td>
+                            <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="rec_doc_term" value='SI'>S&iacute;
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="rec_doc_term" value='NO'>No
                                     </label>
 </td></td>
                         </tr>
@@ -643,7 +700,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                     <div class="form-group">
                         <label for="comment">Observaciones</label>
-                        <textarea name="observaciones" class="form-control" rows="1" id="comment" onChange="conMayusculas(this)"   ></textarea>
+                        <textarea name="observaciones" class="form-control" rows="1" id="comment"></textarea>
                     </div>
             </div>
             <div class="row">
@@ -655,19 +712,18 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 <?php } ?>
                 <div class="col-md-4 col-md-offset-2">
                     <label>Nombre de la persona que entrega el proyecto</label></br>
-                    <input type="text" name="nom_per_entrega" class="registro" placeholder="Nombre" size="40" onChange="conMayusculas(this)" required  ></br>
+                    <input type="text" name="nom_per_entrega" class="registro" placeholder="Nombre" size="40"></br>
                 </div>
                 <div class="col-md-1">
                     <label>Cargo</label></br>
-                    <input type="text" name="cargo" class="registro" placeholder="Cargo" onChange="conMayusculas(this)" required=""></br>
+                    <input type="text" name="cargo" class="registro" placeholder="Cargo"></br>
                 </div>
             </div>
-            <br>
             <div class="row"><br><br>
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-6">
                     <button type="submit"class="btn btn-danger btn-md" >Ingresar</button><br><br>
                 </div>
-                <div class="col-md-1 col-md-offset-3">
+                <div class="col-md-1 col-md-offset-1">
                     <a href='control/cerrarSesion.php' class="btn btn-primary btn-md" target="_top">Salir</a><br><br>
 
                 </div>

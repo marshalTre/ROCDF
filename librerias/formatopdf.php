@@ -1,12 +1,16 @@
 <?php
 
-header('Content-Type: text/html; charset=UTF-8');
 
 require_once '../control/datos_conexion.php';
 
-$consulta = "SELECT folio, nom_org, rep_legal, nom_proyecto, nom_resp, eje_tem, sub_eje, tipo_proyecto, 
-    rec_ficha_tec, rec_arch_elec, rec_cons_insc, rec_carta, rec_cons_plat, rec_doc_term, resp_proyecto, 
-    nom_per_entrega FROM registro WHERE folio = '1' ";
+$UsId = filter_input(INPUT_GET, 'UsId');
+
+$consulta = "SELECT registro_gral.id_folio, registro_gral.nom_org, registro_gral.rep_legal, registro_gral.nom_proyecto,
+    registro_gral.nom_resp, registro_gral.tipo_proyecto, registro_gral.rec_ficha_tec, registro_gral.rec_arch_elec,
+    registro_gral.rec_copia_insc, registro_gral.rec_carta, registro_gral.rec_cons_plat, registro_gral.rec_doc_term,
+    registro_gral.nom_per_entrega, cat_eje_tematico.tema as eje, sub_eje.tema, usuarios.nombre FROM registro_gral, cat_eje_tematico, sub_eje, usuarios 
+    WHERE cat_eje_tematico.numero = registro_gral.id_cat_eje and sub_eje.sub_eje = registro_gral.id_sub_eje and 
+    registro_gral.id_usuarios = usuarios.id_usuarios ORDER BY registro_gral.id_folio DESC LIMIT 1";    
 $query = mysqli_query(conector::conexion(), $consulta);
 
 if ($reg = mysqli_fetch_array($query, MYSQLI_BOTH)) {
@@ -21,8 +25,8 @@ require('fpdf.php');
 
 $pdf = new FPDF();
 $pdf->AddPage();
-$pdf->Image('../images/angel.png',15,10,25);
-$pdf->Image('../images/dgids.png',175,10,25);
+$pdf->Image('../images/letrero.png',8,5,25);
+$pdf->Image('../images/dgids.png',175,8,25);
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(190,10,utf8_decode("PROGRAMA DE COINVERSIÓN PARA EL DESARROLLO SOCIAL"),0,0,'C');
 $pdf->Ln(4);
@@ -41,7 +45,8 @@ $pdf->Cell(10,5,utf8_decode("Folio: "),0,0,'L');
 $pdf->SetXY(32,70);
 $pdf->SetFont('Arial','B',8);
 $pdf->SetFillColor(191, 191, 191);
-$pdf->Cell(15,5,$reg['folio'],1,0,'C',true);
+$pdf->Cell(5,5,$reg['id_folio'],0,0,'R',true);
+$pdf->Cell(8,5,strftime("/ %Y"),0,0,'C',true);
 $pdf->SetXY(18,77);
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(45,5,utf8_decode("Nombre de la organización: "),0,0,'L');
@@ -71,14 +76,14 @@ $pdf->SetFont('Arial','',8);
 $pdf->Cell(22,5,utf8_decode("Eje temático: "),0,0,'L');
 $pdf->SetXY(40,105);
 $pdf->SetFont('Arial','B',8);
-$pdf->Cell(150,5,$reg['eje_tem'],0,0,'L');
+$pdf->Cell(150,5,$reg['eje'],0,0,'L');
 $pdf->SetXY(18,112);
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(14,5,utf8_decode("Subeje: "),0,0,'L');
 $pdf->SetXY(35,112);
 $pdf->SetFont('Arial','B',6);
 $pdf->SetFillColor(255, 255, 255);
-$pdf->MultiCell(160,3,$reg['sub_eje'],0,'J',false);
+$pdf->MultiCell(160,3,$reg['tema'],0,'J',false);
 $pdf->SetXY(18,123);
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(48,5,utf8_decode("Proyecto nuevo / continuidad: "),0,0,'L');
@@ -105,7 +110,7 @@ $pdf->SetFont('Arial','',8);
 $pdf->Cell(117,5,utf8_decode("c. Copia fotostática simple de la Constancia de Inscripción en el Registro"),0,0,'L');
 $pdf->SetXY(170,157);
 $pdf->SetFont('Arial','B',8);
-$pdf->Cell(8,5,$reg['rec_cons_insc'],1,0,'C');
+$pdf->Cell(8,5,$reg['rec_copia_insc'],1,0,'C');
 $pdf->SetXY(20,159);
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(87,5,utf8_decode(" de Organizaciones Civiles de la Ciudad de México"),0,0,'L');
@@ -122,7 +127,7 @@ $pdf->SetFont('Arial','B',8);
 $pdf->Cell(8,5,$reg['rec_cons_plat'],1,0,'C');
 $pdf->SetXY(20,180);
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,utf8_decode("f. En su caso documento de terminación 2015 y/o 2014"),0,0,'L');
+$pdf->Cell(90,5,utf8_decode("f. En su caso documento de terminación 2014 y/o 2015"),0,0,'L');
 $pdf->SetXY(170,180);
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(8,5,$reg['rec_doc_term'],1,0,'C');
@@ -136,7 +141,7 @@ $pdf->SetXY(125,210);
 $pdf->Cell(65,3,utf8_decode("_________________________________"),0,0,'C');
 $pdf->SetXY(20,215);
 $pdf->SetFont('Arial','B',8);
-$pdf->Cell(65,3,$reg['resp_proyecto'],0,0,'C');
+$pdf->Cell(65,3,$reg['id_usuarios'],0,0,'C');
 $pdf->SetXY(125,215);
 $pdf->Cell(65,3,$reg['nom_per_entrega'],0,0,'C');
 $pdf->SetXY(20,220);

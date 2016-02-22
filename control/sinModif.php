@@ -1185,7 +1185,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                         <label style="margin-bottom: 1%;">Ahora tu captura es correcta puedes Imprimir o Aceptar y seguir capturando</label></center>
                 </form>
                 <div class="col-md-1 col-md-offset-2">
-                    <button type="submit"class="imp" onclick = "location = '../librerias/formatopdf.php?UsId=<?php echo $reg['id_usuarios']?>'"/>Imprimir</button><br><br>
+                    <button type="submit"class="btn btn-primary btn-md" onclick = "location = '../librerias/formatopdf.php?UsId=<?php echo $reg['id_usuarios']?>'"/>Imprimir</button><br><br>
                 </div>
                 <div class="col-md-1 col-md-offset-4">
                     <button type="submit"class="btn btn-primary btn-md" onclick = "location = '../administradores.php'"/>Aceptar</button><br><br>

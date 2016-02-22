@@ -9,7 +9,7 @@ $consulta = "SELECT registro_gral.id_folio, registro_gral.nom_org, registro_gral
     registro_gral.nom_resp, registro_gral.tipo_proyecto, registro_gral.rec_ficha_tec, registro_gral.rec_arch_elec,
     registro_gral.rec_copia_insc, registro_gral.rec_carta, registro_gral.rec_cons_plat, registro_gral.rec_doc_term,
     registro_gral.nom_per_entrega, cat_eje_tematico.tema as eje, sub_eje.tema, usuarios.nombre FROM registro_gral, cat_eje_tematico, sub_eje, usuarios 
-    WHERE cat_eje_tematico.numero = registro_gral.id_cat_eje and sub_eje.sub_eje = registro_gral.id_sub_eje and 
+    WHERE registro_gral.id_usuarios = '" . $UsId . "' and cat_eje_tematico.numero = registro_gral.id_cat_eje and sub_eje.sub_eje = registro_gral.id_sub_eje and 
     registro_gral.id_usuarios = usuarios.id_usuarios ORDER BY registro_gral.id_folio DESC LIMIT 1";    
 $query = mysqli_query(conector::conexion(), $consulta);
 
@@ -141,7 +141,7 @@ $pdf->SetXY(125,210);
 $pdf->Cell(65,3,utf8_decode("_________________________________"),0,0,'C');
 $pdf->SetXY(20,215);
 $pdf->SetFont('Arial','B',8);
-$pdf->Cell(65,3,$reg['id_usuarios'],0,0,'C');
+$pdf->Cell(65,3,$reg['nombre'],0,0,'C');
 $pdf->SetXY(125,215);
 $pdf->Cell(65,3,$reg['nom_per_entrega'],0,0,'C');
 $pdf->SetXY(20,220);

@@ -17,7 +17,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        
+        <meta http-equiv='cache-control' content='no-cache'> <meta http-equiv='expires' content='0'> <meta http-equiv='pragma' content='no-cache'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
@@ -720,10 +720,10 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
             </div>
             <div class="row"><br><br>
-                <div class="col-md-1 col-md-offset-6">
-                    <button type="submit"class="btn btn-danger btn-md" >Ingresarw</button><br><br>
+                <div class="col-md-1 col-md-offset-4">
+                    <button type="submit"class="btn btn-danger btn-md" >Ingresar</button><br><br>
                 </div>
-                <div class="col-md-1 col-md-offset-1">
+                <div class="col-md-1 col-md-offset-2">
                     <a href='control/cerrarSesion.php' class="btn btn-primary btn-md" target="_top">Salir</a><br><br>
 
                 </div>

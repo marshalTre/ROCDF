@@ -1174,7 +1174,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                         </div>
                         <div class="col-md-4 col-md-offset-2">
                             <label>Nombre de la persona que entrega el proyecto</label></br>
-                            <input type="text" name="nom_per_entrega" class="registro" value="<?php echo $reg['nom_per_entrega'] ?>" size="40" onChange="conMayusculas(this)"   ></br>
+                            <input type="text" name="nom_per_entrega" class="registro" value="<?php echo $reg['nom_per_entrega'] ?>" size="40" onChange="conMayusculas(this)"></br>
                         </div>
                         <div class="col-md-1">
                             <label>Cargo</label></br>
@@ -1189,7 +1189,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                     </div>
                 </form>
                 <div class="col-md-1 col-md-offset-2">
-                    <button type="submit"class="imp" onclick = "location = '../librerias/formatopdf.php?UsId=<?php echo $reg['id_usuarios']?>'"/>Imprimir</button><br><br>
+                    <button type="submit"class="imp"  onclick = "window.open('../librerias/formatopdf.php?UsId=<?php echo $reg['id_usuarios']?>');" target="_blank"/>Imprimir</button><br><br>
                 </div>
                 <div class="col-md-1 col-md-offset-3">
                     <button type="submit"class="btn btn-primary btn-md" onclick = "location = '../administradores.php'"/>Aceptar</button><br><br>

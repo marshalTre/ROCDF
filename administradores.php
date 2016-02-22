@@ -514,7 +514,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 <h3 align=center >Delegaciones de Intervenci&oacute;n y/o Interacci&oacute;n</h3><br><br>
             <div id="del_intera">
                 <div class="col-md-2">
-                    <label><input type="checkbox" value="SI" name="del_alvaro" id="1">Álvaro Obreg&oacute;n</label>
+                    <label><input type="checkbox" value="SI" name="del_alvaro" id="1">&Aacute;lvaro Obreg&oacute;n</label>
                 </div>
                 <div class="col-md-2">
                     <label><input type="checkbox" value="SI" name="del_azcapotzalco" id="2">Azcapotzalco</label>

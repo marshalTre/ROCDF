@@ -832,7 +832,7 @@ while ($reg = mysqli_fetch_array($query2)) {
                                           if ($reg['del_alvaro'] == 'SI') {
                                               echo 'checked';
                                           }
-                                          ?>>&Áacute;lvaro Obreg&oacute;n</label>
+                                          ?>>&Aacute;lvaro Obreg&oacute;n</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_azc" id="2" <?php

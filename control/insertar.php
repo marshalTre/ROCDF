@@ -1,5 +1,7 @@
 <?php
 
+header('Content-Type: text/html; charset=UTF-8');
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -79,12 +81,11 @@ $consulta = "INSERT INTO registro_gral( nom_org, rep_legal, registro, calle, num
 
 $query = mysqli_query(conector::conexion(), $consulta);
 
-if($query){
-    
-    echo 'Se genero bien el query';
-}else{
-    
-    echo 'No se genera el query'. mysqli_error(conector::conexion(), $consulta);
-//header('Location: ./controlador.php?numUs= '. $resp_proyecto.'');
+//if($query){
+//    
+//    echo 'Se genero bien el query';
+//}else{
+//    
+//    echo 'No se genera el query'. mysqli_error(conector::conexion(), $consulta);
+header('Location: ./controlador.php?numUs= '. $resp_proyecto.'');
 
-}

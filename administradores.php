@@ -721,7 +721,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             </div>
             <div class="row"><br><br>
                 <div class="col-md-1 col-md-offset-6">
-                    <button type="submit"class="btn btn-danger btn-md" >Ingresar</button><br><br>
+                    <button type="submit"class="btn btn-danger btn-md" >Ingresarw</button><br><br>
                 </div>
                 <div class="col-md-1 col-md-offset-1">
                     <a href='control/cerrarSesion.php' class="btn btn-primary btn-md" target="_top">Salir</a><br><br>

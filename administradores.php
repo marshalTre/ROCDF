@@ -7,6 +7,7 @@ if (isset($_SESSION["session_user"])) {
     header("location:index.html");
     exit();
 }
+error_reporting(0);
 require_once './control/datos_conexion.php';
 $user="SELECT * from usuarios WHERE usuario='".$_SESSION["session_user"]."'";
 $queryUs = mysqli_query(conector::conexion(), $user);
@@ -35,6 +36,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
         <script type="text/javascript" src="css/bootstrap-3.3.6-dist/js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/eje.js"></script>
         <script type="text/javascript" src="js/subeje.js"></script>
+        <script type="text/javascript" src="js/mayusculas.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
  
@@ -54,7 +56,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
 
     </head>
 
-    <body>
+    <body onload="nobackbutton();">
         <header>
             <center>
                 <image id="image1" src="images/sedeso.png"/> 
@@ -144,7 +146,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-6">
                     <label>Nombre de la organizaci&oacute;n</label></br>
-                    <input type="text" name="nom_org" class="organizacion" placeholder="Nombre de la organizaci&oacute;n" size="70">
+                    <input type="text" name="nom_org" class="organizacion" placeholder="Nombre de la organizaci&oacute;n" size="70" onChange="conMayusculas(this)" required >
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <label>Tipo de organizaci&oacute;n</label></br>
@@ -160,25 +162,25 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-5">            
                     <label>Nombre del representante legal</label></br>
-                    <input type="text" name="rep_legal" class="repre" placeholder="Representante" size="60">
+                    <input type="text" name="rep_legal" class="repre" placeholder="Representante" size="60" onChange="conMayusculas(this)" required >
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <label>Registro</label></br>
-                    <input type="text" name="registro" class="registro" placeholder="Registro"></br>
+                    <input type="text" name="registro" class="registro" placeholder="Registro" onChange="conMayusculas(this)" required ></br>
                 </div>
             </div></br></br>
             <div class="row">
                 <div class="col-md-3">
                     <label>Calle</label></br>
-                    <input type="text" name="calle" class="calle" placeholder="Calle" size="40">
+                    <input type="text" name="calle" class="calle" placeholder="Calle" size="40" onChange="conMayusculas(this)" required >
                 </div>
                 <div class="col-md-2 col-md-offset-1">
                     <label>N&uacute;mero ext. o int.</label>
-                    <input type="text" name="num_ext" class="num_ext" placeholder="N&uacute;mero"></br>
+                    <input type="text" name="num_ext" class="num_ext" placeholder="N&uacute;mero" onChange="conMayusculas(this)" required ></br>
                 </div>
                 <div class="col-md-2">
                     <label>Colonia</label></br>
-                    <input type="text" name="colonia" class="colonia" placeholder="Colonia"></br>
+                    <input type="text" name="colonia" class="colonia" placeholder="Colonia" onChange="conMayusculas(this)" required ></br>
                 </div>
                 <div class="col-md-2">
                     <label>Delegaci&oacute;n Pol&iacute;tica</label></br>
@@ -206,15 +208,15 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                 <div class="col-md-2"> 
                     <label>C&oacute;digo Postal</label></br>
-                    <input type="text" name="cod_postal" class="cod_postal" placeholder="C.P." size="6"></br>
+                    <input type="text" name="cod_postal" class="cod_postal" placeholder="C.P." size="6" required="" onkeypress="return soloNumeros(event)"></br>
                 </div>
                 <div class="col-md-2">                
                     <label>Tel&eacute;fono Fijo</label></br>                
-                    <input type="text" name="tel_fijo" class="tel_fijo" placeholder="Tel&eacute;fono"></br>
+                    <input type="text" name="tel_fijo" class="tel_fijo" placeholder="Tel&eacute;fono" required="" onkeypress="return soloNumeros(event)"></br>
                 </div>
                 <div class="col-md-2">
                     <label>Tel&eacute;fono M&oacute;vil</label></br>
-                    <input type="text" name="tel_movil" class="tel_movil" placeholder="Tel&eacute;fono"></br>
+                    <input type="text" name="tel_movil" class="tel_movil" placeholder="Tel&eacute;fono" required="" onkeypress="return soloNumeros(event)"></br>
                 </div>
                 <div class="col-md-2">
                     <label>P&aacute;gina de Internet</label></br>
@@ -222,13 +224,13 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                 <div class="col-md-3">
                     <label>Correo Electr&oacute;nico</label></br>                
-                    <input type="text" name="correo" class="correo" placeholder="Email"></br></br>
+                    <input type="email" name="correo" class="correo" placeholder="Email" required=""></br></br>
                 </div>
             </div>
                 <label>Nombre del Proyecto</label></br>
-                <input type="text" name="nom_proyecto" class="nom_proyecto" placeholder="Proyecto" size="100"></br></br>
+                <input type="text" name="nom_proyecto" class="nom_proyecto" placeholder="Proyecto" size="100" onChange="conMayusculas(this)" required ></br></br>
                 <label>Nombre del Responsable del Proyecto</label></br>
-                <input type="text" name="nom_resp" class="nom_resp" placeholder="Responsable del proyecto" size="60"></br></br>
+                <input type="text" name="nom_resp" class="nom_resp" placeholder="Responsable del proyecto" size="60" onChange="conMayusculas(this)" required ></br></br>
             <div class="row">
                 <div class="col-md-2">
                     <label>Eje Tem&aacute;tico</label></br>
@@ -587,7 +589,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                 <div class="col-md-2 col-md-offset-2">
                     <label>Monto solicitado</label></br>
-                    <input type="text" name="mon_sol" class="mon_sol" placeholder="Monto Solicitado"></br>
+                    <input type="text" name="mon_sol" class="mon_sol" placeholder="Monto Solicitado" required="" onkeypress="return soloNumeros(event)"></br>
                 </div>
             </div><br>
             <div class="row">
@@ -610,17 +612,17 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Mujeres</label></br>
-                            <input type="text" name="num_mujeres" class="internet" placeholder="No. Mujeres">
+                            <input type="text" name="num_mujeres" class="internet" placeholder="No. Mujeres" required="" onkeypress="return soloNumeros(event)">
                         </div>
                         <div class="col-md-2 col-md-offset-2">
                             <label>Hombres</label></br>
-                            <input type="text" name="num_hombres" class="internet" placeholder="No. Hombres"></br>
+                            <input type="text" name="num_hombres" class="internet" placeholder="No. Hombres" required="" onkeypress="return soloNumeros(event)"></br>
                         </div>
             </div></br>
             <div class="row">
                     <div class="form-group">
                         <label for="comment">Objetivo general del Proyecto</label>
-                        <textarea  name="objetivo" class="form-control" rows="5" id="comment"></textarea>
+                        <textarea  name="objetivo" class="form-control" rows="5" id="comment" onChange="conMayusculas(this)" required ></textarea>
                     </div>
 
             </div>
@@ -700,7 +702,7 @@ $queryUs = mysqli_query(conector::conexion(), $user);
             <div class="row">
                     <div class="form-group">
                         <label for="comment">Observaciones</label>
-                        <textarea name="observaciones" class="form-control" rows="1" id="comment"></textarea>
+                        <textarea name="observaciones" class="form-control" rows="1" id="comment" onChange="conMayusculas(this)" required ></textarea>
                     </div>
             </div>
             <div class="row">
@@ -712,11 +714,11 @@ $queryUs = mysqli_query(conector::conexion(), $user);
                 <?php } ?>
                 <div class="col-md-4 col-md-offset-2">
                     <label>Nombre de la persona que entrega el proyecto</label></br>
-                    <input type="text" name="nom_per_entrega" class="registro" placeholder="Nombre" size="40"></br>
+                    <input type="text" name="nom_per_entrega" class="registro" placeholder="Nombre" size="40" onChange="conMayusculas(this)" required ></br>
                 </div>
                 <div class="col-md-1">
                     <label>Cargo</label></br>
-                    <input type="text" name="cargo" class="registro" placeholder="Cargo"></br>
+                    <input type="text" name="cargo" class="registro" placeholder="Cargo" onChange="conMayusculas(this)" required ></br>
                 </div>
             </div>
             <div class="row"><br><br>

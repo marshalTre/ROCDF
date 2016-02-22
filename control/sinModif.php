@@ -69,10 +69,11 @@ while ($reg = mysqli_fetch_array($query2)) {
 
                 });
             </script>
+         
 
         </head>
 
-        <body>
+        <body onload="nobackbutton();">
             <header>
                 <center>
                     <image id="image1" src="../images/sedeso.png"/> 
@@ -85,10 +86,10 @@ while ($reg = mysqli_fetch_array($query2)) {
             </header>
             <nav id="navigation">
                 <center>
-<!--                    <ul>
-
-                        <li><a href='./cerrarSesion.php' class="btn2" target="_top">Salir</a></li>
-                    </ul>-->
+                    <!--                    <ul>
+                    
+                                            <li><a href='./cerrarSesion.php' class="btn2" target="_top">Salir</a></li>
+                                        </ul>-->
                     <?php
                     setlocale(LC_TIME, 'es_ES.UTF-8');
                     echo strftime("%A, %d de %B de %Y")
@@ -290,22 +291,22 @@ while ($reg = mysqli_fetch_array($query2)) {
                                 ?>>Eje 2</option>
 
                                 <option value="3" <?php
-                                        if ($reg["id_cat_eje"] == '3') {
-                                            echo "selected";
-                                        }
-                                        ?>>Eje 3</option>
+                                if ($reg["id_cat_eje"] == '3') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 3</option>
 
                                 <option value="4" <?php
-                                        if ($reg["id_cat_eje"] == '4') {
-                                            echo "selected";
-                                        }
-                                        ?>>Eje 4</option>
+                                if ($reg["id_cat_eje"] == '4') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 4</option>
 
                                 <option value="5" <?php
-                            if ($reg["id_cat_eje"] == '5') {
-                                echo "selected";
-                            }
-                                        ?>>Eje 5</option>
+                                if ($reg["id_cat_eje"] == '5') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 5</option>
 
                                 <option value="6" <?php
                                 if ($reg["id_cat_eje"] == '6') {
@@ -320,34 +321,34 @@ while ($reg = mysqli_fetch_array($query2)) {
                                 ?>>Eje 7</option>
 
                                 <option value="8" <?php
-                                        if ($reg["id_cat_eje"] == '8') {
-                                            echo "selected";
-                                        }
-                                        ?>>Eje 8</option>
+                                if ($reg["id_cat_eje"] == '8') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 8</option>
 
                                 <option value="9" <?php
-                                        if ($reg["id_cat_eje"] == '9') {
-                                            echo "selected";
-                                        }
-                                        ?>>Eje 9</option>
+                                if ($reg["id_cat_eje"] == '9') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 9</option>
 
                                 <option value="10" <?php
-                            if ($reg["id_cat_eje"] == '10') {
-                                echo "selected";
-                            }
-                                        ?>>Eje 10</option>
+                                if ($reg["id_cat_eje"] == '10') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 10</option>
 
                                 <option value="11" <?php
-                            if ($reg["id_cat_eje"] == '11') {
-                                echo "selected";
-                            }
-                            ?>>Eje 11</option>
+                                if ($reg["id_cat_eje"] == '11') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 11</option>
 
                                 <option value="12" <?php
-                            if ($reg["id_cat_eje"] == '12') {
-                                echo "selected";
-                            }
-                            ?>>Eje 12</option>
+                                if ($reg["id_cat_eje"] == '12') {
+                                    echo "selected";
+                                }
+                                ?>>Eje 12</option>
 
                             </select></br></br>
                         </div>
@@ -397,265 +398,317 @@ while ($reg = mysqli_fetch_array($query2)) {
                             <select id="subeje" name="id_sub_eje" onChange="mostrarr(this.value);">
                                 <option value=""></option>
                                 <option value="sub_1_1" <?php
-                                if ($reg["id_sub_eje"] == 'sub_1_1') {
-                                    echo "selected";
-                                }?>>1.1</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_1_1') {
+                                            echo "selected";
+                                        }
+                                        ?>>1.1</option>
+
                                 <option value="sub_1_2" <?php
-                                if ($reg["id_sub_eje"] == 'sub_1_2"') {
-                                    echo "selected";
-                                }?>>1.2</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_1_2"') {
+                                            echo "selected";
+                                        }
+                                        ?>>1.2</option>
+
                                 <option value="sub_1_3" <?php
-                                if ($reg["id_sub_eje"] == 'sub_1_3') {
-                                    echo "selected";
-                                }?>>1.3</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_1_3') {
+                                echo "selected";
+                            }
+                                        ?>>1.3</option>
+
                                 <option value="sub_1_4" <?php
                                 if ($reg["id_sub_eje"] == 'sub_1_4') {
                                     echo "selected";
-                                }?>>1.4</option>
-                                
+                                }
+                                ?>>1.4</option>
+
                                 <option value="sub_2_1" <?php
                                 if ($reg["id_sub_eje"] == 'sub_2_1') {
                                     echo "selected";
-                                }?>>2.1</option>
-                                
+                                }
+                                ?>>2.1</option>
+
                                 <option value="sub_2_2" <?php
-                                if ($reg["id_sub_eje"] == 'sub_2_2') {
-                                    echo "selected";
-                                }?>>2.2</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_2_2') {
+                                            echo "selected";
+                                        }
+                                        ?>>2.2</option>
+
                                 <option value="sub_2_3" <?php
-                                if ($reg["id_sub_eje"] == 'sub_2_3') {
-                                    echo "selected";
-                                }?>>2.3</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_2_3') {
+                                            echo "selected";
+                                        }
+                                        ?>>2.3</option>
+
                                 <option value="sub_3_1" <?php
-                                if ($reg["id_sub_eje"] == 'sub_3_1') {
-                                    echo "selected";
-                                }?>>3.1</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_3_1') {
+                                echo "selected";
+                            }
+                                        ?>>3.1</option>
+
                                 <option value="sub_3_2" <?php
                                 if ($reg["id_sub_eje"] == 'sub_3_2') {
                                     echo "selected";
-                                }?>>3.2</option>
-                                
+                                }
+                                ?>>3.2</option>
+
                                 <option value="sub_3_3" <?php
                                 if ($reg["id_sub_eje"] == 'sub_3_3') {
                                     echo "selected";
-                                }?>>3.3</option>
-                                                                
+                                }
+                                ?>>3.3</option>
+
                                 <option value="sub_4_1" <?php
-                                if ($reg["id_sub_eje"] == 'sub_4_1') {
-                                    echo "selected";
-                                }?>>4.1</option>
-                                                                
+                                        if ($reg["id_sub_eje"] == 'sub_4_1') {
+                                            echo "selected";
+                                        }
+                                        ?>>4.1</option>
+
                                 <option value="sub_5_1" <?php
-                                if ($reg["id_sub_eje"] == 'sub_5_1') {
-                                    echo "selected";
-                                }?>>5.1</option>
-                                                                
+                                        if ($reg["id_sub_eje"] == 'sub_5_1') {
+                                            echo "selected";
+                                        }
+                                        ?>>5.1</option>
+
                                 <option value="sub_6_1" <?php
-                                if ($reg["id_sub_eje"] == 'sub_6_1') {
-                                    echo "selected";
-                                }?>>6.1</option>
-                                                                
+                            if ($reg["id_sub_eje"] == 'sub_6_1') {
+                                echo "selected";
+                            }
+                                        ?>>6.1</option>
+
                                 <option value="sub_7_1" <?php
                                 if ($reg["id_sub_eje"] == 'sub_7_1') {
                                     echo "selected";
-                                }?>>7.1</option>
-                                
+                                }
+                                ?>>7.1</option>
+
                                 <option value="sub_7_2" <?php
                                 if ($reg["id_sub_eje"] == 'sub_7_2') {
                                     echo "selected";
-                                }?>>7.2</option>
-                                
+                                }
+                                ?>>7.2</option>
+
                                 <option value="sub_7_3" <?php
-                                if ($reg["id_sub_eje"] == 'sub_7_3') {
-                                    echo "selected";
-                                }?>>7.3</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_7_3') {
+                                            echo "selected";
+                                        }
+                                        ?>>7.3</option>
+
                                 <option value="sub_7_4" <?php
-                                if ($reg["id_sub_eje"] == 'sub_7_4') {
-                                    echo "selected";
-                                }?>>7.4</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_7_4') {
+                                            echo "selected";
+                                        }
+                                        ?>>7.4</option>
+
                                 <option value="sub_7_5" <?php
-                                if ($reg["id_sub_eje"] == 'sub_7_5') {
-                                    echo "selected";
-                                }?>>7.5</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_7_5') {
+                                echo "selected";
+                            }
+                                        ?>>7.5</option>
+
                                 <option value="sub_7_6" <?php
                                 if ($reg["id_sub_eje"] == 'sub_7_6') {
                                     echo "selected";
-                                }?>>7.6</option>
-                                                                
+                                }
+                                ?>>7.6</option>
+
                                 <option value="sub_8_1" <?php
                                 if ($reg["id_sub_eje"] == 'sub_8_1') {
                                     echo "selected";
-                                }?>>8.1</option>
-                                
+                                }
+                                ?>>8.1</option>
+
                                 <option value="sub_9_1" <?php
-                                if ($reg["id_sub_eje"] == 'sub_9_1') {
-                                    echo "selected";
-                                }?>>9.1</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_9_1') {
+                                            echo "selected";
+                                        }
+                                        ?>>9.1</option>
+
                                 <option value="sub_10_1" <?php
-                                if ($reg["id_sub_eje"] == 'sub_10_1') {
-                                    echo "selected";
-                                }?>>10.1</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_10_1') {
+                                            echo "selected";
+                                        }
+                                        ?>>10.1</option>
+
                                 <option value="sub_10_2" <?php
-                                if ($reg["id_sub_eje"] == 'sub_10_2') {
-                                    echo "selected";
-                                }?>>10.2</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_10_2') {
+                                echo "selected";
+                            }
+                                        ?>>10.2</option>
+
                                 <option value="sub_11_1" <?php
                                 if ($reg["id_sub_eje"] == 'sub_11_1') {
                                     echo "selected";
-                                }?>>11.1</option>
-                                
+                                }
+                                ?>>11.1</option>
+
                                 <option value="sub_11_2" <?php
                                 if ($reg["id_sub_eje"] == 'sub_11_2') {
                                     echo "selected";
-                                }?>>11.2</option>
-                                
+                                }
+                                ?>>11.2</option>
+
                                 <option value="sub_11_3" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_3') {
-                                    echo "selected";
-                                }?>>11.3</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_11_3') {
+                                            echo "selected";
+                                        }
+                                        ?>>11.3</option>
+
                                 <option value="sub_11_4" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_4') {
-                                    echo "selected";
-                                }?>>11.4</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_11_4') {
+                                            echo "selected";
+                                        }
+                                        ?>>11.4</option>
+
                                 <option value="sub_11_5" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_5') {
-                                    echo "selected";
-                                }?>>11.5</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_11_5') {
+                                echo "selected";
+                            }
+                                        ?>>11.5</option>
+
                                 <option value="sub_11_6" <?php
                                 if ($reg["id_sub_eje"] == 'sub_11_6') {
                                     echo "selected";
-                                }?>>11.6</option>
-                                
+                                }
+                                ?>>11.6</option>
+
                                 <option value="sub_11_7" <?php
                                 if ($reg["id_sub_eje"] == 'sub_11_7') {
                                     echo "selected";
-                                }?>>11.7</option>
-                                
+                                }
+                                ?>>11.7</option>
+
                                 <option value="sub_11_8" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_8') {
-                                    echo "selected";
-                                }?>>11.8</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_11_8') {
+                                            echo "selected";
+                                        }
+                                        ?>>11.8</option>
+
                                 <option value="sub_11_9" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_9') {
-                                    echo "selected";
-                                }?>>11.9</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_11_9') {
+                                            echo "selected";
+                                        }
+                                        ?>>11.9</option>
+
                                 <option value="sub_11_10" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_10') {
-                                    echo "selected";
-                                }?>>11.10</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_11_10') {
+                                echo "selected";
+                            }
+                                        ?>>11.10</option>
+
                                 <option value="sub_11_11" <?php
                                 if ($reg["id_sub_eje"] == 'sub_11_11') {
                                     echo "selected";
-                                }?>>11.11</option>
-                                
+                                }
+                                ?>>11.11</option>
+
                                 <option value="sub_11_12" <?php
                                 if ($reg["id_sub_eje"] == 'sub_11_12') {
                                     echo "selected";
-                                }?>>11.12</option>
-                                
+                                }
+                                ?>>11.12</option>
+
                                 <option value="sub_11_13" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_13') {
-                                    echo "selected";
-                                }?>>11.13</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_11_13') {
+                                            echo "selected";
+                                        }
+                                        ?>>11.13</option>
+
                                 <option value="sub_11_14" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_14') {
-                                    echo "selected";
-                                }?>>11.14</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_11_14') {
+                                            echo "selected";
+                                        }
+                                        ?>>11.14</option>
+
                                 <option value="sub_11_15" <?php
-                                if ($reg["id_sub_eje"] == 'sub_11_15') {
-                                    echo "selected";
-                                }?>>11.15</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_11_15') {
+                                echo "selected";
+                            }
+                                        ?>>11.15</option>
+
                                 <option value="sub_11_16" <?php
                                 if ($reg["id_sub_eje"] == 'sub_11_16') {
                                     echo "selected";
-                                }?>>11.16</option>
-                                
+                                }
+                                ?>>11.16</option>
+
                                 <option value="sub_12_1" <?php
                                 if ($reg["id_sub_eje"] == 'sub_12_1') {
                                     echo "selected";
-                                }?>>12.1</option>
-                                
+                                }
+                                ?>>12.1</option>
+
                                 <option value="sub_12_2" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_2') {
-                                    echo "selected";
-                                }?>>12.2</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_12_2') {
+                                            echo "selected";
+                                        }
+                                        ?>>12.2</option>
+
                                 <option value="sub_12_3" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_3') {
-                                    echo "selected";
-                                }?>>12.3</option>
-                                
+                                        if ($reg["id_sub_eje"] == 'sub_12_3') {
+                                            echo "selected";
+                                        }
+                                        ?>>12.3</option>
+
                                 <option value="sub_12_4" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_4') {
-                                    echo "selected";
-                                }?>>12.4</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_4') {
+                                echo "selected";
+                            }
+                                        ?>>12.4</option>
+
                                 <option value="sub_12_5" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_5') {
-                                    echo "selected";
-                                }?>>12.5</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_5') {
+                                echo "selected";
+                            }
+                            ?>>12.5</option>
+
                                 <option value="sub_12_6" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_6') {
-                                    echo "selected";
-                                }?>>12.6</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_6') {
+                                echo "selected";
+                            }
+                            ?>>12.6</option>
+
                                 <option value="sub_12_7" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_7') {
-                                    echo "selected";
-                                }?>>12.7</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_7') {
+                                echo "selected";
+                            }
+                            ?>>12.7</option>
+
                                 <option value="sub_12_8" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_8') {
-                                    echo "selected";
-                                }?>>12.8</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_8') {
+                                echo "selected";
+                            }
+                            ?>>12.8</option>
+
                                 <option value="sub_12_9" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_9') {
-                                    echo "selected";
-                                }?>>12.9</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_9') {
+                                echo "selected";
+                            }
+                            ?>>12.9</option>
+
                                 <option value="sub_12_10" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_10') {
-                                    echo "selected";
-                                }?>>12.10</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_10') {
+                                echo "selected";
+                            }
+                            ?>>12.10</option>
+
                                 <option value="sub_12_11" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_11') {
-                                    echo "selected";
-                                }?>>12.11</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_11') {
+                                echo "selected";
+                            }
+                            ?>>12.11</option>
+
                                 <option value="sub_12_12" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_12') {
-                                    echo "selected";
-                                }?>>12.12</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_12') {
+                                echo "selected";
+                            }
+                            ?>>12.12</option>
+
                                 <option value="sub_12_13" <?php
-                                if ($reg["id_sub_eje"] == 'sub_12_13') {
-                                    echo "selected";
-                                }?>>12.13</option>
-                                
+                            if ($reg["id_sub_eje"] == 'sub_12_13') {
+                                echo "selected";
+                            }
+                            ?>>12.13</option>
+
                             </select>
                         </div>
 
@@ -825,115 +878,115 @@ while ($reg = mysqli_fetch_array($query2)) {
                     <div id="del_intera">
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_ao" id="1" <?php
-                                          if ($reg['del_alvaro'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>&Áacute;lvaro Obreg&oacute;n</label>
+                            if ($reg['del_alvaro'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>&Áacute;lvaro Obreg&oacute;n</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_azc" id="2" <?php
-                                          if ($reg['del_azcapotzalco'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Azcapotzalco</label>
+                            if ($reg['del_azcapotzalco'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>Azcapotzalco</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_ben" id="3" <?php
-                                          if ($reg['del_benito'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Benito Ju&aacute;rez</label>
+                            if ($reg['del_benito'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>Benito Ju&aacute;rez</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_coy" id="4" <?php
-                                          if ($reg['del_coyoacan'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Coyoac&aacute;n</label>
+                            if ($reg['del_coyoacan'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>Coyoac&aacute;n</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI"name="del_cuaj" id="5" <?php
-                                          if ($reg['del_cuajimalpa'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Cuajimalpa</label>
+                            if ($reg['del_cuajimalpa'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>Cuajimalpa</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_cuauh" id="6" <?php
-                                          if ($reg['del_cuauhtemoc'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Cuauht&eacute;moc</label>
+                            if ($reg['del_cuauhtemoc'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>Cuauht&eacute;moc</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_gam" id="7" <?php
-                                          if ($reg['del_gustavo'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Gustavo A. Madero</label>
+                            if ($reg['del_gustavo'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>Gustavo A. Madero</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_iztac" id="8" <?php
-                                          if ($reg['del_iztacalco'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Iztacalco</label>
+                            if ($reg['del_iztacalco'] == 'SI') {
+                                echo 'checked';
+                            }
+                                        ?>>Iztacalco</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_iztap" id="9" <?php
-                                          if ($reg['del_iztapalapa'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Iztapalapa</label>
+                            if ($reg['del_iztapalapa'] == 'SI') {
+                                echo 'checked';
+                            }
+                            ?>>Iztapalapa</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_magda" id="10" <?php
-                                          if ($reg['del_magdalena'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Magdalena Contreras</label>
+                            if ($reg['del_magdalena'] == 'SI') {
+                                echo 'checked';
+                            }
+                            ?>>Magdalena Contreras</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_miguel" id="11" <?php
-                                          if ($reg['del_miguel'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Miguel Hidalgo</label>
+                                if ($reg['del_miguel'] == 'SI') {
+                                    echo 'checked';
+                                }
+                                ?>>Miguel Hidalgo</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_milpa" id="12" <?php
-                                          if ($reg['del_milpa'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Milpa Alta</label>
+                                        if ($reg['del_milpa'] == 'SI') {
+                                            echo 'checked';
+                                        }
+                                        ?>>Milpa Alta</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_tlah" id="13" <?php
-                                          if ($reg['del_tlahuac'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Tl&aacute;huac</label>
+                            if ($reg['del_tlahuac'] == 'SI') {
+                                echo 'checked';
+                            }
+                            ?>>Tl&aacute;huac</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_tlal" id="14" <?php
-                                          if ($reg['del_tlalpan'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Tlalpan</label>
+                                if ($reg['del_tlalpan'] == 'SI') {
+                                    echo 'checked';
+                                }
+                                ?>>Tlalpan</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_venus" id="15" <?php
-                                          if ($reg['del_venustiano'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Venustiano Carranza</label>
+                                        if ($reg['del_venustiano'] == 'SI') {
+                                            echo 'checked';
+                                        }
+                                        ?>>Venustiano Carranza</label>
                         </div>
                         <div class="col-md-2">
                             <label><input type="checkbox" value="SI" name="del_xochi" id="16" <?php
-                                          if ($reg['del_xochimilco'] == 'SI') {
-                                              echo 'checked';
-                                          }
-                                          ?>>Xochimilco</label>
+                                        if ($reg['del_xochimilco'] == 'SI') {
+                                            echo 'checked';
+                                        }
+                                        ?>>Xochimilco</label>
                         </div>
                         <div class="row">
                             <div class="col-md-2 col-md-offset-6">
@@ -953,14 +1006,14 @@ while ($reg = mysqli_fetch_array($query2)) {
                                 }
                                 ?>>DGIDS</option>
                                 <option value="DIF" <?php
-                                    if ($reg["id_cat_institucion"] == 'DIF') {
-                                        echo "selected";
-                                    }
-                                    ?>>DIF</option>
+                                if ($reg["id_cat_institucion"] == 'DIF') {
+                                    echo "selected";
+                                }
+                                ?>>DIF</option>
                                 <option value="INMUJERES" <?php
-                                    if ($reg["id_cat_institucion"] == 'INMUJERES') {
-                                        echo "selected";
-                                    }
+                                if ($reg["id_cat_institucion"] == 'INMUJERES') {
+                                    echo "selected";
+                                }
                                 ?>>Inmujeres</option>
                             </select>
                         </div>
@@ -969,15 +1022,15 @@ while ($reg = mysqli_fetch_array($query2)) {
                             <select name="tipo_proyecto">
                                 <option value=""></option>
                                 <option value="NUEVO" <?php
-                            if ($reg["tipo_proyecto"] == 'NUEVO') {
-                                echo "selected";
-                            }
-                            ?>>Nuevo</option>
+                                if ($reg["tipo_proyecto"] == 'NUEVO') {
+                                    echo "selected";
+                                }
+                                ?>>Nuevo</option>
                                 <option value="CONTINUIDAD" <?php
-                            if ($reg["tipo_proyecto"] == 'CONTINUIDAD') {
-                                echo "selected";
-                            }
-                            ?>>Continuidad</option>
+                                if ($reg["tipo_proyecto"] == 'CONTINUIDAD') {
+                                    echo "selected";
+                                }
+                                ?>>Continuidad</option>
                             </select>
                         </div>
                         <div class="col-md-2 col-md-offset-2">
@@ -1022,30 +1075,30 @@ while ($reg = mysqli_fetch_array($query2)) {
                                 }
                                 ?>>Mujeres</option>
                                 <option value="7" <?php
-                                if ($reg["id_cat_poblacion"] == '7') {
-                                    echo "selected";
-                                }
+                                               if ($reg["id_cat_poblacion"] == '7') {
+                                                   echo "selected";
+                                               }
                                 ?>>Ni&ntilde;as/Ni&ntilde;os</option>
                                 <option value="8" <?php
-                                if ($reg["id_cat_poblacion"] == '8') {
-                                    echo "selected";
-                                }
-                                ?>>Organizaciones Sociales</option>
+                                               if ($reg["id_cat_poblacion"] == '8') {
+                                                   echo "selected";
+                                               }
+                                               ?>>Organizaciones Sociales</option>
                                 <option value="9" <?php
-                                if ($reg["id_cat_poblacion"] == '9') {
-                                    echo "selected";
-                                }
+                                               if ($reg["id_cat_poblacion"] == '9') {
+                                                   echo "selected";
+                                               }
                                 ?>>Poblaci&oacute;n en General</option>
                                 <option value="10" <?php
-                                    if ($reg["id_cat_poblacion"] == '10') {
-                                        echo "selected";
-                                    }
-                                    ?>>Poblaci&oacute;n LGBTTTI</option>
+                                               if ($reg["id_cat_poblacion"] == '10') {
+                                                   echo "selected";
+                                               }
+                                ?>>Poblaci&oacute;n LGBTTTI</option>
                                 <option value="11"<?php
-                                    if ($reg["id_cat_poblacion"] == '11') {
-                                        echo "selected";
-                                    }
-                                    ?>>Pueblos y Colectividades Indigenas</option>
+                                               if ($reg["id_cat_poblacion"] == '11') {
+                                                   echo "selected";
+                                               }
+                                               ?>>Pueblos y Colectividades Indigenas</option>
                             </select>
                         </div>
                         <div class="col-md-2 col-md-offset-2">
@@ -1072,14 +1125,18 @@ while ($reg = mysqli_fetch_array($query2)) {
                                     <td>1. Proyecto y ficha t&eacute;cnica (original y copia impresas)</td>
                                     <td> 
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_ficha_tec" value='SI' <?php if ($reg['rec_ficha_tec'] == 'SI') {
-                                        echo 'checked';
-                                    } ?>>S&iacute;
+                                            <input type="radio" name="rec_ficha_tec" value='SI' <?php
+                                        if ($reg['rec_ficha_tec'] == 'SI') {
+                                            echo 'checked';
+                                        }
+                                        ?>>S&iacute;
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_ficha_tec" value='NO' <?php if ($reg['rec_ficha_tec'] == 'NO') {
-                                        echo 'checked';
-                                    } ?>>No
+                                            <input type="radio" name="rec_ficha_tec" value='NO' <?php
+                                                   if ($reg['rec_ficha_tec'] == 'NO') {
+                                                       echo 'checked';
+                                                   }
+                                                   ?>>No
                                         </label>
                                     </td>
                                 </tr>
@@ -1087,14 +1144,18 @@ while ($reg = mysqli_fetch_array($query2)) {
                                     <td>2. Archivo electr&oacute;nico del proyecto y ficha t&eacute;cnica (CD o USB)</td>
                                     <td>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_arch_elec" value='SI' <?php if ($reg['rec_arch_elec'] == 'SI') {
-                                        echo 'checked';
-                                    } ?>>S&iacute;
+                                            <input type="radio" name="rec_arch_elec" value='SI' <?php
+                                                   if ($reg['rec_arch_elec'] == 'SI') {
+                                                       echo 'checked';
+                                                   }
+                                                   ?>>S&iacute;
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_arch_elec" value='NO' <?php if ($reg['rec_arch_elec'] == 'NO') {
-                                        echo 'checked';
-                                    } ?>>No
+                                            <input type="radio" name="rec_arch_elec" value='NO' <?php
+                                            if ($reg['rec_arch_elec'] == 'NO') {
+                                                echo 'checked';
+                                            }
+                                            ?>>No
                                         </label>
                                     </td>
                                 </tr>
@@ -1102,14 +1163,18 @@ while ($reg = mysqli_fetch_array($query2)) {
                                     <td>3. Copia fotost&aacute;tica simple de la Constancia de inscripci&oacute;n en el Registro de Organizaciones Civiles del Distrito Federal</td>
                                     <td>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_cons_insc" value='SI' <?php if ($reg['rec_copia_insc'] == 'SI') {
-                                        echo 'checked';
-                                    } ?>>S&iacute;
+                                            <input type="radio" name="rec_cons_insc" value='SI' <?php
+                                            if ($reg['rec_copia_insc'] == 'SI') {
+                                                echo 'checked';
+                                            }
+                                            ?>>S&iacute;
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_cons_insc" value='NO' <?php if ($reg['rec_copia_insc'] == 'NO') {
-                                        echo 'checked';
-                                    } ?>>No
+                                            <input type="radio" name="rec_cons_insc" value='NO' <?php
+                                            if ($reg['rec_copia_insc'] == 'NO') {
+                                                echo 'checked';
+                                            }
+                                            ?>>No
                                         </label>
                                     </td>
                                 </tr>
@@ -1117,14 +1182,18 @@ while ($reg = mysqli_fetch_array($query2)) {
                                     <td>4. Carta compromiso (original y copia impresa)</td>
                                     <td>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_carta" value='SI' <?php if ($reg['rec_carta'] == 'SI') {
-                                        echo 'checked';
-                                    } ?>>S&iacute;
+                                            <input type="radio" name="rec_carta" value='SI' <?php
+                                            if ($reg['rec_carta'] == 'SI') {
+                                                echo 'checked';
+                                            }
+                                            ?>>S&iacute;
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_carta" value='NO' <?php if ($reg['rec_carta'] == 'NO') {
-                                        echo 'checked';
-                                    } ?>>No
+                                            <input type="radio" name="rec_carta" value='NO' <?php
+                                            if ($reg['rec_carta'] == 'NO') {
+                                                echo 'checked';
+                                            }
+                                            ?>>No
                                         </label>
                                     </td>
                                 </tr>
@@ -1132,14 +1201,18 @@ while ($reg = mysqli_fetch_array($query2)) {
                                     <td>5. Constancia de participaci&oacute;n de la pl&aacute;tica informativa</td>
                                     <td>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_cons_plat" value='SI' <?php if ($reg['rec_cons_plat'] == 'SI') {
-                                        echo 'checked';
-                                    } ?>>S&iacute;
+                                            <input type="radio" name="rec_cons_plat" value='SI' <?php
+                                            if ($reg['rec_cons_plat'] == 'SI') {
+                                                echo 'checked';
+                                            }
+                                            ?>>S&iacute;
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_cons_plat" value='NO' <?php if ($reg['rec_cons_plat'] == 'NO') {
-                                        echo 'checked';
-                                    } ?>>No
+                                            <input type="radio" name="rec_cons_plat" value='NO' <?php
+    if ($reg['rec_cons_plat'] == 'NO') {
+        echo 'checked';
+    }
+    ?>>No
                                         </label>
                                     </td>
                                 </tr>
@@ -1147,14 +1220,18 @@ while ($reg = mysqli_fetch_array($query2)) {
                                     <td>6. Documento de terminaci&oacute;n 2014 y/o 2013</td>
                                     <td>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_doc_term" value='SI' <?php if ($reg['rec_doc_term'] == 'SI') {
-                                        echo 'checked';
-                                    } ?>>S&iacute;
+                                            <input type="radio" name="rec_doc_term" value='SI' <?php
+    if ($reg['rec_doc_term'] == 'SI') {
+        echo 'checked';
+    }
+    ?>>S&iacute;
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="rec_doc_term" value='NO' <?php if ($reg['rec_doc_term'] == 'NO') {
-                                        echo 'checked';
-                                    } ?>>No
+                                            <input type="radio" name="rec_doc_term" value='NO' <?php
+    if ($reg['rec_doc_term'] == 'NO') {
+        echo 'checked';
+    }
+    ?>>No
                                         </label>
                                     </td></td>
                                 </tr>
@@ -1184,8 +1261,8 @@ while ($reg = mysqli_fetch_array($query2)) {
                     <br><br><br><center>
                         <label style="margin-bottom: 1%;">Ahora tu captura es correcta puedes Imprimir o Aceptar y seguir capturando</label></center>
                 </form>
-                <div class="col-md-1 col-md-offset-2">
-                    <button type="submit"class="btn btn-primary btn-md" onclick = "location = '../librerias/formatopdf.php?UsId=<?php echo $reg['id_usuarios']?>'"/>Imprimir</button><br><br>
+                <div class="col-md-1 col-md-offset-3">
+                    <button type="submit"class="btn btn-primary btn-md" onclick = "window.open('../librerias/formatopdf.php?UsId=<?php echo $reg['id_usuarios'] ?>');" target="_blank"/>Imprimir</button><br><br>
                 </div>
                 <div class="col-md-1 col-md-offset-4">
                     <button type="submit"class="btn btn-primary btn-md" onclick = "location = '../administradores.php'"/>Aceptar</button><br><br>

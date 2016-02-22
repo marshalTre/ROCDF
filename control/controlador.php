@@ -1,6 +1,10 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
+session_start();
+if (isset($_SESSION["session_user"])) {
+    
+} else {
+    header("location:../index.html");
+    exit();
 }
 error_reporting(0);
 
@@ -72,7 +76,7 @@ while ($reg = mysqli_fetch_array($query2)) {
 
         </head>
 
-        <body>
+        <body onload="nobackbutton();">
             <header>
                 <center>
                     <image id="image1" src="../images/sedeso.png"/> 
